@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   }
 
   .navigation {
-    font-size: 1rem;
+    font-size: 0.9rem;
     flex: 1;
     flex-grow: 1;
     overflow: auto;

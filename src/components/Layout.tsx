@@ -28,10 +28,8 @@ const Layout: FC<Props> = ({ children }) => {
         <Side isOpen={open}>
           <Navigation />
         </Side>
-        <Content>
-          {children}
-          <Footer>footer</Footer>
-        </Content>
+        <Content>{children}</Content>
+        <Footer>footer</Footer>
       </Main>
     </Wrapper>
   );
@@ -42,28 +40,10 @@ const Wrapper = styled.div``;
 const Main = styled.div`
   height: 100%;
   width: 100%;
-  padding-left: 248px;
+  padding-left: 280px;
 
   @media screen and (max-width: 960px) {
-    padding-left: 0;
-  }
-`;
-
-const Header = styled.nav`
-  display: none;
-
-  @media screen and (max-width: 960px) {
-    height: 48px;
-    border-bottom: 1px solid black;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    padding-left: 8px;
-    z-index: 10;
+    padding: 56px 0 0 0;
   }
 `;
 
@@ -83,6 +63,24 @@ const Overlay = styled.div<LinksProps>`
   }
 `;
 
+const Header = styled.nav`
+  display: none;
+
+  @media screen and (max-width: 960px) {
+    height: 56px;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    padding-left: 8px;
+    z-index: 10;
+  }
+`;
+
 const Side = styled.div<LinksProps>`
   background-color: #fafafa;
   min-width: 280px;
@@ -91,50 +89,6 @@ const Side = styled.div<LinksProps>`
   top: 0px;
   bottom: 0px;
   z-index: 12;
-
-  .navheader {
-    padding: 2em 2.75em;
-  }
-
-  .navigation {
-    font-size: 1rem;
-    flex: 1;
-    flex-grow: 1;
-    overflow: auto;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding: 2em;
-  }
-
-  .main {
-    font-weight: 700;
-    padding: 0.5em 0.75em;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgba(44, 44, 44, 0.06);
-      border-radius: 0.25em;
-    }
-  }
-
-  .sub {
-    padding: 0.5em 0 0.5em 2em;
-    font-weight: 400;
-    cursor: pointer;
-
-    &:hover {
-      background-color: rgba(44, 44, 44, 0.06);
-      border-radius: 0.25em;
-    }
-  }
-
-  .active {
-    background-color: rgba(44, 44, 44, 0.06);
-  }
-
-  .hide {
-    display: none;
-  }
 
   @media screen and (max-width: 960px) {
     left: auto;
@@ -147,20 +101,21 @@ const Side = styled.div<LinksProps>`
 `;
 
 const Content = styled.div`
-  background-color: lavenderblush;
-  padding: 40px 52px 0px 52px;
+  /* background-color: lavenderblush; */
+  padding: 3em;
   margin: 0 auto;
   max-width: 1080px;
 
-  .block {
-    width: 400px;
-    height: 400px;
-    margin: 1em;
+  @media screen and (max-width: 960px) {
+    padding: 3em 2em;
   }
 `;
 
 const Footer = styled.div`
   background-color: gainsboro;
+  padding: 3em 4em;
+  margin: 0 auto;
+  max-width: 1080px;
 `;
 
 export default Layout;

@@ -57,21 +57,26 @@ export const navData = [
       },
       {
         id: 303,
-        name: "Header",
-        link: "/",
-      },
-      {
-        id: 304,
         name: "Footer",
         link: "/",
       },
       {
-        id: 305,
-        name: "Text Fields",
+        id: 304,
+        name: "Header",
         link: "/",
       },
       {
         id: 306,
+        name: "Table",
+        link: "/",
+      },
+      {
+        id: 307,
+        name: "Text Fields",
+        link: "/",
+      },
+      {
+        id: 308,
         name: "Tags",
         link: "/",
       },
@@ -88,12 +93,12 @@ export const navData = [
       },
       {
         id: 402,
-        name: "Login",
+        name: "Authentication",
         link: "/",
       },
       {
         id: 403,
-        name: "Filtering",
+        name: "Filter",
         link: "/",
       },
     ],

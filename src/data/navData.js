@@ -63,12 +63,12 @@ export const navData = [
       {
         id: 304,
         name: "Header",
-        link: "/",
+        link: "/components",
       },
       {
         id: 306,
         name: "Table",
-        link: "/",
+        link: "/components/table",
       },
       {
         id: 307,

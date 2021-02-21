@@ -7,6 +7,7 @@ import styled from "styled-components";
 import Table from "../../components/Table";
 
 //import assets
+import { colors } from "../../components/Colors";
 import Cover from "../../assets/Cover.jpg";
 
 //import local data
@@ -31,6 +32,7 @@ const Home = () => {
       </Header>
 
       <Main>
+        <Divider />
         <Section>
           <h3>Tools and stacks</h3>
           <p>
@@ -38,7 +40,7 @@ const Home = () => {
             <em>TypeScript</em> to code.
           </p>
         </Section>
-
+        <Divider />
         <Section>
           <h3>Cross browser/device testing</h3>
           <p>Currently being tested on the following devices and browsers:</p>
@@ -83,6 +85,13 @@ const ImageContainer = styled.div`
     width: 100%;
     object-fit: cover;
   }
+`;
+
+const Divider = styled.hr`
+  border: none;
+  height: 1px;
+  background-color: ${colors.lightergray};
+  margin: 4em 0;
 `;
 
 export default Home;

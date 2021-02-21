@@ -21,11 +21,19 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.875rem;
         font-weight: 400;
     }
+
+   
+
     ul {
         list-style-type: none;
     }
 
+    li {
+        color: ${colors.gray};
+    }
+
     a {
+        text-decoration: none; 
         cursor: pointer;
     }
 
@@ -38,10 +46,12 @@ const GlobalStyle = createGlobalStyle`
             outline-offset: 1px;
         }
     }
+
     h1 {
         color: ${colors.darkgray};
         font-size: 3rem;
-        margin-bottom: 1.5rem;
+       line-height: 3rem;
+
     }
 
     h2 {

@@ -40,70 +40,74 @@ const Wrapper = styled.div``;
 const Main = styled.div`
   height: 100%;
   width: 100%;
-  padding: 56px 0 0 0;
+  padding-left: 280px;
 
-  @media (min-width: 1024px) {
-    padding-left: 280px;
+  @media screen and (max-width: 960px) {
+    padding: 56px 0 0 0;
   }
 `;
 
 const Overlay = styled.div<LinksProps>`
-  display: block;
-  background-color: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 11;
-  visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
-  opacity: ${(props) => (props.isOpen ? 1 : 0)};
-  transition: opacity 0.2s ease-in-out;
+  @media screen and (max-width: 960px) {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+    visibility: ${(props) => (props.isOpen ? "visible" : "hidden")};
+    opacity: ${(props) => (props.isOpen ? 1 : 0)};
+    transition: opacity 0.2s ease-in-out;
+  }
 `;
 
 const Header = styled.nav`
-  height: 56px;
-  border-bottom: 1px solid black;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: fixed;
-  top: 0px;
-  right: 0px;
-  left: 0px;
-  padding-left: 8px;
-  z-index: 10;
+  display: none;
 
-  @media (min-width: 1024px) {
-    display: none;
+  @media screen and (max-width: 960px) {
+    height: 56px;
+    border-bottom: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    padding-left: 8px;
+    z-index: 10;
   }
 `;
 
 const Side = styled.div<LinksProps>`
   background-color: #fafafa;
-  position: fixed;
   min-width: 280px;
-  left: auto;
-  bottom: 0px;
-  right: 100%;
+  position: fixed;
+  left: 0px;
   top: 0px;
-  z-index: 100;
-  transform: ${(props) =>
-    props.isOpen ? "translateX(100%)" : "translateX(0)"};
-  transition: transform 0.2s ease-in-out;
+  bottom: 0px;
+  z-index: 12;
 
-  @media (min-width: 1024px) {
-    left: 0px;
+  @media screen and (max-width: 960px) {
+    left: auto;
+    right: 100%;
+    z-index: 100;
+    transform: ${(props) =>
+      props.isOpen ? "translateX(100%)" : "translateX(0)"};
+    transition: transform 0.2s ease-in-out;
   }
 `;
 
 const Content = styled.div`
-  padding: 3em 2em;
+  /* background-color: lavenderblush; */
+  padding: 3em;
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1080px;
 
-  @media (min-width: 1024px) {
-    padding: 3em;
+  @media screen and (max-width: 960px) {
+    padding: 3em 2em;
   }
 `;
 

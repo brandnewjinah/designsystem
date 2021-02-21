@@ -6,6 +6,6 @@ export const colors = {
   gray: "#4d4d4d",
   lightgray: "#707070",
   lightergray: "#e0e0e0",
-  faintgray: "#fffdfa",
+  faintgray: "#f5f5f5",
   pink: "#FD9792",
 };

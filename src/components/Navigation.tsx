@@ -1,7 +1,11 @@
 import React, { FC, useState } from "react";
 
 //import libraries
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+//import styles and assets
+import { colors } from "./Colors";
 
 //import data
 import { navData } from "../data/navData";
@@ -15,23 +19,29 @@ const Navigation: FC<Props> = () => {
   return (
     <Wrapper>
       <div className="navheader">header</div>
-      <div className="navigation">
+      <div className="navigation" aria-label="Navigation">
         <ul>
           {navData.map((cat, idx) => (
-            <li>
-              <div
-                className="main"
+            <li key={idx}>
+              <Link
+                to=""
+                aria-haspopup="true"
+                aria-expanded={idx === open ? true : false}
                 onClick={() => setOpen(idx === open ? 1000 : idx)}
               >
-                {cat.name}
-              </div>
+                <div className="main">{cat.name}</div>
+              </Link>
+
               <ul className={idx === open ? "" : "hide"}>
-                {cat.subcategory.map((sub) => (
-                  <li
-                    className={sub.name === active ? "sub active" : "sub"}
-                    onClick={() => setActive(sub.name)}
-                  >
-                    <div>{sub.name}</div>
+                {cat.subcategory.map((sub, idx) => (
+                  <li key={idx}>
+                    <Link to={sub.link} onClick={() => setActive(sub.name)}>
+                      <div
+                        className={sub.name === active ? "sub active" : "sub"}
+                      >
+                        {sub.name}
+                      </div>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -44,6 +54,15 @@ const Navigation: FC<Props> = () => {
 };
 
 const Wrapper = styled.div`
+  a {
+    color: ${colors.darkgray};
+  }
+
+  ul,
+  li {
+    width: 100%;
+  }
+
   .navheader {
     padding: 2em 2.75em;
   }
@@ -59,6 +78,7 @@ const Wrapper = styled.div`
   }
 
   .main {
+    width: 100%;
     font-weight: 700;
     padding: 0.5em 0.75em;
     cursor: pointer;

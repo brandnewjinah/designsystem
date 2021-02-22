@@ -48,7 +48,7 @@ export const navData = [
       {
         id: 301,
         name: "Buttons",
-        link: "/",
+        link: "/components/button",
       },
       {
         id: 302,
@@ -63,7 +63,7 @@ export const navData = [
       {
         id: 304,
         name: "Header",
-        link: "/components",
+        link: "/components/header",
       },
       {
         id: 306,
@@ -73,7 +73,7 @@ export const navData = [
       {
         id: 307,
         name: "Text Fields",
-        link: "/",
+        link: "/components/textfield",
       },
       {
         id: 308,

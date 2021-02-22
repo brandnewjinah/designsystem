@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 //import styles and assets
-import { colors } from "./Colors";
+import { colors } from "./StyleVariables";
 
 //import data
 import { navData } from "../data/navData";
@@ -23,14 +23,13 @@ const Navigation: FC<Props> = () => {
         <ul>
           {navData.map((cat, idx) => (
             <li key={idx}>
-              <Link
-                to=""
+              <a
                 aria-haspopup="true"
                 aria-expanded={idx === open ? true : false}
                 onClick={() => setOpen(idx === open ? 1000 : idx)}
               >
                 <div className="main">{cat.name}</div>
-              </Link>
+              </a>
 
               <ul className={idx === open ? "" : "hide"}>
                 {cat.subcategory.map((sub, idx) => (

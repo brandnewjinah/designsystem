@@ -5,7 +5,7 @@ import styled from "styled-components";
 import _ from "lodash";
 
 //import assets
-import { colors } from "../components/Colors";
+import { colors } from "./StyleVariables";
 import { ChevronLeft, ChevronRight } from "../assets/Icons";
 
 interface Props {

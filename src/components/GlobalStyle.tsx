@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { colors } from "./Colors";
+import { colors } from "./StyleVariables";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -72,6 +72,12 @@ const GlobalStyle = createGlobalStyle`
         margin-bottom: .625rem;
     }
 
+    h5 {
+        color: ${colors.darkgray};
+        font-size: 1rem;
+        margin-bottom: .25rem;
+    }
+
     p {
         color: ${colors.gray};
         font-size: 1rem;
@@ -82,6 +88,16 @@ const GlobalStyle = createGlobalStyle`
         font-style: normal;
         font-weight: 700;
         color: ${colors.pink};
+    }
+
+    pre {
+        padding: 1em !important;
+        line-height: 1.5rem;
+    }
+
+    code {
+        font-size: .675rem;
+        padding: 1em; 
     }
     
 `;

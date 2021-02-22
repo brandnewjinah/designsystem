@@ -16,16 +16,13 @@ import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 //import local data
 import { deviceData } from "../../data/deviceData";
 
-const TablePage = () => {
+const ButtonPage = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Table</h1>
+        <h1>Button</h1>
         <Article>
-          <p>
-            Data tables are used to organize and display sets of data across
-            rows and columns.
-          </p>
+          <p>Buttons allow user to press and take actions.</p>
         </Article>
       </Header>
       <Main>
@@ -97,4 +94,4 @@ const Article = styled.article`
 
 const Main = styled.main``;
 
-export default TablePage;
+export default ButtonPage;

@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Table from "../../components/Table";
 
 //import assets
-import { colors } from "../../components/Colors";
+import { colors } from "../../components/StyleVariables";
 import Cover from "../../assets/Cover.jpg";
 
 //import local data

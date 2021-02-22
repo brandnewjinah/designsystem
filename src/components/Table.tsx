@@ -9,12 +9,13 @@ import Pagination from "../components/Pagination";
 import { paginate } from "../utils/Paginate";
 
 //import assets
-import { colors } from "../components/Colors";
+import { colors } from "./StyleVariables";
 
 interface Props {
   data: any;
   keys: string[];
   showId?: boolean;
+  listSize?: number;
 }
 
 interface Column {
@@ -26,8 +27,8 @@ type LinksProps = {
   numOfCol: number;
 };
 
-const Table: FC<Props> = ({ data, keys, showId }) => {
-  const [pageSize, setPageSize] = useState(4);
+const Table: FC<Props> = ({ data, keys, showId, listSize }) => {
+  const pageSize = listSize ? listSize : 10;
   const [currentPage, setCurrentPage] = useState(1);
   const [sortColumn, setSortColumn] = useState<Column>({
     path: "",
@@ -69,7 +70,7 @@ const Table: FC<Props> = ({ data, keys, showId }) => {
 
   return (
     <Wrapper>
-      <table aria-label="sample">
+      <table aria-label="table">
         <thead>
           <tr>
             {keys.map((item, idx) => (

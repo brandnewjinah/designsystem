@@ -186,7 +186,7 @@ const InputTag = styled.input<StyleProps>`
   ::placeholder,
   ::-webkit-input-placeholder {
     font-size: 0.925rem;
-    color: ${colors.lightergray};
+    color: ${colors.gray_2};
   }
 `;
 

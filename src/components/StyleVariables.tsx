@@ -5,8 +5,8 @@ export const colors = {
   darkgray: "#242424",
   gray: "#4d4d4d",
   lightgray: "#999999",
-  lightergray: "#cccccc",
-  faintgray: "#f5f5f5",
+  gray_2: "#cccccc",
+  gray_1: "#f5f5f5",
   pink: "#FD9792",
 };
 

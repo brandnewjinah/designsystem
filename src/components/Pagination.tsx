@@ -86,7 +86,7 @@ const Wrapper = styled.div`
     margin: 0 0.5em;
 
     &:hover {
-      background-color: ${colors.lightergray};
+      background-color: ${colors.gray_2};
     }
   }
 

@@ -63,7 +63,7 @@ export const navData = [
       {
         id: 304,
         name: "Header",
-        link: "/components/header",
+        link: "/",
       },
       {
         id: 306,

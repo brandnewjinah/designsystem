@@ -90,7 +90,7 @@ const ImageContainer = styled.div`
 const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: ${colors.lightergray};
+  background-color: ${colors.gray_2};
   margin: 4em 0;
 `;
 

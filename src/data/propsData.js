@@ -70,3 +70,48 @@ export const inputData = [
     required: "no",
   },
 ];
+
+export const buttonData = [
+  {
+    id: 1,
+    property: "label",
+    type: "string",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 2,
+    property: "color",
+    type: "string",
+    default: "black",
+    required: "no",
+  },
+  {
+    id: 3,
+    property: "shape",
+    type: "rounded / pill",
+    default: "square",
+    required: "no",
+  },
+  {
+    id: 4,
+    property: "icon",
+    type: "boolean",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 5,
+    property: "fullWidth",
+    type: "boolean",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 6,
+    property: "disabled",
+    type: "boolean",
+    default: "-",
+    required: "no",
+  },
+];

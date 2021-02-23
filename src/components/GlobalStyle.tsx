@@ -79,7 +79,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
     p {
-        color: ${colors.gray};
         font-size: 1rem;
         line-height: 1.5rem;
     }

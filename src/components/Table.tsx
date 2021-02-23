@@ -140,10 +140,10 @@ const Wrapper = styled.div`
     line-height: 2.1rem;
     text-transform: uppercase;
     text-align: left;
-    border-bottom: 1px solid ${colors.lightergray};
+    border-bottom: 1px solid ${colors.gray_2};
     overflow-x: hidden;
     overflow-y: auto;
-    background: ${colors.faintgray};
+    background: ${colors.gray_1};
     padding: 0.75em 1em;
     cursor: pointer;
 
@@ -170,7 +170,7 @@ const Wrapper = styled.div`
 
 const Cell = styled.td<LinksProps>`
   display: block;
-  border-bottom: 1px solid ${colors.lightergray};
+  border-bottom: 1px solid ${colors.gray_2};
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0.75em 1em;

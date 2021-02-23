@@ -3,18 +3,32 @@ import React, { useState } from "react";
 //import libraries
 import styled from "styled-components";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
+//import layout components
+import Section from "../../components/Section";
+import Flex from "../../components/Sections/Flex";
 
 //import components
 import Table from "../../components/Table";
-import Section from "../../components/Section";
+
+import {
+  TextButton,
+  OutlinedButton,
+  FilledButton,
+  IconButton,
+} from "../../components/Buttons";
 
 //import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
+import Anatomy from "../../assets/components/Button_Anatomy.jpg";
 import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 
+//import assets
+import { sizes, colors } from "../../components/StyleVariables";
+import { Heart } from "../../assets/Icons";
+
 //import local data
-import { deviceData } from "../../data/deviceData";
+import { buttonData } from "../../data/propsData";
 
 const ButtonPage = () => {
   return (
@@ -26,51 +40,159 @@ const ButtonPage = () => {
         </Article>
       </Header>
       <Main>
-        <Section title="Interactive Demo">
-          <Table
-            data={deviceData}
-            keys={["platform", "device", "os", "browser", "resolution"]}
-            showId={false}
+        <Section title="Anatomy" image={Anatomy} />
+        <Section title="Options">
+          <Flex
+            example={
+              <TextButton
+                label="Button"
+                color="#d35400"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Text Button"
+            text="Text Button can be used for actions with low emphasis"
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Outlined Button"
+                color="#d35400"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Outlined Button"
+            text="Outlined Button can be used for actions with medium emphasis"
+          />
+          <Flex
+            example={
+              <FilledButton
+                label="Filled Button"
+                color="#d35400"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Text Button"
+            text="Filled Button can be used for actions with high emphasis"
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Button"
+                color="#d35400"
+                shape="rounded"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Rounded Shape"
+            text="Outlined or Filled button can be in rounded shape to fit the style needs."
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Button"
+                color="#d35400"
+                shape="pill"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Pill Shape"
+            text="Outlined or Filled button can be in pill shape to fit the style needs."
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Like"
+                color="#d35400"
+                icon
+                handleClick={() => console.log("clicked")}
+              >
+                <Heart width={18} height={18} stroke={2} color="#d35400" />
+              </OutlinedButton>
+            }
+            title="Optional Icon"
+            text="Outlined or Filled button can have an optional icon next to the label. Icon should only be used to clarify what the button does."
+          />
+          <Flex
+            example={
+              <FilledButton
+                label="Button"
+                disabled
+                color="#d35400"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Disabled"
+            text="Disalbed state can be passed as a boolean property"
+          />
+          <Flex
+            example={
+              <IconButton
+                label="Icon"
+                color="#d35400"
+                handleClick={() => console.log("clicked")}
+              >
+                <Heart
+                  width={18}
+                  height={18}
+                  stroke={2}
+                  fill="#fff"
+                  // ariaHidden={true}
+                />
+              </IconButton>
+            }
+            title="Icon Button"
+            text="Icon-only button can be used for simple actions. On hover it displays a tooltip to provide more context."
           />
         </Section>
+        <Section title="Implementation for React">
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {`
+  import { TextButton, OutlinedButton, FilledButton, IconButton, } from "components/Input";
+  import { Heart } from "assets/Icons";
 
-        <Section title="Desktop Anatomy" image={Anatomy}>
-          <ul>
-            <li>
-              <strong>1. Column Header</strong>: Asc and desc sort available on
-              click.
-            </li>
-            <li>
-              <strong>2. Rows</strong>
-            </li>
-            <li>
-              <strong>3. Pagination</strong>
-            </li>
-          </ul>
-        </Section>
+  <TextButton
+    label="Button"
+    color="#d35400"
+    handleClick={() => console.log("clicked")}
+  />
 
-        <Section title="Responsive Anatomy" image={AnatomyMobile}>
-          <ul>
-            <li>
-              <strong>1. Sticky Header</strong>: Asc and desc sort available on
-              click.
-            </li>
-            <li>
-              <strong>2. Rows</strong>: Scrollable
-            </li>
-            <li>
-              <strong>3. Default Browser Scroll</strong>
-            </li>
-            <li>
-              <strong>4. Pagination</strong>
-            </li>
-          </ul>
-        </Section>
+  <OutlinedButton
+    label="Outlined Button"
+    color="#d35400"
+    shape="rounded"
+    handleClick={() => console.log("clicked")}
+  />
 
-        <Section title="Implementation">
-          <SyntaxHighlighter language="javascript" style={docco}>
-            {`(num) => num + 1`}
+  <FilledButton
+    label="Button"
+    disabled
+    color="#d35400"
+    shape="pill"
+    icon
+    handleClick={() => console.log("clicked")}
+  >
+    <Heart width={18} height={18} stroke={2} color="#d35400" />
+  </FilledButton>  
+
+  <IconButton
+    label="Button"
+    color="#d35400"
+    handleClick={() => console.log("clicked")}
+  >
+    <Heart width={18} height={18} stroke={2} fill="#fff" ariaHidden={true} />
+  </IconButton>
+
+  `}
           </SyntaxHighlighter>
+        </Section>
+        <Section title="Props" divider={false}>
+          <Table
+            data={buttonData}
+            listSize={10}
+            keys={["property", "type", "default", "required"]}
+            showId={false}
+          />
         </Section>
       </Main>
     </Wrapper>

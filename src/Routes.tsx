@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 
 //import pages
 import Home from "./pages/Home/Home";
+import Principles from "./pages/Overview/Priciples";
 
 //import component pages
 import Table from "./pages/Components/Table";
@@ -19,6 +20,7 @@ const Routes = () => {
       <Switch>
         <Layout>
           <Route exact path="/" component={Home} />
+          <Route exact path="/overview/Principles" component={Principles} />
           <Route exact path="/components/table" component={Table} />
           <Route exact path="/components/button" component={Button} />
           <Route exact path="/components/header" component={Header} />

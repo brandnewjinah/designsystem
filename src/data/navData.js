@@ -6,7 +6,7 @@ export const navData = [
       {
         id: 101,
         name: "Principles",
-        link: "/",
+        link: "/overview/principles",
       },
     ],
   },
@@ -17,27 +17,27 @@ export const navData = [
       {
         id: 201,
         name: "Initial Setup",
-        link: "/",
+        link: "/foundation/setup",
       },
       {
         id: 202,
         name: "Layout",
-        link: "/",
+        link: "/foundation/layout",
       },
       {
         id: 203,
         name: "Typography",
-        link: "/",
+        link: "/foundation/typography",
       },
       {
         id: 204,
         name: "Iconography",
-        link: "/",
+        link: "/foundation/icons",
       },
       {
         id: 205,
         name: "Navigation",
-        link: "/",
+        link: "/foundation/navigation",
       },
     ],
   },
@@ -53,17 +53,17 @@ export const navData = [
       {
         id: 302,
         name: "Card",
-        link: "/",
+        link: "/components/card",
       },
       {
         id: 303,
         name: "Footer",
-        link: "/",
+        link: "/components/footer",
       },
       {
         id: 304,
         name: "Header",
-        link: "/",
+        link: "/components/header",
       },
       {
         id: 306,
@@ -78,7 +78,7 @@ export const navData = [
       {
         id: 308,
         name: "Tags",
-        link: "/",
+        link: "/components/tags",
       },
     ],
   },
@@ -89,17 +89,17 @@ export const navData = [
       {
         id: 401,
         name: "Forms",
-        link: "/",
+        link: "/patterns/forms",
       },
       {
         id: 402,
         name: "Authentication",
-        link: "/",
+        link: "/patterns/authentication",
       },
       {
         id: 403,
         name: "Filter",
-        link: "/",
+        link: "/patterns/filter",
       },
     ],
   },
@@ -110,12 +110,12 @@ export const navData = [
       {
         id: 501,
         name: "Redux",
-        link: "/",
+        link: "/data/redux",
       },
       {
         id: 502,
         name: "HTTP",
-        link: "/",
+        link: "/data/http",
       },
     ],
   },

@@ -20,7 +20,7 @@ const IconographyPage = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Principles</h1>
+        <h1>Iconography</h1>
         <Article>
           <p>text</p>
         </Article>

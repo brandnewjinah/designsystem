@@ -20,7 +20,7 @@ const SetupPage = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Principles</h1>
+        <h1>Setup</h1>
         <Article>
           <p>text</p>
         </Article>

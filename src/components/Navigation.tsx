@@ -18,7 +18,10 @@ const Navigation: FC<Props> = () => {
 
   return (
     <Wrapper>
-      <div className="navheader">System</div>
+      <Link to="/">
+        <div className="navheader">System</div>
+      </Link>
+
       <div className="navigation" aria-label="Navigation">
         <ul>
           {navData.map((cat, idx) => (

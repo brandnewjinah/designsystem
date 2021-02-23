@@ -32,7 +32,7 @@ export const navData = [
       {
         id: 204,
         name: "Iconography",
-        link: "/foundation/icons",
+        link: "/foundation/iconography",
       },
       {
         id: 205,

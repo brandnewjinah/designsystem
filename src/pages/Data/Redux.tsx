@@ -16,11 +16,11 @@ import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 //import local data
 import { deviceData } from "../../data/deviceData";
 
-const LayoutPage = () => {
+const ReduxPage = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Layout</h1>
+        <h1>Redux</h1>
         <Article>
           <p>text</p>
         </Article>
@@ -43,4 +43,4 @@ const Article = styled.article`
 
 const Main = styled.main``;
 
-export default LayoutPage;
+export default ReduxPage;

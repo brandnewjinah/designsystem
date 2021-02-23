@@ -20,7 +20,7 @@ const TypographyPage = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Principles</h1>
+        <h1>Typography</h1>
         <Article>
           <p>text</p>
         </Article>

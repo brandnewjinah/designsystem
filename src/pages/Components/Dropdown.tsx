@@ -50,14 +50,76 @@ const DropdownPage = () => {
               color="#de576d"
             />
           </Section>
-          <Section title="Setup">
+          <Section title="Implementation for React">
             <SyntaxHighlighter
               language="javascript"
               style={atelierEstuaryLight}
             >
               {`
-  npm i react-select
-  npm i @types/react-select 
+    npm i react-select
+    npm i @types/react-select 
+  `}
+            </SyntaxHighlighter>
+          </Section>
+          <Section
+            title="My Code Process"
+            text="I used and customized react-select for the dropdown component as it provides flexible and robust solution."
+            divider={false}
+          >
+            <SyntaxHighlighter
+              language="javascript"
+              style={atelierEstuaryLight}
+            >
+              {`
+    npm i react-select
+    npm i @types/react-select 
+  `}
+            </SyntaxHighlighter>
+          </Section>
+          <Section
+            subtitle="fff"
+            text="Dropdown component will always have a label, "
+            divider={false}
+          >
+            <SyntaxHighlighter
+              language="javascript"
+              style={atelierEstuaryLight}
+            >
+              {`
+    import Select from "react-select";
+
+    <div>
+      <p>{label}</p>
+      <Select />
+    </div>
+  `}
+            </SyntaxHighlighter>
+          </Section>
+          <Section
+            subtitle="fff"
+            text="This is where customizatio happens. I created a dropdown component file, imported the library and gave it the following layout"
+            divider={false}
+          >
+            <SyntaxHighlighter
+              language="javascript"
+              style={atelierEstuaryLight}
+            >
+              {`
+    import Select from "react-select";
+
+    <div>
+      <p>{label}</p>
+      <Select 
+        options={data}
+        isMulti={isMulti}
+        placeholder={placeholder}
+        styles={customStyles}
+        components={{
+          IndicatorSeparator: () => null,
+          ClearIndicator: () => null,
+        }}
+      />
+    </div>
   `}
             </SyntaxHighlighter>
           </Section>

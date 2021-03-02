@@ -8,6 +8,7 @@ import { neutral } from "./Token";
 
 interface Props {
   title?: string;
+  subtitle?: string;
   image?: string;
   children?: any;
   divider?: boolean;
@@ -17,6 +18,7 @@ interface Props {
 
 const Section: FC<Props> = ({
   title,
+  subtitle,
   image,
   children,
   divider,
@@ -26,7 +28,8 @@ const Section: FC<Props> = ({
   return (
     <Wrapper>
       {title && <h3>{title}</h3>}
-      {title && <p>{text}</p>}
+      {subtitle && <h5>{subtitle}</h5>}
+      {text && <p>{text}</p>}
       {image && (
         <ImageContainer>
           <img src={image} />

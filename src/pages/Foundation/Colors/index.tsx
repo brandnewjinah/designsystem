@@ -71,33 +71,45 @@ const Colors = () => {
   `}
             </SyntaxHighlighter>
           </Section>
-          <Section title="Setup">
+          <Section
+            title="My Code Process"
+            text="Like CSS variables, I created a variable file that holds color values. Colors are grouped into palettes, then colors file is exported from the Token index."
+            divider={false}
+          >
             <SyntaxHighlighter
               language="javascript"
               style={atelierEstuaryLight}
             >
               {`
-├── components
-│   └── Token
-│       └── index.tsx
-│       └── colors.tsx
+  ├── components
+  │   └── Token
+  │       └── index.js
+  │       └── colors.js
 
 
---index.tsx--
-export * from "./colors";
+  --index.js--
+  export * from "./colors";
 
 
---colors.tsx--
-export const neutral = {
-  n000: "#ffffff",
-  n100: "#E7E7EC",
-  n200: "#C4C4CF",
-  n300: "#A0A1B2",
-  n400: "#838494",
-  n500: "#505165",
-  n600: "#2A2A43",
-  n700: "#12143F",
-};
+  --colors.js--
+  export const neutral = {
+    n000: "#ffffff",
+    n100: "#E7E7EC",
+    n200: "#C4C4CF",
+    n300: "#A0A1B2",
+    n400: "#838494",
+    n500: "#505165",
+    n600: "#2A2A43",
+    n700: "#12143F",
+  };
+
+  export const blue = {
+    ...
+  }
+
+  export const coral = {
+    ...
+  }
   `}
             </SyntaxHighlighter>
           </Section>

@@ -43,17 +43,16 @@ export const Dropdown: FC<Props> = ({
     }),
     option: (styles: any, state: any) => ({
       ...styles,
-
       backgroundColor: state.isDisabled
         ? null
         : state.isSelected
         ? color
           ? color
-          : neutral.n200
+          : neutral.n100
         : state.isFocused
         ? color
           ? color
-          : neutral.n200
+          : neutral.n100
         : null,
       // backgroundColor: state.isDisabled
       //   ? null

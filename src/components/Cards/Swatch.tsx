@@ -24,14 +24,15 @@ const Swatch: FC<Props> = ({ name, value, textInverted }) => {
 const Wrapper = styled.div<Props>`
   width: 100%;
   border-radius: 0.5em;
-  padding-top: 50%;
+  padding-top: 30%;
   padding-left: 1em;
   padding-bottom: 1em;
   background-color: ${(props) => props.value};
   color: ${(props) => (props.textInverted ? neutral.n000 : neutral.n700)};
 
   p {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
   }
 `;
 

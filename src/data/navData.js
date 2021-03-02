@@ -46,7 +46,7 @@ export const navData = [
       },
       {
         id: 207,
-        name: "Gird",
+        name: "Grid",
         link: "/foundation/grid",
       },
     ],

@@ -23,7 +23,8 @@ const Home = () => {
           <p>
             This design system includes guidelines I researched and created to
             design and develop more efficiently. Focused around user experience,
-            accessibility and clean code.
+            accessibility and clean code. It's following WCAG accessibility
+            guidelines.
           </p>
         </Article>
         <ImageContainer>

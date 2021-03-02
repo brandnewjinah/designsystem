@@ -24,7 +24,7 @@ import Anatomy from "../../assets/components/Button_Anatomy.jpg";
 import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 
 //import assets
-import { sizes, colors } from "../../components/StyleVariables";
+import { sizes, neutral } from "../../components/Token";
 import { Heart } from "../../assets/Icons";
 
 //import local data

@@ -4,25 +4,35 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 //import styles and assets
-import { colors } from "./StyleVariables";
+import { neutral } from "./Token";
 
 interface Props {
   title?: string;
   image?: string;
   children?: any;
   divider?: boolean;
+  text?: string;
+  maxWidth?: boolean;
 }
 
-const Section: FC<Props> = ({ title, image, children, divider }) => {
+const Section: FC<Props> = ({
+  title,
+  image,
+  children,
+  divider,
+  text,
+  maxWidth,
+}) => {
   return (
     <Wrapper>
       {title && <h3>{title}</h3>}
+      {title && <p>{text}</p>}
       {image && (
         <ImageContainer>
           <img src={image} />
         </ImageContainer>
       )}
-      <Article>{children}</Article>
+      <Article maxWidth={maxWidth}>{children}</Article>
       {divider === false ? null : <Divider />}
     </Wrapper>
   );
@@ -42,15 +52,19 @@ const ImageContainer = styled.div`
   }
 `;
 
-const Article = styled.article`
+const Article = styled.article<Props>`
+width: 100%;
+max-width: ${(props) => (props.maxWidth ? "400px" : null)}};
+    
   font-size: 1rem;
-  margin: 1em 0;
+  margin: 1em auto;
+
 `;
 
 const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: ${colors.gray_2};
+  background-color: ${neutral.n200};
   margin: 4em 0;
 `;
 

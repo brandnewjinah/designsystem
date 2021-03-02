@@ -26,18 +26,28 @@ export const navData = [
       },
       {
         id: 203,
+        name: "Colors",
+        link: "/foundation/colors",
+      },
+      {
+        id: 204,
         name: "Typography",
         link: "/foundation/typography",
       },
       {
-        id: 204,
+        id: 205,
         name: "Iconography",
         link: "/foundation/iconography",
       },
       {
-        id: 205,
+        id: 206,
         name: "Navigation",
         link: "/foundation/navigation",
+      },
+      {
+        id: 207,
+        name: "Gird",
+        link: "/foundation/grid",
       },
     ],
   },
@@ -57,14 +67,20 @@ export const navData = [
       },
       {
         id: 303,
+        name: "Dropdown",
+        link: "/components/dropdown",
+      },
+      {
+        id: 304,
         name: "Footer",
         link: "/components/footer",
       },
       {
-        id: 304,
+        id: 305,
         name: "Header",
         link: "/components/header",
       },
+
       {
         id: 306,
         name: "Table",
@@ -72,13 +88,13 @@ export const navData = [
       },
       {
         id: 307,
-        name: "Text Fields",
-        link: "/components/textfield",
+        name: "Tags",
+        link: "/components/tags",
       },
       {
         id: 308,
-        name: "Tags",
-        link: "/components/tags",
+        name: "Text Fields",
+        link: "/components/textfield",
       },
     ],
   },

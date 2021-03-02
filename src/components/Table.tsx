@@ -9,7 +9,7 @@ import Pagination from "../components/Pagination";
 import { paginate } from "../utils/Paginate";
 
 //import assets
-import { colors } from "./StyleVariables";
+import { neutral } from "./Token";
 
 interface Props {
   data: any;
@@ -114,7 +114,7 @@ const Table: FC<Props> = ({ data, keys, showId, listSize }) => {
 
 const Wrapper = styled.div`
   font-size: 0.875rem;
-  color: ${colors.gray};
+  color: ${neutral.n500};
 
   table {
     width: 100%;
@@ -140,10 +140,10 @@ const Wrapper = styled.div`
     line-height: 2.1rem;
     text-transform: uppercase;
     text-align: left;
-    border-bottom: 1px solid ${colors.gray_2};
+    border-bottom: 1px solid ${neutral.n300};
     overflow-x: hidden;
     overflow-y: auto;
-    background: ${colors.gray_1};
+    background: ${neutral.n100};
     padding: 0.75em 1em;
     cursor: pointer;
 
@@ -170,7 +170,7 @@ const Wrapper = styled.div`
 
 const Cell = styled.td<LinksProps>`
   display: block;
-  border-bottom: 1px solid ${colors.gray_2};
+  border-bottom: 1px solid ${neutral.n200};
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0.75em 1em;

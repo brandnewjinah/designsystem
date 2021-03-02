@@ -11,8 +11,10 @@ import Table from "../../components/Table";
 import { Input, FloatingInput } from "../../components/Input";
 
 //import assets
-import { sizes, colors } from "../../components/StyleVariables";
 import Anatomy from "../../assets/components/Input_Anatomy.jpg";
+
+//import tokesn
+import { sizes, neutral } from "../../components/Token";
 
 //import local data
 import { inputData } from "../../data/propsData";
@@ -291,7 +293,7 @@ const Flex = styled.div`
     }
 
     code {
-      background-color: ${colors.faintgray};
+      background-color: ${neutral.n100};
       padding: 0.5em 1em;
     }
   }

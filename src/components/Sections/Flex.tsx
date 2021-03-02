@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 //import assets
-import { colors, sizes } from "../StyleVariables";
+import { neutral, sizes } from "../Token";
 
 interface Props {
   example: any;
@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     }
 
     code {
-      background-color: ${colors.gray_1};
+      background-color: ${neutral.n200};
       padding: 0.5em 1em;
     }
   }

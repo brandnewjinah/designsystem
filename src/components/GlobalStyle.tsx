@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { colors } from "./StyleVariables";
+import { neutral } from "./Token";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     li {
-        color: ${colors.gray};
+        color: ${neutral.n400};
     }
 
     a {
@@ -48,32 +48,32 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        color: ${colors.darkgray};
+        color: ${neutral.n700};
         font-size: 3rem;
        line-height: 3rem;
 
     }
 
     h2 {
-        color: ${colors.darkgray};
+        color: ${neutral.n700};
         font-size: 2.125rem;
         margin-bottom: 1.05rem;
     }
 
     h3 {
-        color: ${colors.darkgray};
+        color: ${neutral.n700};
         font-size: 1.5rem;
         margin-bottom: .75rem;
     }
 
     h4 {
-        color: ${colors.darkgray};
+        color: ${neutral.n700};
         font-size: 1.25rem;
         margin-bottom: .625rem;
     }
 
     h5 {
-        color: ${colors.darkgray};
+        color: ${neutral.n700};
         font-size: 1rem;
         margin-bottom: .25rem;
     }
@@ -86,7 +86,7 @@ const GlobalStyle = createGlobalStyle`
     em {
         font-style: normal;
         font-weight: 700;
-        color: ${colors.pink};
+        color: ${neutral.n700};
     }
 
     pre {

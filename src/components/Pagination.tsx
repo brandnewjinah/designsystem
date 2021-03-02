@@ -5,7 +5,7 @@ import styled from "styled-components";
 import _ from "lodash";
 
 //import assets
-import { colors } from "./StyleVariables";
+import { neutral, blue } from "./Token";
 import { ChevronLeft, ChevronRight } from "../assets/Icons";
 
 interface Props {
@@ -86,12 +86,12 @@ const Wrapper = styled.div`
     margin: 0 0.5em;
 
     &:hover {
-      background-color: ${colors.gray_2};
+      background-color: ${neutral.n200};
     }
   }
 
   .active {
-    background-color: ${colors.pink};
+    background-color: ${blue.pink};
     border-radius: 100%;
     color: #fff;
   }

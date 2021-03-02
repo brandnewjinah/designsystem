@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 //import styles and assets
-import { colors } from "./StyleVariables";
+import { neutral } from "./Token";
 
 //import data
 import { navData } from "../data/navData";
@@ -57,7 +57,7 @@ const Navigation: FC<Props> = () => {
 
 const Wrapper = styled.div`
   a {
-    color: ${colors.darkgray};
+    color: ${neutral.n600};
   }
 
   ul,

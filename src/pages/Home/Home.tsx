@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Table from "../../components/Table";
 
 //import assets
-import { colors } from "../../components/StyleVariables";
+import { neutral } from "../../components/Token";
 import Cover from "../../assets/Cover.jpg";
 
 //import local data
@@ -90,7 +90,7 @@ const ImageContainer = styled.div`
 const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: ${colors.gray_2};
+  background-color: ${neutral.n300};
   margin: 4em 0;
 `;
 

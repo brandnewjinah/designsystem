@@ -3,7 +3,7 @@ import React, { ChangeEvent, FC, useState } from "react";
 //import styles and assets
 import styled from "styled-components";
 import { Eye, EyeOff } from "../assets/Icons";
-import { colors } from "./StyleVariables";
+import { neutral } from "./Token";
 
 interface Props {
   label: string;
@@ -126,7 +126,7 @@ const InputContainer = styled.div<StyleProps>`
 
   label {
     font-size: 0.925rem;
-    color: ${colors.gray};
+    color: ${neutral.n400};
   }
 
   .error {
@@ -186,7 +186,7 @@ const InputTag = styled.input<StyleProps>`
   ::placeholder,
   ::-webkit-input-placeholder {
     font-size: 0.925rem;
-    color: ${colors.gray_2};
+    color: ${neutral.n200};
   }
 `;
 

@@ -8,7 +8,7 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 //import components
 import Grid from "../../../components/Grid";
 import { Swatch, SwatchWCAG } from "../../../components/Cards/Swatch";
-import Section from "../../../components/Sections/Section";
+import { Section } from "../../../components/Sections/Section";
 import { neutral } from "../../../components/Token";
 
 //import local data

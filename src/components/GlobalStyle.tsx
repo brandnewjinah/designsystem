@@ -21,15 +21,12 @@ const GlobalStyle = createGlobalStyle`
         line-height: 1.875rem;
         font-weight: 400;
     }
-
-   
-
     ul {
         list-style-type: none;
     }
 
     li {
-        color: ${neutral[400]};
+        color: ${neutral[500]};
     }
 
     a {
@@ -94,8 +91,8 @@ const GlobalStyle = createGlobalStyle`
     }
 
     code {
-        font-size: .675rem;
-        padding: 1em; 
+        font-size: .75rem;
+        padding: .5em;   
     }
     
 `;

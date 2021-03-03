@@ -6,7 +6,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import layout components
-import Section from "../../components/Sections/Section";
+import { Section } from "../../components/Sections/Section";
 import Flex from "../../components/Sections/Flex";
 
 //import components
@@ -21,14 +21,15 @@ import {
 
 //import assets
 import Anatomy from "../../assets/components/Button_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
+import States from "../../assets/components/Button_States.jpg";
 
 //import assets
-import { sizes, neutral } from "../../components/Token";
+import { sizes, neutral, blue } from "../../components/Token";
 import { Heart } from "../../assets/Icons";
 
 //import local data
 import { buttonData } from "../../data/propsData";
+import * as Code from "../../data/code/button";
 
 const ButtonPage = () => {
   return (
@@ -41,95 +42,124 @@ const ButtonPage = () => {
       </Header>
       <Main>
         <Section title="Anatomy" image={Anatomy} />
-        <Section title="Options">
-          <Flex
-            example={
-              <TextButton
-                label="Button"
-                color="#d35400"
-                handleClick={() => console.log("clicked")}
-              />
-            }
-            title="Text Button"
-            text="Text Button can be used for actions with low emphasis"
-          />
-          <Flex
-            example={
-              <OutlinedButton
-                label="Outlined Button"
-                color="#d35400"
-                handleClick={() => console.log("clicked")}
-              />
-            }
-            title="Outlined Button"
-            text="Outlined Button can be used for actions with medium emphasis"
-          />
+        <Section title="States" image={States}>
+          <ul>
+            <li>
+              <strong>1. Default</strong>: When it isn't being interacted.
+            </li>
+            <li>
+              <strong>2. Hover</strong>: When user places cursor over.
+            </li>
+            <li>
+              <strong>3. Active</strong>: When user presses.
+            </li>
+            <li>
+              <strong>4. Focus</strong>: When user highlights using keyboard or
+              voice.
+            </li>
+            <li>
+              <strong>5. Disabled</strong>: When it's not available for
+              interacton.
+            </li>
+          </ul>
+        </Section>
+        <Section title="Styles">
           <Flex
             example={
               <FilledButton
-                label="Filled Button"
-                color="#d35400"
-                handleClick={() => console.log("clicked")}
-              />
-            }
-            title="Text Button"
-            text="Filled Button can be used for actions with high emphasis"
-          />
-          <Flex
-            example={
-              <OutlinedButton
                 label="Button"
-                color="#d35400"
-                shape="rounded"
-                handleClick={() => console.log("clicked")}
-              />
-            }
-            title="Rounded Shape"
-            text="Outlined or Filled button can be in rounded shape to fit the style needs."
-          />
-          <Flex
-            example={
-              <OutlinedButton
-                label="Button"
-                color="#d35400"
+                color={blue[400]}
                 shape="pill"
                 handleClick={() => console.log("clicked")}
               />
             }
-            title="Pill Shape"
-            text="Outlined or Filled button can be in pill shape to fit the style needs."
+            title="Pill Contained"
           />
           <Flex
             example={
               <OutlinedButton
+                label="Button"
+                color={blue[400]}
+                shape="pill"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Pill Outlined"
+          />
+          <Flex
+            example={
+              <FilledButton
+                label="Button"
+                color={blue[400]}
+                shape="rounded"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Rounded Contained"
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Button"
+                color={blue[400]}
+                shape="rounded"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Rounded Outlined"
+          />
+          <Flex
+            example={
+              <FilledButton
+                label="Button"
+                color={blue[400]}
+                shape="sharp"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Sharp Contained"
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Button"
+                color={blue[400]}
+                shape="sharp"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Sharp Outlined"
+          />
+          <Flex
+            example={
+              <TextButton
+                label="Button"
+                color={blue[400]}
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Text Button"
+          />
+          <Flex
+            example={
+              <FilledButton
                 label="Like"
-                color="#d35400"
+                color={blue[400]}
+                shape="rounded"
                 icon
                 handleClick={() => console.log("clicked")}
               >
-                <Heart width={18} height={18} stroke={2} color="#d35400" />
-              </OutlinedButton>
+                <Heart width={18} height={18} stroke={2} fill={neutral[10]} />
+              </FilledButton>
             }
             title="Optional Icon"
             text="Outlined or Filled button can have an optional icon next to the label. Icon should only be used to clarify what the button does."
           />
           <Flex
             example={
-              <FilledButton
-                label="Button"
-                disabled
-                color="#d35400"
-                handleClick={() => console.log("clicked")}
-              />
-            }
-            title="Disabled"
-            text="Disalbed state can be passed as a boolean property"
-          />
-          <Flex
-            example={
               <IconButton
                 label="Icon"
-                color="#d35400"
+                color={blue[400]}
                 handleClick={() => console.log("clicked")}
               >
                 <Heart
@@ -145,45 +175,82 @@ const ButtonPage = () => {
             text="Icon-only button can be used for simple actions. On hover it displays a tooltip to provide more context."
           />
         </Section>
+        <Section title="Hierarchy">
+          <Flex
+            example={
+              <FilledButton
+                label="Button"
+                color={blue[400]}
+                shape="rounded"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Primary"
+            text="high-emphasis"
+          />
+          <Flex
+            example={
+              <OutlinedButton
+                label="Button"
+                color={blue[400]}
+                shape="rounded"
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Secondary"
+            text="medium-emphasis"
+          />
+          <Flex
+            example={
+              <TextButton
+                label="Button"
+                color={blue[400]}
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Tertiary"
+            text="low-emphasis"
+          />
+        </Section>
+        <Section title="Accessibility">
+          <Section
+            subtitle="Label"
+            text={
+              <p>
+                Label should be short and clearly explain what will happen when
+                button is pressed. Icon button should also have a label as it is
+                used for{" "}
+                <code style={{ backgroundColor: "#f4f3ec" }}>aria-label</code>.
+              </p>
+            }
+            divider={false}
+          />
+          <Section
+            subtitle="Color contrast"
+            text={
+              <>
+                Background color and label color contrast needs to comply with
+                the{" "}
+                <a href="https://www.w3.org/TR/WCAG/" target="_blank">
+                  WCAG AA
+                </a>{" "}
+                standard. It can be tested on{" "}
+                <a
+                  href="https://webaim.org/resources/contrastchecker"
+                  target="_blank"
+                >
+                  WebAIM
+                </a>
+                .
+              </>
+            }
+            divider={false}
+          />
+        </Section>
+
         <Section title="Implementation for React">
           <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
-            {`
-  import { TextButton, OutlinedButton, FilledButton, IconButton, } from "components/Input";
-  import { Heart } from "assets/Icons";
-
-  <TextButton
-    label="Button"
-    color="#d35400"
-    handleClick={() => console.log("clicked")}
-  />
-
-  <OutlinedButton
-    label="Outlined Button"
-    color="#d35400"
-    shape="rounded"
-    handleClick={() => console.log("clicked")}
-  />
-
-  <FilledButton
-    label="Button"
-    disabled
-    color="#d35400"
-    shape="pill"
-    icon
-    handleClick={() => console.log("clicked")}
-  >
-    <Heart width={18} height={18} stroke={2} color="#d35400" />
-  </FilledButton>  
-
-  <IconButton
-    label="Button"
-    color="#d35400"
-    handleClick={() => console.log("clicked")}
-  >
-    <Heart width={18} height={18} stroke={2} fill="#fff" ariaHidden={true} />
-  </IconButton>
-
-  `}
+            {Code.implement}
           </SyntaxHighlighter>
         </Section>
         <Section title="Props" divider={false}>

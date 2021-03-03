@@ -63,6 +63,7 @@ const Overlay = styled.div<LinksProps>`
 
 const Header = styled.nav`
   height: 56px;
+  background-color: #fff;
   border-bottom: 1px solid black;
   display: flex;
   flex-direction: row;

@@ -9,7 +9,7 @@ import { neutral, sizes } from "../Token";
 interface Props {
   example: any;
   title: string;
-  text: string;
+  text?: string;
 }
 
 const Flex: FC<Props> = ({ example, title, text }) => {
@@ -18,7 +18,7 @@ const Flex: FC<Props> = ({ example, title, text }) => {
       <div className="example">{example}</div>
       <div className="description">
         <h5>{title}</h5>
-        <p>{text}</p>
+        {text && <p>{text}</p>}
       </div>
     </Wrapper>
   );
@@ -47,6 +47,9 @@ const Wrapper = styled.div`
 
   .description {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 1em;
 
     p {

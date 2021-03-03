@@ -83,14 +83,14 @@ export const buttonData = [
     id: 2,
     property: "color",
     type: "string",
-    default: "black",
+    default: "neutral[700]",
     required: "no",
   },
   {
     id: 3,
     property: "shape",
     type: "rounded / pill",
-    default: "square",
+    default: "sharp",
     required: "no",
   },
   {

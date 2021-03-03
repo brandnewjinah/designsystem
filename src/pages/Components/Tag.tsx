@@ -7,7 +7,7 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
 import Table from "../../components/Table";
-import Section from "../../components/Sections/Section";
+import { Section } from "../../components/Sections/Section";
 
 //import assets
 import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";

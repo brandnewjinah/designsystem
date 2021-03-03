@@ -16,7 +16,7 @@ interface Props {
   maxWidth?: boolean;
 }
 
-const Section: FC<Props> = ({
+export const Section: FC<Props> = ({
   title,
   subtitle,
   image,
@@ -47,6 +47,12 @@ const Wrapper = styled.div`
     color: ${neutral[600]};
     margin-bottom: 1em;
   }
+
+  h5 {
+    font-weight: 500;
+    color: ${neutral[600]};
+  }
+
   margin: 2em 0 3em;
 `;
 
@@ -70,5 +76,3 @@ const Divider = styled.hr`
   background-color: ${neutral[200]};
   margin: 4em 0;
 `;
-
-export default Section;

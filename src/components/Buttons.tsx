@@ -7,7 +7,7 @@ interface Props {
   label?: string;
   color?: string;
   disabled?: boolean;
-  shape?: "pill" | "rounded" | "rectangle";
+  shape?: "pill" | "rounded" | "sharp";
   fullwidth?: boolean;
   icon?: boolean;
   handleClick?: () => void;
@@ -44,6 +44,7 @@ export const FilledButton: FC<Props> = ({
   return (
     <FilledContainer
       aria-label={label}
+      role="button"
       color={color}
       shape={shape}
       disabled={disabled && true}
@@ -108,14 +109,14 @@ export const IconButton: FC<Props> = ({
 const TextButtonContainer = styled.button<Props>`
   font-weight: 600;
   background: transparent;
+  color: ${(props) => props.color};
   border: 0;
-  /* border-bottom: ${(props) => `2px solid ${props.color}`}; */
+
   border-bottom: ${(props) =>
     props.color ? `2px solid ${props.color}` : `2px solid black`};
   transition: 0.2s;
 
   &:hover {
-    color: ${(props) => props.color};
     border-bottom-color: transparent;
   }
 

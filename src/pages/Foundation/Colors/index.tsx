@@ -7,29 +7,29 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 
 //import components
 import Grid from "../../../components/Grid";
-import Swatch from "../../../components/Cards/Swatch";
-import Section from "../../../components/Section";
-
-//import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
+import { Swatch, SwatchWCAG } from "../../../components/Cards/Swatch";
+import Section from "../../../components/Sections/Section";
+import { neutral } from "../../../components/Token";
 
 //import local data
-import { neutrals, blue } from "../../../data/colorData";
+import { neutrals, blue, peach } from "../../../data/colorData";
+import * as Code from "../../../data/code/color";
 
 const Colors = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Colors</h1>
+        <h1>Color</h1>
         <Article>
           <p>
             Color is used to draw attention, group elements, convey meaning,
             generate mood and enhance aesthetics.
           </p>
         </Article>
-        <Main>
-          <ColorSection>
+      </Header>
+      <Main>
+        <Section title="Color Palettes">
+          <Subsection>
             <h5>Neutrals</h5>
             <Grid>
               {neutrals.map((color, idx) => (
@@ -42,8 +42,8 @@ const Colors = () => {
                 </div>
               ))}
             </Grid>
-          </ColorSection>
-          <ColorSection>
+          </Subsection>
+          <Subsection>
             <h5>Blue</h5>
             <Grid>
               {blue.map((color, idx) => (
@@ -56,65 +56,80 @@ const Colors = () => {
                 </div>
               ))}
             </Grid>
-          </ColorSection>
-          <Section title="Implementation for React">
-            <SyntaxHighlighter
-              language="javascript"
-              style={atelierEstuaryLight}
-            >
-              {`
-  import { neutral } from "components/Token";
+          </Subsection>
+          <Subsection>
+            <h5>Peach</h5>
+            <Grid>
+              {peach.map((color, idx) => (
+                <div key={idx} className="span2">
+                  <Swatch
+                    name={color.name}
+                    value={color.value}
+                    textInverted={color.textInverted}
+                    main={color.main}
+                  ></Swatch>
+                </div>
+              ))}
+            </Grid>
+          </Subsection>
+        </Section>
 
-  <Component
-    color={neutral.n400}
-  />
-  `}
-            </SyntaxHighlighter>
-          </Section>
-          <Section
-            title="My Code Process"
-            text="Like CSS variables, I created a variable file that holds color values. Colors are grouped into palettes, then colors file is exported from the Token index."
-            divider={false}
-          >
-            <SyntaxHighlighter
-              language="javascript"
-              style={atelierEstuaryLight}
-            >
-              {`
-  ├── components
-  │   └── Token
-  │       └── index.js
-  │       └── colors.js
-
-
-  --index.js--
-  export * from "./colors";
-
-
-  --colors.js--
-  export const neutral = {
-    n000: "#ffffff",
-    n100: "#E7E7EC",
-    n200: "#C4C4CF",
-    n300: "#A0A1B2",
-    n400: "#838494",
-    n500: "#505165",
-    n600: "#2A2A43",
-    n700: "#12143F",
-  };
-
-  export const blue = {
-    ...
-  }
-
-  export const coral = {
-    ...
-  }
-  `}
-            </SyntaxHighlighter>
-          </Section>
-        </Main>
-      </Header>
+        <Section
+          title="Accessibility"
+          text={
+            <>
+              It needs to comply with the{" "}
+              <a href="https://www.w3.org/TR/WCAG/" target="_blank">
+                WCAG AA
+              </a>{" "}
+              standard contrast ratios. It can be tested on{" "}
+              <a
+                href="https://webaim.org/resources/contrastchecker"
+                target="_blank"
+              >
+                WebAIM
+              </a>
+              .
+            </>
+          }
+        >
+          <Grid>
+            {peach.map((color, idx) => (
+              <div key={idx} className="span2">
+                <SwatchWCAG
+                  lightText={color.lightText}
+                  darkText={color.darkText}
+                  value={color.value}
+                  textInverted={color.textInverted}
+                ></SwatchWCAG>
+              </div>
+            ))}
+          </Grid>
+        </Section>
+        <Section title="Implementation for React">
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.implement}
+          </SyntaxHighlighter>
+        </Section>
+        <Section
+          title="My Code Process"
+          text="Like CSS variables, I created a variable file that holds color values. Colors are grouped into palettes, then colors file is exported from the Token index."
+          divider={false}
+        >
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.process}
+          </SyntaxHighlighter>
+        </Section>
+        <Section
+          title="Creating a Theme"
+          text="Create a theme and name colors based on roles to make the process more effective."
+          divider={false}
+        >
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.theme}
+          </SyntaxHighlighter>
+        </Section>
+      </Main>
     </Wrapper>
   );
 };
@@ -127,17 +142,20 @@ const Header = styled.header`
 
 const Article = styled.article`
   font-size: 1rem;
+  color: ${neutral[600]};
   margin: 1em 0;
 `;
 
 const Main = styled.main``;
 
-const ColorSection = styled.section`
+const Subsection = styled.section`
   h5 {
+    font-weight: 500;
+    color: ${neutral[600]};
     margin-bottom: 1em;
   }
 
-  padding: 2em;
+  padding: 2em 0;
 `;
 
 export default Colors;

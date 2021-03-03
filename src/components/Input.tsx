@@ -126,7 +126,7 @@ const InputContainer = styled.div<StyleProps>`
 
   label {
     font-size: 0.925rem;
-    color: ${neutral.n400};
+    color: ${neutral[400]};
   }
 
   .error {
@@ -186,7 +186,7 @@ const InputTag = styled.input<StyleProps>`
   ::placeholder,
   ::-webkit-input-placeholder {
     font-size: 0.925rem;
-    color: ${neutral.n200};
+    color: ${neutral[200]};
   }
 `;
 

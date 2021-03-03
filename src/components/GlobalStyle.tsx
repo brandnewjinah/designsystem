@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     li {
-        color: ${neutral.n400};
+        color: ${neutral[400]};
     }
 
     a {
@@ -48,32 +48,31 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
-        color: ${neutral.n700};
+        color: ${neutral[700]};
         font-size: 3rem;
-       line-height: 3rem;
-
+        line-height: 3rem;
     }
 
     h2 {
-        color: ${neutral.n700};
+        color: ${neutral[700]};
         font-size: 2.125rem;
         margin-bottom: 1.05rem;
     }
 
     h3 {
-        color: ${neutral.n700};
+        color: ${neutral[700]};
         font-size: 1.5rem;
         margin-bottom: .75rem;
     }
 
     h4 {
-        color: ${neutral.n700};
+        color: ${neutral[700]};
         font-size: 1.25rem;
         margin-bottom: .625rem;
     }
 
     h5 {
-        color: ${neutral.n700};
+        color: ${neutral[700]};
         font-size: 1rem;
         margin-bottom: .25rem;
     }
@@ -86,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
     em {
         font-style: normal;
         font-weight: 700;
-        color: ${neutral.n700};
+        color: ${neutral[700]};
     }
 
     pre {

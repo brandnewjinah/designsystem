@@ -91,7 +91,7 @@ const ImageContainer = styled.div`
 const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: ${neutral.n300};
+  background-color: ${neutral[300]};
   margin: 4em 0;
 `;
 

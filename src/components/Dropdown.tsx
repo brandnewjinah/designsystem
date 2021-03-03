@@ -48,11 +48,11 @@ export const Dropdown: FC<Props> = ({
         : state.isSelected
         ? color
           ? color
-          : neutral.n100
+          : neutral[100]
         : state.isFocused
         ? color
           ? color
-          : neutral.n100
+          : neutral[100]
         : null,
       // backgroundColor: state.isDisabled
       //   ? null
@@ -65,7 +65,7 @@ export const Dropdown: FC<Props> = ({
     placeholder: (styles: any) => ({
       ...styles,
       fontSize: `.925rem`,
-      color: `${neutral.n200}`,
+      color: `${neutral[200]}`,
     }),
   };
 
@@ -98,6 +98,6 @@ const Wrapper = styled.div<StyleProps>`
   p {
     font-size: 0.925rem;
     line-height: 1.875rem;
-    color: ${neutral.n400};
+    color: ${neutral[400]};
   }
 `;

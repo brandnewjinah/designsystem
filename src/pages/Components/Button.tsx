@@ -6,7 +6,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import layout components
-import Section from "../../components/Section";
+import Section from "../../components/Sections/Section";
 import Flex from "../../components/Sections/Flex";
 
 //import components

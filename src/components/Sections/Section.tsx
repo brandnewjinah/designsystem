@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 //import styles and assets
-import { neutral } from "./Token";
+import { neutral } from "../Token";
 
 interface Props {
   title?: string;
@@ -12,7 +12,7 @@ interface Props {
   image?: string;
   children?: any;
   divider?: boolean;
-  text?: string;
+  text?: React.ReactNode;
   maxWidth?: boolean;
 }
 
@@ -43,6 +43,8 @@ const Section: FC<Props> = ({
 
 const Wrapper = styled.div`
   h3 {
+    font-weight: 500;
+    color: ${neutral[600]};
     margin-bottom: 1em;
   }
   margin: 2em 0 3em;
@@ -56,18 +58,16 @@ const ImageContainer = styled.div`
 `;
 
 const Article = styled.article<Props>`
-width: 100%;
-max-width: ${(props) => (props.maxWidth ? "400px" : null)}};
-    
+  width: 100%;
+  max-width: ${(props) => (props.maxWidth ? "400px" : null)};
   font-size: 1rem;
   margin: 1em auto;
-
 `;
 
 const Divider = styled.hr`
   border: none;
   height: 1px;
-  background-color: ${neutral.n200};
+  background-color: ${neutral[200]};
   margin: 4em 0;
 `;
 

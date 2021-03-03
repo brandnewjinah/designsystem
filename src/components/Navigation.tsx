@@ -57,7 +57,7 @@ const Navigation: FC<Props> = () => {
 
 const Wrapper = styled.div`
   a {
-    color: ${neutral.n600};
+    color: ${neutral[600]};
   }
 
   ul,

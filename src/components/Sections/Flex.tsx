@@ -54,7 +54,7 @@ const Wrapper = styled.div`
     }
 
     code {
-      background-color: ${neutral.n200};
+      background-color: ${neutral[200]};
       padding: 0.5em 1em;
     }
   }

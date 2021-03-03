@@ -3,23 +3,25 @@ import React, { FC } from "react";
 //import styles and assets
 import styled from "styled-components";
 
-interface Props {}
+interface Props {
+  gap?: number;
+}
 
-const Grid: FC<Props> = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+const Grid: FC<Props> = ({ children, gap }) => {
+  return <Wrapper gap={gap}>{children}</Wrapper>;
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<Props>`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 16px;
+  /* grid-gap: 16px; */
+  grid-gap: ${(props) => (props.gap ? `${props.gap}px` : `16px`)};
 
   div {
   }
 
   .span {
-    background-color: #ebdada;
-    margin: 0.5em 0;
+    margin: 0.25em 0;
   }
 
   .span2 {
@@ -68,7 +70,11 @@ const Wrapper = styled.div`
 
   @media (min-width: 1024px) {
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 22px;
+    grid-gap: ${(props) => (props.gap ? `${props.gap}px` : `22px`)};
+
+    .span2 {
+      grid-column: span 3;
+    }
 
     .tablet {
       display: none;
@@ -81,7 +87,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 1280px) {
     grid-template-columns: repeat(12, 1fr);
-    grid-gap: 26px;
+    grid-gap: ${(props) => (props.gap ? `${props.gap}px` : `26px`)};
   }
 `;
 

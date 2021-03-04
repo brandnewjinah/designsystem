@@ -70,17 +70,17 @@ export const navData = [
         name: "Dropdown",
         link: "/components/dropdown",
       },
+
       {
         id: 304,
-        name: "Footer",
-        link: "/components/footer",
-      },
-      {
-        id: 305,
         name: "Header",
         link: "/components/header",
       },
-
+      {
+        id: 305,
+        name: "Selection",
+        link: "/components/selection",
+      },
       {
         id: 306,
         name: "Table",

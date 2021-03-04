@@ -10,6 +10,7 @@ interface Props {
   title?: string;
   subtitle?: string;
   image?: string;
+  image2?: string;
   children?: any;
   divider?: boolean;
   text?: React.ReactNode;
@@ -20,6 +21,7 @@ export const Section: FC<Props> = ({
   title,
   subtitle,
   image,
+  image2,
   children,
   divider,
   text,
@@ -33,6 +35,11 @@ export const Section: FC<Props> = ({
       {image && (
         <ImageContainer>
           <img src={image} />
+        </ImageContainer>
+      )}
+      {image2 && (
+        <ImageContainer>
+          <img src={image2} />
         </ImageContainer>
       )}
       <Article maxWidth={maxWidth}>{children}</Article>

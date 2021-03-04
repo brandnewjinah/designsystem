@@ -6,8 +6,8 @@ import styled from "styled-components";
 //import components
 import Navigation from "./Navigation";
 
-//import data
-import { navData } from "../data/navData";
+//import tokens
+import { neutral } from "./Token";
 
 type LinksProps = {
   isOpen: boolean;
@@ -29,7 +29,7 @@ const Layout: FC<Props> = ({ children }) => {
           <Navigation />
         </Side>
         <Content>{children}</Content>
-        <Footer>footer</Footer>
+        <Footer>© 2021 Jinah Lee</Footer>
       </Main>
     </Wrapper>
   );
@@ -109,10 +109,17 @@ const Content = styled.div`
 `;
 
 const Footer = styled.div`
-  background-color: gainsboro;
-  padding: 3em 4em;
+  border-top: 1px solid ${neutral[100]};
+  font-size: 0.675rem;
+  color: ${neutral[500]};
+  text-align: center;
+  padding: 3em 2em;
   margin: 0 auto;
-  max-width: 1080px;
+  /* max-width: 1280px; */
+
+  @media (min-width: 1024px) {
+    padding: 3em;
+  }
 `;
 
 export default Layout;

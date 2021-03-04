@@ -20,7 +20,7 @@ const FooterPage = () => {
   return (
     <Wrapper>
       <Header>
-        <h1>Footer</h1>
+        <h1>Selection</h1>
         <Article>
           <p>text</p>
         </Article>

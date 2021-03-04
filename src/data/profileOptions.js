@@ -1,22 +1,22 @@
 export const profileOptions = [
   {
     id: 100,
-    label: "Information Technology and Services",
-    value: "Information Technology and Services",
+    label: "Option 1",
+    value: "Option 1",
   },
   {
     id: 101,
-    label: "Hospital & Health Care",
-    value: "Hospital & Health Care",
+    label: "Option 2",
+    value: "Option 2",
   },
   {
     id: 102,
-    label: "Hazelnut",
-    value: "Hazelnut",
+    label: "Option 3",
+    value: "Option 3",
   },
   {
     id: 103,
-    label: "Peanuts",
-    value: "Peanuts",
+    label: "Option 4",
+    value: "Option 4",
   },
 ];

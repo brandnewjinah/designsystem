@@ -8,17 +8,19 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 //import components
 import Table from "../../components/Table";
 import { Section } from "../../components/Sections/Section";
+import Flex from "../../components/Sections/Flex";
 import { Dropdown } from "../../components/Dropdown";
 
 //import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
+import Anatomy from "../../assets/components/Dropdown_Anatomy.jpg";
+import Anatomy2 from "../../assets/components/Dropdown_Anatomy2.jpg";
 
 //import styles
 import { neutral, sizes } from "../../components/Token";
 
 //import local data
 import { profileOptions } from "../../data/profileOptions";
+import * as Code from "../../data/code/dropdown";
 
 const DropdownPage = () => {
   return (
@@ -32,99 +34,67 @@ const DropdownPage = () => {
             form or can be used to filter content.
           </p>
         </Article>
-        <Main>
-          <Section title="Interactive Demo" maxWidth={true}>
-            <Dropdown
-              label="Select one"
-              placeholder="Select one"
-              data={profileOptions}
-              style="underline"
-              margin={sizes.xl}
-            />
-            <Dropdown
-              isMulti
-              label="Select multi"
-              placeholder="Select all that apply"
-              data={profileOptions}
-              margin={sizes.xl}
-              color="#de576d"
-            />
-          </Section>
-          <Section title="Implementation for React">
-            <SyntaxHighlighter
-              language="javascript"
-              style={atelierEstuaryLight}
-            >
-              {`
-    npm i react-select
-    npm i @types/react-select 
-  `}
-            </SyntaxHighlighter>
-          </Section>
-          <Section
-            title="My Code Process"
-            text="I used and customized react-select for the dropdown component as it provides flexible and robust solution."
-            divider={false}
-          >
-            <SyntaxHighlighter
-              language="javascript"
-              style={atelierEstuaryLight}
-            >
-              {`
-    npm i react-select
-    npm i @types/react-select 
-  `}
-            </SyntaxHighlighter>
-          </Section>
-          <Section
-            subtitle="fff"
-            text="Dropdown component will always have a label, "
-            divider={false}
-          >
-            <SyntaxHighlighter
-              language="javascript"
-              style={atelierEstuaryLight}
-            >
-              {`
-    import Select from "react-select";
-
-    <div>
-      <p>{label}</p>
-      <Select />
-    </div>
-  `}
-            </SyntaxHighlighter>
-          </Section>
-          <Section
-            subtitle="fff"
-            text="This is where customizatio happens. I created a dropdown component file, imported the library and gave it the following layout"
-            divider={false}
-          >
-            <SyntaxHighlighter
-              language="javascript"
-              style={atelierEstuaryLight}
-            >
-              {`
-    import Select from "react-select";
-
-    <div>
-      <p>{label}</p>
-      <Select 
-        options={data}
-        isMulti={isMulti}
-        placeholder={placeholder}
-        styles={customStyles}
-        components={{
-          IndicatorSeparator: () => null,
-          ClearIndicator: () => null,
-        }}
-      />
-    </div>
-  `}
-            </SyntaxHighlighter>
-          </Section>
-        </Main>
       </Header>
+      <Main>
+        <Section title="Interactive Demo" maxWidth={true}>
+          <Dropdown
+            label="Select one"
+            placeholder="Select one"
+            data={profileOptions}
+            style="underline"
+            margin={sizes.xxl}
+          />
+
+          <Dropdown
+            isMulti
+            label="Select multi"
+            placeholder="Select all that apply"
+            data={profileOptions}
+            margin={sizes.xl}
+            color="#E1EDFF"
+          />
+        </Section>
+        <Section title="Anatomy" image={Anatomy} image2={Anatomy2}></Section>
+
+        <Section title="Best Practices"></Section>
+
+        <Section
+          title="My Code Process"
+          text="I used and customized react-select for the dropdown component as it provides flexible and robust solution."
+          divider={false}
+        >
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.install}
+          </SyntaxHighlighter>
+        </Section>
+        <Section
+          subtitle="Label"
+          text="Dropdown component will always have a label, "
+          divider={false}
+        >
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.label}
+          </SyntaxHighlighter>
+        </Section>
+        <Section
+          subtitle="Props"
+          text={
+            <>
+              It primarily uses the following props. To add more options, refer
+              to the{" "}
+              <a href="https://react-select.com/" target="_blank">
+                react-select document
+              </a>
+              .
+            </>
+          }
+          divider={false}
+        >
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.props}
+          </SyntaxHighlighter>
+        </Section>
+      </Main>
     </Wrapper>
   );
 };

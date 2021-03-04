@@ -45,27 +45,20 @@ export const Dropdown: FC<Props> = ({
       ...styles,
       fontSize: `.875rem`,
       color: `${neutral[600]}`,
-      cursor: `pointer`,
       backgroundColor: state.isDisabled
         ? null
         : state.isSelected
         ? color
           ? color
-          : `rgba(225, 237, 255, 1)`
+          : neutral[100]
         : state.isFocused
         ? color
           ? color
-          : `rgba(225, 237, 255, .5)`
+          : neutral[100]
         : null,
       ":active": {
         ...styles[":active"],
-        backgroundColor:
-          !state.isDisabled &&
-          (state.isSelected
-            ? `rgba(225, 237, 255, .8)`
-            : state.isFocused
-            ? `rgba(225, 237, 255, .8)`
-            : null),
+        backgroundColor: !state.isDisabled && state.isSelected && color,
       },
     }),
     placeholder: (styles: any) => ({
@@ -87,7 +80,6 @@ export const Dropdown: FC<Props> = ({
       ...styles,
       margin: `.5em 0 .5em .25em`,
       color: `#3D6AAD`,
-      cursor: `pointer`,
       ":hover": {
         backgroundColor: `#3D6AAD`,
         color: neutral[10],
@@ -119,7 +111,7 @@ export const Dropdown: FC<Props> = ({
 };
 
 const Wrapper = styled.div<StyleProps>`
-  margin-bottom: ${(props) => props.margin};
+  margin: ${(props) => `${props.margin} 0`};
 
   p {
     font-size: 0.925rem;

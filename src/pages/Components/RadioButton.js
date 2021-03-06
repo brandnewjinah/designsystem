@@ -8,33 +8,27 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 //import components
 import Table from "../../components/Table";
 import { Section } from "../../components/Sections/Section";
-import { Checkbox } from "../../components/Checkbox";
+import { Radio } from "../../components/RadioButton";
 
 //import assets
-import States from "../../assets/components/Checkbox_States.jpg";
+import States from "../../assets/components/Radio_States.jpg";
 import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 
 //import local data
 import { deviceData } from "../../data/deviceData";
 import * as Code from "../../data/code/select";
 
-const Selection = () => {
-  const [data, setData] = useState({
-    one: true,
-    two: false,
-    three: true,
-  });
+const RadioButton = () => {
+  const [selection, setSelection] = useState("one");
 
   const handleChange = (e) => {
-    const userInput = { ...data };
-    userInput[e.target.name] = e.target.checked;
-    setData(userInput);
+    setSelection(e.target.value);
   };
 
   return (
     <Wrapper>
       <Header>
-        <h1>Checkbox</h1>
+        <h1>Radio Button</h1>
         <Article>
           <p>
             Checkboxes are used when there are one or more options to select in
@@ -45,25 +39,27 @@ const Selection = () => {
       <Main>
         <Section title="Interactive Demo">
           <div className="demo">
-            <Checkbox
+            <Radio
               label="label 1"
-              name="one"
-              value={data.one}
-              checked={data.one}
+              name="group"
+              value="one"
+              checked={selection === "one"}
+              // disabled={true}
               onChange={handleChange}
             />
-            <Checkbox
+            <Radio
               label="label 2"
-              name="two"
-              value={data.two}
-              checked={data.two}
+              name="group"
+              value="two"
+              checked={selection === "two"}
+              // disabled={true}
               onChange={handleChange}
             />
-            <Checkbox
+            <Radio
               label="label 3"
-              name="three"
-              value={data.three}
-              checked={data.three}
+              name="group"
+              value="three"
+              checked={selection === "three"}
               disabled={true}
               onChange={handleChange}
             />
@@ -84,7 +80,7 @@ const Selection = () => {
         </Section>
         <Section title="Implementation for React" divider={false}>
           <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
-            {Code.checkbox}
+            {Code.radio}
           </SyntaxHighlighter>
         </Section>
       </Main>
@@ -112,4 +108,4 @@ const Main = styled.main`
   }
 `;
 
-export default Selection;
+export default RadioButton;

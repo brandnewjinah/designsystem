@@ -24,6 +24,7 @@ import Navigation from "./pages/Foundation/Navigation";
 import Button from "./pages/Components/Button";
 import Card from "./pages/Components/Card";
 import Selection from "./pages/Components/Selection";
+import Radio from "./pages/Components/RadioButton";
 import Header from "./pages/Components/Header";
 import Select from "./pages/Components/Dropdown";
 import Table from "./pages/Components/Table";
@@ -57,6 +58,7 @@ const Routes = () => {
           <Route exact path="/components/button" component={Button} />
           <Route exact path="/components/card" component={Card} />
           <Route exact path="/components/checkbox" component={Selection} />
+          <Route exact path="/components/radio" component={Radio} />
           <Route exact path="/components/header" component={Header} />
           <Route exact path="/components/dropdown" component={Select} />
           <Route exact path="/components/table" component={Table} />

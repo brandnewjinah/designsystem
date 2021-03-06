@@ -38,3 +38,38 @@ export const checkbox = `
     />
     )
 `;
+
+export const radio = `
+    import { RadioButton } from "components/RadioButton";
+
+    const [selection, setSelection] = useState("one");
+
+    const handleChange = (e) => {
+      setSelection(e.target.value);
+    };
+
+    return(
+    <Radio
+      label="label 1"
+      name="group"
+      value="one"
+      checked={selection === "one"}
+      onChange={handleChange}
+    />
+    <RadioButton
+      label="label 2"
+      name="group"
+      value="two"
+      checked={selection === "two"}
+      onChange={handleChange}
+    />
+    <RadioButton
+      label="label 3"
+      name="group"
+      value="three"
+      checked={selection === "three"}
+      disabled={true}
+      onChange={handleChange}
+    />
+    )
+`;

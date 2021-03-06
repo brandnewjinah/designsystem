@@ -81,6 +81,11 @@ export const navData = [
         link: "/components/header",
       },
       {
+        id: 309,
+        name: "Radio Button",
+        link: "/components/radio",
+      },
+      {
         id: 306,
         name: "Table",
         link: "/components/table",

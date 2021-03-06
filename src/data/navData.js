@@ -66,20 +66,19 @@ export const navData = [
         link: "/components/card",
       },
       {
+        id: 305,
+        name: "Checkbox",
+        link: "/components/checkbox",
+      },
+      {
         id: 303,
         name: "Dropdown",
         link: "/components/dropdown",
       },
-
       {
         id: 304,
         name: "Header",
         link: "/components/header",
-      },
-      {
-        id: 305,
-        name: "Selection",
-        link: "/components/selection",
       },
       {
         id: 306,

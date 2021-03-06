@@ -56,7 +56,7 @@ const Routes = () => {
           <Route exact path="/foundation/navigation" component={Navigation} />
           <Route exact path="/components/button" component={Button} />
           <Route exact path="/components/card" component={Card} />
-          <Route exact path="/components/selection" component={Selection} />
+          <Route exact path="/components/checkbox" component={Selection} />
           <Route exact path="/components/header" component={Header} />
           <Route exact path="/components/dropdown" component={Select} />
           <Route exact path="/components/table" component={Table} />

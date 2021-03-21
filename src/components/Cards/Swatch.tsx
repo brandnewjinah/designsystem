@@ -76,7 +76,7 @@ const Wrapper = styled.div<Props>`
   padding: 1.5em 0;
   border-radius: 0.5em;
   background-color: ${(props) => props.value};
-  color: ${(props) => (props.textInverted ? neutral[10] : neutral[700])};
+  color: ${(props) => (props.textInverted ? neutral[100] : neutral[700])};
 
   p {
     font-size: 0.8rem;
@@ -86,6 +86,8 @@ const Wrapper = styled.div<Props>`
 
 const WrapperColumn = styled(Wrapper)<Props>`
   flex-direction: column;
-  /* padding-top: 50%; */
-  /* padding-bottom: 1em; */
+
+  p {
+    color: ${(props) => (props.textInverted ? neutral[100] : neutral[700])};
+  }
 `;

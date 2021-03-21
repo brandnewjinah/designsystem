@@ -14,7 +14,7 @@ import { Input, FloatingInput } from "../../components/Input";
 import Anatomy from "../../assets/components/Input_Anatomy.jpg";
 
 //import tokesn
-import { sizes, neutral } from "../../components/Token";
+import { spacing, neutral } from "../../components/Token";
 
 //import local data
 import { inputData } from "../../data/propsData";
@@ -48,7 +48,7 @@ const TextField = () => {
                   label="Label"
                   name="label"
                   handleChange={handleChange}
-                  margin={sizes.l}
+                  margin={spacing.l}
                 />
               </div>
               <div className="description">
@@ -68,7 +68,7 @@ const TextField = () => {
                   name="label"
                   required={true}
                   handleChange={handleChange}
-                  margin={sizes.l}
+                  margin={spacing.l}
                 />
               </div>
               <div className="description">
@@ -89,7 +89,7 @@ const TextField = () => {
                   required={true}
                   placeholder="e.g. Placeholder"
                   handleChange={handleChange}
-                  margin={sizes.l}
+                  margin={spacing.l}
                 />
               </div>
               <div className="description">
@@ -109,7 +109,7 @@ const TextField = () => {
                   name="password"
                   type="password"
                   handleChange={handleChange}
-                  margin={sizes.l}
+                  margin={spacing.l}
                 />
               </div>
               <div className="description">
@@ -127,7 +127,7 @@ const TextField = () => {
                   name="error"
                   error="Error message"
                   handleChange={handleChange}
-                  margin={sizes.l}
+                  margin={spacing.l}
                 />
               </div>
               <div className="description">
@@ -146,7 +146,7 @@ const TextField = () => {
                   shape="underline"
                   placeholder="e.g. Placeholder"
                   handleChange={handleChange}
-                  margin={sizes.xl}
+                  margin={spacing.xl}
                 />
               </div>
               <div className="description">
@@ -161,7 +161,7 @@ const TextField = () => {
                   name="label"
                   required={true}
                   handleChange={handleChange}
-                  margin={sizes.xxl}
+                  margin={spacing.xxl}
                 />
               </div>
               <div className="description">
@@ -201,7 +201,7 @@ const TextField = () => {
             >
               {`
   import { Input, FloatingInput } from "components/Input";
-  import { sizes } from "components/StyleVariables";
+  import { spacing } from "components/StyleVariables";
 
   const [data, setData] = useState({
     name: "",
@@ -223,7 +223,7 @@ const TextField = () => {
     error={error}
     shape="underline"
     handleChange={handleChange}
-    margin={sizes.l}
+    margin={spacing.l}
   />
 
   <FloatingInput
@@ -234,7 +234,7 @@ const TextField = () => {
     value={data.password}
     error={error} 
     handleChange={handleChange}
-    margin={sizes.l}
+    margin={spacing.l}
 />
   `}
             </SyntaxHighlighter>

@@ -1,9 +1,11 @@
 import React, { FC } from "react";
+import { shade } from "polished";
+import { defaultTheme } from "./Token";
 
 //import libraries
 import styled from "styled-components";
 
-interface Props {
+export interface Props {
   label?: string;
   color?: string;
   disabled?: boolean;
@@ -12,24 +14,6 @@ interface Props {
   icon?: boolean;
   handleClick?: () => void;
 }
-
-export const TextButton: FC<Props> = ({
-  label,
-  color,
-  disabled,
-  handleClick,
-}) => {
-  return (
-    <TextButtonContainer
-      aria-label={label}
-      color={color}
-      disabled={disabled && true}
-      onClick={handleClick}
-    >
-      <p>{label}</p>
-    </TextButtonContainer>
-  );
-};
 
 export const FilledButton: FC<Props> = ({
   label,
@@ -47,7 +31,7 @@ export const FilledButton: FC<Props> = ({
       role="button"
       color={color}
       shape={shape}
-      disabled={disabled && true}
+      disabled={disabled}
       fullwidth={fullwidth}
       onClick={handleClick}
     >
@@ -56,6 +40,24 @@ export const FilledButton: FC<Props> = ({
         <p>{label}</p>
       </Flex>
     </FilledContainer>
+  );
+};
+
+export const TextButton: FC<Props> = ({
+  label,
+  color,
+  disabled,
+  handleClick,
+}) => {
+  return (
+    <TextButtonContainer
+      aria-label={label}
+      color={color}
+      disabled={disabled}
+      onClick={handleClick}
+    >
+      <p>{label}</p>
+    </TextButtonContainer>
   );
 };
 
@@ -106,6 +108,59 @@ export const IconButton: FC<Props> = ({
   );
 };
 
+const Button = styled.button<Props>`
+  font-weight: 600;
+  width: ${(props) => (props.fullwidth ? "100%" : null)};
+  border-radius: ${(props) =>
+    props.shape === "pill" ? "2em" : props.shape === "rounded" ? ".5em" : 0};
+  padding: 0.875em 1.5em;
+  transition: opacity 0.3s ease-out;
+
+  &:disabled {
+    opacity: 1;
+    cursor: not-allowed;
+  }
+`;
+
+const FilledContainer = styled(Button)<Props>`
+  background-color: ${(props) => props.color};
+  border: none;
+  color: #fff;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 1;
+    /* background: ${(props) => shade(0.15, "#000")}; */
+  }
+
+  &:disabled {
+    background-color: ${defaultTheme.disalbed};
+  }
+`;
+
+const OutlinedContainer = styled(Button)<Props>`
+  background-color: transparent;
+  border: ${(props) => `2px solid ${props.color}`};
+  color: ${(props) => props.color};
+
+  &:hover {
+    opacity: 0.65;
+  }
+
+  &:active {
+    opacity: 1;
+    /* border-color: ${(props) => shade(0.15, `${props.color}`)}; */
+  }
+
+  &:disabled {
+    border-color: ${defaultTheme.disalbed};
+    color: ${defaultTheme.disalbed};
+  }
+`;
+
 const TextButtonContainer = styled.button<Props>`
   font-weight: 600;
   background: transparent;
@@ -120,62 +175,14 @@ const TextButtonContainer = styled.button<Props>`
     border-bottom-color: transparent;
   }
 
+  &:active {
+    opacity: 1;
+    color: ${(props) => shade(0.5, `${props.color}`)};
+  }
+
   &:disabled {
-    color: #666;
+    color: ${defaultTheme.disalbed};
     border-bottom-color: transparent;
-    cursor: not-allowed;
-  }
-`;
-
-const FilledContainer = styled.button<Props>`
-  font-weight: 600;
-  width: ${(props) => (props.fullwidth ? "100%" : null)};
-  background-color: ${(props) => props.color};
-  border: transparent;
-  border-radius: ${(props) =>
-    props.shape === "pill" ? "2em" : props.shape === "rounded" ? ".5em" : 0};
-  color: #fff;
-  padding: 0.875em 1.5em;
-  transition: opacity 0.5s ease-out;
-
-  &:hover {
-    opacity: 0.85;
-  }
-
-  &:active {
-    opacity: 1;
-  }
-
-  &:disabled {
-    background-color: #b0b0b0;
-    opacity: 1;
-    cursor: not-allowed;
-  }
-`;
-
-const OutlinedContainer = styled.button<Props>`
-  font-weight: 600;
-  width: ${(props) => (props.fullwidth ? "100%" : null)};
-  background-color: transparent;
-  border: ${(props) => `2px solid ${props.color}`};
-  border-radius: ${(props) =>
-    props.shape === "pill" ? "2em" : props.shape === "rounded" ? ".5em" : 0};
-  color: ${(props) => props.color};
-  padding: 0.875em 1.5em;
-  transition: opacity 0.3s ease-out;
-
-  &:hover {
-    opacity: 0.65;
-  }
-
-  &:active {
-    opacity: 1;
-  }
-
-  &:disabled {
-    border-color: #b0b0b0;
-    color: #b0b0b0;
-    opacity: 1;
     cursor: not-allowed;
   }
 `;

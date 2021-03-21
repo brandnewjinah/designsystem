@@ -5,7 +5,7 @@ import styled from "styled-components";
 import _ from "lodash";
 
 //import components
-import Pagination from "../components/Pagination";
+import Pagination from "./Pagination";
 import { paginate } from "../utils/Paginate";
 
 //import assets
@@ -137,10 +137,10 @@ const Wrapper = styled.div`
 
   thead th {
     font-size: 0.75rem;
-    line-height: 2.1rem;
+    line-height: 2rem;
     text-transform: uppercase;
     text-align: left;
-    border-bottom: 1px solid ${neutral[300]};
+    border-bottom: 1px solid ${neutral[200]};
     overflow-x: hidden;
     overflow-y: auto;
     background: ${neutral[100]};
@@ -149,6 +149,7 @@ const Wrapper = styled.div`
 
     @media (min-width: 1024px) {
       background: transparent;
+      padding: 0.75em 0;
     }
   }
 
@@ -170,7 +171,8 @@ const Wrapper = styled.div`
 
 const Cell = styled.td<LinksProps>`
   display: block;
-  border-bottom: 1px solid ${neutral[200]};
+  line-height: 1.825rem;
+  border-bottom: 1px solid ${neutral[100]};
   overflow-x: hidden;
   overflow-y: auto;
   padding: 0.75em 1em;
@@ -178,6 +180,7 @@ const Cell = styled.td<LinksProps>`
   @media (min-width: 1024px) {
     width: ${(props) => 100 / props.numOfCol}%;
     display: table-cell;
+    padding: 0.75em 0;
   }
 `;
 

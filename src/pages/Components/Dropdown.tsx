@@ -16,7 +16,7 @@ import Anatomy from "../../assets/components/Dropdown_Anatomy.jpg";
 import Anatomy2 from "../../assets/components/Dropdown_Anatomy2.jpg";
 
 //import styles
-import { neutral, sizes } from "../../components/Token";
+import { neutral, spacing } from "../../components/Token";
 
 //import local data
 import { profileOptions } from "../../data/profileOptions";
@@ -42,7 +42,7 @@ const DropdownPage = () => {
             placeholder="Select one"
             data={profileOptions}
             style="underline"
-            margin={sizes.xxl}
+            margin={spacing.xxl}
           />
 
           <Dropdown
@@ -50,7 +50,7 @@ const DropdownPage = () => {
             label="Select multi"
             placeholder="Select all that apply"
             data={profileOptions}
-            margin={sizes.xl}
+            margin={spacing.xl}
             color="#E1EDFF"
           />
         </Section>

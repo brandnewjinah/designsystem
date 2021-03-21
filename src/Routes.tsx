@@ -27,6 +27,7 @@ import Selection from "./pages/Components/Selection";
 import Radio from "./pages/Components/RadioButton";
 import Header from "./pages/Components/Header";
 import Select from "./pages/Components/Dropdown";
+import Slider from "./pages/Components/Slider";
 import Table from "./pages/Components/Table";
 import TextField from "./pages/Components/TextField";
 import Tags from "./pages/Components/Tag";
@@ -40,6 +41,8 @@ import Filter from "./pages/Patterns/Filter";
 import Redux from "./pages/Data/Redux";
 import HTTP from "./pages/Data/HTTP";
 
+import Sketchbook from "./pages/Sketchbook";
+
 const Routes = () => {
   return (
     <Router>
@@ -47,6 +50,7 @@ const Routes = () => {
       <Switch>
         <Layout>
           <Route exact path="/" component={Home} />
+          <Route exact path="/sketchbook" component={Sketchbook} />
           <Route exact path="/overview/Principles" component={Principles} />
           <Route exact path="/foundation/setup" component={Setup} />
           <Route exact path="/foundation/colors" component={Colors} />
@@ -58,6 +62,7 @@ const Routes = () => {
           <Route exact path="/components/button" component={Button} />
           <Route exact path="/components/card" component={Card} />
           <Route exact path="/components/checkbox" component={Selection} />
+          <Route exact path="/components/slider" component={Slider} />
           <Route exact path="/components/radio" component={Radio} />
           <Route exact path="/components/header" component={Header} />
           <Route exact path="/components/dropdown" component={Select} />

@@ -1,32 +1,32 @@
 import { createGlobalStyle } from "styled-components";
-import { neutral } from "./Token";
+import { neutral, primaryFont, typeScale } from "./Token";
+import { normalize } from "polished";
 
 const GlobalStyle = createGlobalStyle`
+    ${normalize()}
+
     * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
     }
     html {
-        width: 100%;
-        height: 100%;
+        font-size: 16px;
     }
+
     body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        font-size: 1.05rem;
-        line-height: 1.875rem;
-        font-weight: 400;
+        font-family: ${primaryFont}
+        /* line-height: 1.875rem;
+        font-weight: 400; */
     }
+
     ul {
         list-style-type: none;
     }
 
     li {
         color: ${neutral[500]};
+        line-height: 1.875rem;
     }
 
     a {
@@ -37,45 +37,50 @@ const GlobalStyle = createGlobalStyle`
     button {
         cursor: pointer;
 
-        &:focus {
-            outline: 3px solid #c1e0fe;
-            outline: 3px solid rgba(131, 192, 253, 0.5);
-            outline-offset: 1px;
-        }
+      
     }
 
     h1 {
         color: ${neutral[700]};
-        font-size: 3rem;
-        line-height: 3rem;
+        font-size: ${typeScale.header1};
+        letter-spacing: 0.015rem;
     }
 
     h2 {
         color: ${neutral[700]};
-        font-size: 2.125rem;
-        margin-bottom: 1.05rem;
+        font-size: ${typeScale.header2};
+        letter-spacing: 0.015rem;
     }
 
     h3 {
         color: ${neutral[700]};
-        font-size: 1.5rem;
-        margin-bottom: .75rem;
+        font-size: ${typeScale.header3};
+
     }
 
     h4 {
         color: ${neutral[700]};
-        font-size: 1.25rem;
-        margin-bottom: .625rem;
+        font-size: ${typeScale.header4};
+        /* margin-bottom: .625rem; */
     }
 
     h5 {
         color: ${neutral[700]};
-        font-size: 1rem;
-        margin-bottom: .25rem;
+        font-size: ${typeScale.header5};
+        font-weight: 500;
+        /* margin-bottom: .25rem; */
+    }
+
+    h6 {
+        color: ${neutral[700]};
+        font-size: ${typeScale.header6};
+        font-weight: 500;
+        /* margin-bottom: .25rem; */
     }
 
     p {
         font-size: 1rem;
+        color: ${neutral[700]};
         line-height: 1.5rem;
     }
 
@@ -91,8 +96,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     code {
-        font-size: .75rem;
+        font-size: .9rem;
         padding: .5em;   
+        font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
     }
     
 `;

@@ -4,7 +4,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 //import assets
-import { neutral, sizes } from "../Token";
+import { neutral, spacing } from "../Token";
 
 interface Props {
   example: any;
@@ -17,7 +17,7 @@ const Flex: FC<Props> = ({ example, title, text }) => {
     <Wrapper>
       <div className="example">{example}</div>
       <div className="description">
-        <h5>{title}</h5>
+        <h6>{title}</h6>
         {text && <p>{text}</p>}
       </div>
     </Wrapper>

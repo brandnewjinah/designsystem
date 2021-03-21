@@ -3,7 +3,7 @@ import React, { useState } from "react";
 //import libraries
 import styled from "styled-components";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { arduinoLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import layout components
 import { Section } from "../../components/Sections/Section";
@@ -12,19 +12,14 @@ import Flex from "../../components/Sections/Flex";
 //import components
 import Table from "../../components/Table";
 
-import {
-  TextButton,
-  OutlinedButton,
-  FilledButton,
-  IconButton,
-} from "../../components/Buttons";
+import { Button, IconButton } from "../../components/Buttons/Button";
 
 //import assets
 import Anatomy from "../../assets/components/Button_Anatomy.jpg";
 import States from "../../assets/components/Button_States.jpg";
 
 //import assets
-import { sizes, neutral, blue } from "../../components/Token";
+import { spacing, neutral, blue } from "../../components/Token";
 import { Heart } from "../../assets/Icons";
 
 //import local data
@@ -66,10 +61,12 @@ const ButtonPage = () => {
         <Section title="Styles">
           <Flex
             example={
-              <FilledButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="primary"
                 shape="pill"
+                labelColor="#fff"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -77,10 +74,11 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <OutlinedButton
+              <Button
                 label="Button"
                 color={blue[400]}
                 shape="pill"
+                variant="secondary"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -88,10 +86,12 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <FilledButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="primary"
                 shape="rounded"
+                labelColor="#fff"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -99,10 +99,11 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <OutlinedButton
+              <Button
                 label="Button"
                 color={blue[400]}
                 shape="rounded"
+                variant="secondary"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -110,10 +111,12 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <FilledButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="primary"
                 shape="sharp"
+                labelColor="#fff"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -121,10 +124,11 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <OutlinedButton
+              <Button
                 label="Button"
                 color={blue[400]}
                 shape="sharp"
+                variant="secondary"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -132,9 +136,10 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <TextButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="tertiary"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -142,15 +147,17 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <FilledButton
-                label="Like"
+              <Button
+                label="Button"
                 color={blue[400]}
                 shape="rounded"
+                variant="primary"
+                labelColor="#fff"
                 icon
                 handleClick={() => console.log("clicked")}
               >
                 <Heart width={18} height={18} stroke={2} fill={neutral[10]} />
-              </FilledButton>
+              </Button>
             }
             title="Optional Icon"
             text="Outlined or Filled button can have an optional icon next to the label. Icon should only be used to clarify what the button does."
@@ -178,10 +185,12 @@ const ButtonPage = () => {
         <Section title="Hierarchy">
           <Flex
             example={
-              <FilledButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="primary"
                 shape="rounded"
+                labelColor="#fff"
                 handleClick={() => console.log("clicked")}
               />
             }
@@ -190,9 +199,10 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <OutlinedButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="secondary"
                 shape="rounded"
                 handleClick={() => console.log("clicked")}
               />
@@ -202,14 +212,79 @@ const ButtonPage = () => {
           />
           <Flex
             example={
-              <TextButton
+              <Button
                 label="Button"
                 color={blue[400]}
+                variant="tertiary"
                 handleClick={() => console.log("clicked")}
               />
             }
             title="Tertiary"
             text="low-emphasis"
+          />
+        </Section>
+        <Section title="Disabled">
+          <Flex
+            example={
+              <Button
+                label="Button"
+                color={blue[400]}
+                variant="primary"
+                shape="rounded"
+                labelColor="#fff"
+                disabled
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Primary"
+            text="disabled"
+          />
+          <Flex
+            example={
+              <Button
+                label="Button"
+                color={blue[400]}
+                variant="secondary"
+                shape="rounded"
+                disabled
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Secondary"
+            text="disabled"
+          />
+          <Flex
+            example={
+              <Button
+                label="Button"
+                color={blue[400]}
+                variant="tertiary"
+                disabled
+                handleClick={() => console.log("clicked")}
+              />
+            }
+            title="Tertiary"
+            text="disabled"
+          />
+          <Flex
+            example={
+              <IconButton
+                label="Icon"
+                color={blue[400]}
+                disabled
+                handleClick={() => console.log("clicked")}
+              >
+                <Heart
+                  width={18}
+                  height={18}
+                  stroke={2}
+                  fill="#fff"
+                  // ariaHidden={true}
+                />
+              </IconButton>
+            }
+            title="Icon"
+            text="disabled"
           />
         </Section>
         <Section title="Accessibility">
@@ -249,7 +324,7 @@ const ButtonPage = () => {
         </Section>
 
         <Section title="Implementation for React">
-          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+          <SyntaxHighlighter language="javascript" style={arduinoLight}>
             {Code.implement}
           </SyntaxHighlighter>
         </Section>

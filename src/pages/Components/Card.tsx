@@ -15,6 +15,7 @@ import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 
 //import local data
 import { deviceData } from "../../data/deviceData";
+import { Cards } from "../../components/Cards/Cards";
 
 const CardPage = () => {
   return (
@@ -22,9 +23,22 @@ const CardPage = () => {
       <Header>
         <h1>Card</h1>
         <Article>
-          <p>text</p>
+          <p>
+            Card is a rectangular container that groups related contents and
+            actions about a single subject.
+          </p>
         </Article>
-        <Main></Main>
+        <Main>
+          <Section title="Interactive Demo" maxWidth={true}>
+            <Cards title="Card Title" subtitle="March 16 2021">
+              <p>
+                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
+                amet sint. Velit officia consequat duis enim velit mollit.
+                Exercitation veniam consequat sunt nostrud amet.
+              </p>
+            </Cards>
+          </Section>
+        </Main>
       </Header>
     </Wrapper>
   );

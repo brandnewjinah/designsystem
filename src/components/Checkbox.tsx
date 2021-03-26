@@ -45,6 +45,7 @@ export const Checkbox: FC<Props> = ({
 
 const Wrapper = styled.div`
   position: relative;
+  margin: 0.5rem 0;
 
   .disabled {
     color: ${neutral[300]};
@@ -66,7 +67,7 @@ const Input = styled.input`
 
   + label::before {
     position: absolute;
-    top: 0.25em;
+    top: 0;
     left: 0;
     width: 1.2em;
     height: 1.2em;
@@ -84,7 +85,7 @@ const Input = styled.input`
     width: 0.3em;
     height: 0.7em;
     position: absolute;
-    top: 0.4em;
+    top: 0.2rem;
     left: 0.5em;
     opacity: 0;
     transform: rotate(45deg);

@@ -226,6 +226,26 @@ export const Minus: FC<Props> = ({ width, height, stroke, color, fill }) => {
   );
 };
 
+export const More: FC<Props> = ({ width, height, stroke, color, fill }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={width}
+      height={height}
+      viewBox="0 0 24 24"
+      fill={fill ? fill : "none"}
+      stroke={color}
+      strokeWidth={stroke}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx={12} cy={12} r={1} />
+      <circle cx={12} cy={5} r={1} />
+      <circle cx={12} cy={19} r={1} />
+    </svg>
+  );
+};
+
 export const Plus: FC<Props> = ({ width, height, stroke, color, fill }) => {
   return (
     <svg

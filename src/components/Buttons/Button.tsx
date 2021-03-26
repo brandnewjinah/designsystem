@@ -69,7 +69,8 @@ export const IconButton: FC<Props> = ({
 };
 
 const Container = styled.button<Props>`
-  font-size: 1rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.015rem;
   font-weight: 600;
   border-radius: ${(props) =>
     props.variant === "tertiary"
@@ -127,6 +128,7 @@ const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   svg {
     margin-right: 0.5em;
   }

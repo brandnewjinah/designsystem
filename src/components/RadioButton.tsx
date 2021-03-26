@@ -46,6 +46,7 @@ export const Radio: FC<Props> = ({
 
 const Wrapper = styled.div`
   position: relative;
+  margin: 0.25rem 0;
 
   .disabled {
     color: ${neutral[300]};
@@ -67,7 +68,7 @@ const Input = styled.input`
 
   + label::before {
     position: absolute;
-    top: 0.25em;
+    top: 0;
     left: 0;
     width: 1em;
     height: 1em;
@@ -84,7 +85,7 @@ const Input = styled.input`
     /* width: 0.3em;
     height: 0.7em; */
     position: absolute;
-    top: 0.65em;
+    top: 0.4em;
     left: 0.4em;
     opacity: 0;
     transition: opacity 0.2s ease-in-out;

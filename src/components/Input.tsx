@@ -148,7 +148,7 @@ const InputContainer = styled.div<StyleProps>`
 
   .pw {
     position: absolute;
-    top: 2.85em;
+    top: 2.25em;
     right: 0.75em;
     display: flex;
     cursor: pointer;

@@ -26,26 +26,36 @@ export const navData = [
       },
       {
         id: 203,
+        name: "Semantic markup",
+        link: "/foundation/semantic",
+      },
+      {
+        id: 204,
+        name: "Accessibility",
+        link: "/foundation/accessibility",
+      },
+      {
+        id: 205,
         name: "Colors",
         link: "/foundation/colors",
       },
       {
-        id: 204,
+        id: 206,
         name: "Typography",
         link: "/foundation/typography",
       },
       {
-        id: 205,
+        id: 207,
         name: "Iconography",
         link: "/foundation/iconography",
       },
       {
-        id: 206,
+        id: 208,
         name: "Navigation",
         link: "/foundation/navigation",
       },
       {
-        id: 207,
+        id: 209,
         name: "Grid",
         link: "/foundation/grid",
       },

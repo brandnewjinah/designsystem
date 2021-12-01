@@ -6,8 +6,8 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { arduinoLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import layout components
-import { Section } from "../../components/Sections/Section";
-import Flex from "../../components/Sections/Flex";
+import { Section } from "../../components/Layout/Section";
+import Flex from "../../components/Layout/Flex";
 
 //import components
 import Table from "../../components/Table";

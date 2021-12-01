@@ -21,11 +21,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     ul {
-        list-style-type: none;
+        list-style-position: inside;
     }
 
     li {
-        color: ${neutral[500]};
         line-height: 1.875rem;
     }
 

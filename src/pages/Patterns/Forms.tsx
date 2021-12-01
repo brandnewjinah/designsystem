@@ -7,7 +7,7 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
 import Table from "../../components/Table";
-import { Section } from "../../components/Sections/Section";
+import { Section } from "../../components/Layout/Section";
 
 //import assets
 import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
@@ -17,17 +17,7 @@ import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 import { deviceData } from "../../data/deviceData";
 
 const FormsPage = () => {
-  return (
-    <Wrapper>
-      <Header>
-        <h1>Forms</h1>
-        <Article>
-          <p>text</p>
-        </Article>
-        <Main></Main>
-      </Header>
-    </Wrapper>
-  );
+  return <Wrapper></Wrapper>;
 };
 
 const Wrapper = styled.div``;

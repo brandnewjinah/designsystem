@@ -5,30 +5,44 @@ import { More } from "../../assets/Icons";
 import { Button } from "../Buttons/Button";
 
 interface Props {
+  preview?: string;
   title?: string;
   subtitle?: string;
+  headerAction?: any;
+  footerTitle?: string;
+  footerSub?: string;
   children?: any;
 }
 
-export const Cards: FC<Props> = ({ title, subtitle, children }) => {
+export const Cards: FC<Props> = ({
+  preview,
+  title,
+  subtitle,
+  headerAction,
+  footerTitle,
+  footerSub,
+  children,
+}) => {
   return (
     <Wrapper>
-      <Preview>
-        <img src="" />
-      </Preview>
+      {preview && (
+        <Preview>
+          <img src={preview} />
+        </Preview>
+      )}
       <Content>
         <Header>
           <Title>
             {title && <p className="title">{title}</p>}
             {subtitle && <p className="helper">{subtitle}</p>}
           </Title>
-          <More width={20} height={20} color="#000" stroke={2} />
+          {headerAction && headerAction}
         </Header>
         <Body>{children}</Body>
         <Footer>
           <div className="left">
-            <div className="top">$1000</div>
-            <div className="bottom">Footer Sub</div>
+            <div className="top">{footerTitle}</div>
+            <div className="bottom">{footerSub}</div>
           </div>
           <Button label="Button" variant="primary" shape="rounded" />
         </Footer>
@@ -44,11 +58,13 @@ const Wrapper = styled.div`
 
 const Preview = styled.figure`
   width: 100%;
-  padding-top: 56.25%;
+  height: 225px;
   background-color: #eee;
 
   img {
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 `;
 

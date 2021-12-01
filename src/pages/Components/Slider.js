@@ -7,7 +7,7 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 
 //import components
 import Slider from "../../components/Slider";
-import { Section } from "../../components/Sections/Section";
+import { Section } from "../../components/Layout/Section";
 
 //import assets
 import States from "../../assets/components/Radio_States.jpg";

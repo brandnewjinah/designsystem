@@ -7,7 +7,7 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 
 //import components
 import Table from "../../components/Table";
-import { Section } from "../../components/Sections/Section";
+import { Section } from "../../components/Layout/Section";
 import { Radio } from "../../components/RadioButton";
 
 //import assets

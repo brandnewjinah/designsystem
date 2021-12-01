@@ -60,6 +60,10 @@ const Wrapper = styled.div`
     color: ${neutral[600]};
   }
 
+  ul {
+    list-style-type: none;
+  }
+
   ul,
   li {
     width: 100%;

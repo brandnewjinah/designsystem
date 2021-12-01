@@ -19,6 +19,8 @@ import LayoutPage from "./pages/Foundation/Layout";
 import Typography from "./pages/Foundation/Typography";
 import Iconography from "./pages/Foundation/Iconography";
 import Navigation from "./pages/Foundation/Navigation";
+import Accessibility from "./pages/Foundation/Accessibility";
+import Semantic from "./pages/Foundation/Semantic";
 
 //import component pages
 import Button from "./pages/Components/Button";
@@ -53,6 +55,12 @@ const Routes = () => {
           <Route exact path="/sketchbook" component={Sketchbook} />
           <Route exact path="/overview/Principles" component={Principles} />
           <Route exact path="/foundation/setup" component={Setup} />
+          <Route exact path="/foundation/semantic" component={Semantic} />
+          <Route
+            exact
+            path="/foundation/accessibility"
+            component={Accessibility}
+          />
           <Route exact path="/foundation/colors" component={Colors} />
           <Route exact path="/foundation/grid" component={Grid} />
           <Route exact path="/foundation/layout" component={LayoutPage} />

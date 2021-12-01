@@ -7,7 +7,7 @@ import { arduinoLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
 import Table from "../../components/Table";
-import { Section } from "../../components/Sections/Section";
+import { Section } from "../../components/Layout/Section";
 
 //import assets
 import Structure from "../../assets/foundation/Layout_Structure.jpg";

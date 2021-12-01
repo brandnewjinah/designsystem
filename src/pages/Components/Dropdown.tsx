@@ -7,8 +7,8 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 
 //import components
 import Table from "../../components/Table";
-import { Section } from "../../components/Sections/Section";
-import Flex from "../../components/Sections/Flex";
+import { Section } from "../../components/Layout/Section";
+import Flex from "../../components/Layout/Flex";
 import { Dropdown } from "../../components/Dropdown";
 
 //import assets

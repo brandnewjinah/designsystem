@@ -6,12 +6,11 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
-import Table from "../../components/Table";
-import { Section } from "../../components/Sections/Section";
+import { Section } from "../../components/Layout/Section";
+import { Article } from "../../components/Layout/Article";
 
 //import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
+import Anatomy from "../../assets/foundation/Navigation_Anatomy.jpg";
 
 //import local data
 import { deviceData } from "../../data/deviceData";
@@ -21,10 +20,28 @@ const NavigationPage = () => {
     <Wrapper>
       <Header>
         <h1>Navigation</h1>
-        <Article>
-          <p>text</p>
-        </Article>
-        <Main></Main>
+        <p>
+          Navigation, typically placed in the header or side, helps users
+          identify where they are on the site, and move between pages.
+        </p>
+        <Main>
+          <Section title="Header Navigation Anatomy" image={Anatomy} />
+          <Section title="Accessibility">
+            <Article
+              title="Label"
+              text={
+                <p>
+                  Label should be short and clearly explain what will happen
+                  when button is pressed. Icon button should also have a label
+                  as it is used for{" "}
+                  <code style={{ backgroundColor: "#f4f3ec" }}>aria-label</code>
+                  .
+                </p>
+              }
+              divider={false}
+            />
+          </Section>
+        </Main>
       </Header>
     </Wrapper>
   );
@@ -34,11 +51,6 @@ const Wrapper = styled.div``;
 
 const Header = styled.header`
   margin-bottom: 4em;
-`;
-
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
 `;
 
 const Main = styled.main``;

@@ -154,4 +154,20 @@ export const navData = [
       },
     ],
   },
+  {
+    id: 600,
+    name: "Design Tokens",
+    subcategory: [
+      {
+        id: 501,
+        name: "Color",
+        link: "/token/color",
+      },
+      {
+        id: 502,
+        name: "Type Scale",
+        link: "/token/typescale",
+      },
+    ],
+  },
 ];

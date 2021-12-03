@@ -43,6 +43,10 @@ import Filter from "./pages/Patterns/Filter";
 import Redux from "./pages/Data/Redux";
 import HTTP from "./pages/Data/HTTP";
 
+//import token pages
+// import Colors from "./pages/Tokens/Colors";
+import TypeScale from "./pages/Tokens/TypeScale/TypeScale";
+
 import Sketchbook from "./pages/Sketchbook";
 
 const Routes = () => {
@@ -86,6 +90,7 @@ const Routes = () => {
           <Route exact path="/patterns/filter" component={Filter} />
           <Route exact path="/data/redux" component={Redux} />
           <Route exact path="/data/http" component={HTTP} />
+          <Route exact path="/token/typescale" component={TypeScale} />
         </Layout>
       </Switch>
     </Router>

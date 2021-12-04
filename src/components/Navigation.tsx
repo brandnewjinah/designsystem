@@ -62,6 +62,8 @@ const Wrapper = styled.div`
 
   ul {
     list-style-type: none;
+    text-indent: 0;
+    padding-left: 0;
   }
 
   ul,

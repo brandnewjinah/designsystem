@@ -67,51 +67,56 @@ export const navData = [
     subcategory: [
       {
         id: 301,
+        name: "Avatar",
+        link: "/components/avatar",
+      },
+      {
+        id: 302,
         name: "Buttons",
         link: "/components/button",
       },
       {
-        id: 302,
+        id: 303,
         name: "Card",
         link: "/components/card",
       },
       {
-        id: 303,
+        id: 304,
         name: "Checkbox",
         link: "/components/checkbox",
       },
       {
-        id: 304,
+        id: 305,
         name: "Dropdown",
         link: "/components/dropdown",
       },
       {
-        id: 305,
+        id: 306,
         name: "Header",
         link: "/components/header",
       },
       {
-        id: 306,
+        id: 307,
         name: "Radio Button",
         link: "/components/radio",
       },
       {
-        id: 307,
+        id: 308,
         name: "Slider",
         link: "/components/slider",
       },
       {
-        id: 308,
+        id: 309,
         name: "Table",
         link: "/components/table",
       },
       {
-        id: 309,
+        id: 310,
         name: "Tags",
         link: "/components/tags",
       },
       {
-        id: 310,
+        id: 311,
         name: "Text Fields",
         link: "/components/textfield",
       },

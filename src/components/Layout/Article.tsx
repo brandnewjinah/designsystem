@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 //import styles and assets
-import { typeScale, neutral, spacing } from "../Token";
+import { typeScale, neutral, spacing, fontSize } from "../Token";
 
 interface Props {
   title?: string;
@@ -15,6 +15,8 @@ interface Props {
   divider?: boolean;
   text?: React.ReactNode;
   maxWidth?: boolean;
+  backgroundColor?: boolean;
+  center?: boolean;
 }
 
 export const Article: FC<Props> = ({
@@ -27,11 +29,13 @@ export const Article: FC<Props> = ({
   divider,
   text,
   maxWidth,
+  backgroundColor,
+  center,
 }) => {
   return (
-    <Wrapper>
-      {title && <h5>{title}</h5>}
-      {text && <p>{text}</p>}
+    <Wrapper backgroundColor={backgroundColor} center={center}>
+      {title && <h3>{title}</h3>}
+      {text && <>{text}</>}
       {image && (
         <ImageContainer>
           <img src={image} />
@@ -44,15 +48,25 @@ export const Article: FC<Props> = ({
           {image2Text && <p>{image2Text}</p>}
         </ImageContainer>
       )}
-      {children && <Div maxWidth={maxWidth}>{children}</Div>}
+      {children && (
+        <Div center={center} maxWidth={maxWidth}>
+          {children}
+        </Div>
+      )}
     </Wrapper>
   );
 };
 
-const Wrapper = styled.article`
-  padding-bottom: 1.5rem;
+const Wrapper = styled.article<Props>`
+  display: ${(props) => props.center && "flex"};
+  align-items: ${(props) => props.center && "center"};
+  justify-content: ${(props) => props.center && "center"};
+  background-color: ${(props) => props.backgroundColor && "#fcfcf9"};
+  padding: 0.5rem 0;
 
-  h5 {
+  h3 {
+    font-size: ${fontSize.lg1};
+    font-weight: 500;
     color: ${neutral[600]};
     padding-bottom: 0.5rem;
   }
@@ -74,6 +88,8 @@ const ImageContainer = styled.div`
 const Div = styled.div<Props>`
   width: 100%;
   max-width: ${(props) => (props.maxWidth ? "400px" : null)};
-  font-size: 1rem;
+  display: ${(props) => props.center && "flex"};
+  align-items: ${(props) => props.center && "center"};
+  justify-content: ${(props) => props.center && "center"};
   margin: 1rem auto;
 `;

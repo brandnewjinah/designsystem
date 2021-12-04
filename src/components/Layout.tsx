@@ -103,6 +103,10 @@ const Content = styled.div`
   margin: 0 auto;
   max-width: 1280px;
 
+  li {
+    line-height: 2rem;
+  }
+
   @media ${breakpoint.lg} {
     padding: 2rem 3rem;
   }

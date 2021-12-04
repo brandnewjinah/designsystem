@@ -1,3 +1,34 @@
+export const avatarData = [
+  {
+    id: 1,
+    property: "user",
+    type: "string",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 2,
+    property: "imgSrc",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 3,
+    property: "alt",
+    type: "string",
+    default: "avatar",
+    required: "no",
+  },
+  {
+    id: 4,
+    property: "color",
+    type: "string",
+    default: "#5d815d",
+    required: "no",
+  },
+];
+
 export const inputData = [
   {
     id: 1,

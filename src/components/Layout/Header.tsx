@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { neutral } from "../Token";
+import { fontSize, neutral } from "../Token";
 
 interface Props {
   title?: string;
@@ -21,4 +21,8 @@ const Wrapper = styled.header<Props>`
   border-bottom: ${(props) =>
     props.divider ? null : `1px solid ${neutral[100]}`};
   padding-bottom: 2.5rem;
+
+  h1 {
+    font-size: ${fontSize.lg4};
+  }
 `;

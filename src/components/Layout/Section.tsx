@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import styled from "styled-components";
 
 //import styles and assets
-import { typeScale, neutral, spacing } from "../Token";
+import { typeScale, neutral, spacing, fontSize } from "../Token";
 
 interface Props {
   title?: string;
@@ -31,10 +31,13 @@ export const Section: FC<Props> = ({
 }) => {
   return (
     <Wrapper divider={divider}>
-      <header>
-        {title && <h2>{title}</h2>}
-        {subtitle && <h5>{subtitle}</h5>}
-      </header>
+      {title && (
+        <header>
+          <h2>{title}</h2>
+          {subtitle && <h3>{subtitle}</h3>}
+        </header>
+      )}
+
       {text && <p className="text">{text}</p>}
       {image && (
         <ImageContainer>
@@ -54,19 +57,24 @@ export const Section: FC<Props> = ({
 };
 
 const Wrapper = styled.section<Props>`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   border-bottom: ${(props) =>
     props.divider === false ? null : `1px solid ${neutral[100]}`};
   padding: 1.5rem 0;
 
   header {
-    padding: 1.5rem 0;
+    padding: 0.75rem 0;
   }
 
   h2 {
+    font-size: ${fontSize.lg2};
+    font-weight: 500;
     color: ${neutral[600]};
   }
 
-  h5 {
+  h3 {
     color: ${neutral[600]};
   }
 
@@ -86,11 +94,4 @@ const ImageContainer = styled.div`
   p {
     margin-top: 1rem;
   }
-`;
-
-const Divider = styled.hr`
-  border: none;
-  height: 1px;
-  background-color: ${neutral[200]};
-  margin-top: 3rem;
 `;

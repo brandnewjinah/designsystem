@@ -104,10 +104,6 @@ const NavigationPage = () => {
 
 const Wrapper = styled.div``;
 
-const Main = styled.main`
-  li {
-    line-height: 2.5rem;
-  }
-`;
+const Main = styled.main``;
 
 export default NavigationPage;

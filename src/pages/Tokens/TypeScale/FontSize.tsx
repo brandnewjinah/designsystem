@@ -54,16 +54,30 @@ const Table = () => {
           <tr>
             <td>lg2</td>
             <td className="lg2">Font Size</td>
-            <td>24px</td>
-            <td>1.5rem</td>
+            <td>21px</td>
+            <td>1.3125rem</td>
             <td>$fontSize.lg2</td>
           </tr>
           <tr>
             <td>lg3</td>
             <td className="lg3">Font Size</td>
+            <td>24px</td>
+            <td>1.5rem</td>
+            <td>$fontSize.lg3</td>
+          </tr>
+          <tr>
+            <td>lg4</td>
+            <td className="lg4">Font Size</td>
+            <td>28px</td>
+            <td>1.75rem</td>
+            <td>$fontSize.lg4</td>
+          </tr>
+          <tr>
+            <td>lg5</td>
+            <td className="lg5">Font Size</td>
             <td>32px</td>
             <td>2rem</td>
-            <td>$fontSize.lg3</td>
+            <td>$fontSize.lg5</td>
           </tr>
         </tbody>
       </table>
@@ -167,6 +181,14 @@ const Wrapper = styled.div`
 
   .lg3 {
     font-size: ${fontSize.lg3};
+  }
+
+  .lg4 {
+    font-size: ${fontSize.lg4};
+  }
+
+  .lg5 {
+    font-size: ${fontSize.lg5};
   }
 `;
 

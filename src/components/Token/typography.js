@@ -20,8 +20,10 @@ export const fontSize = {
   sm1: "0.9375rem",
   base: "16px",
   lg1: "1.125rem",
-  lg2: "1.5rem",
-  lg3: "2rem",
+  lg2: "1.3125rem",
+  lg3: "1.5rem",
+  lg4: "1.75rem",
+  lg5: "2rem",
 };
 
 export const lineHeight = {
@@ -30,6 +32,8 @@ export const lineHeight = {
   sm1: "1.625rem",
   base: "1.625rem",
   lg1: "1.725rem",
-  lg2: "2.25rem",
-  lg3: "2.75rem",
+  lg2: "2rem",
+  lg3: "2.15rem",
+  lg4: "2.5rem",
+  lg5: "2.75rem",
 };

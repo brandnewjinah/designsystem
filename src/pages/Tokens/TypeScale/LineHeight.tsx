@@ -117,6 +117,38 @@ const LineHeight = () => {
           magna, eget faucibus augue massa quis sapien.
         </div>
       </Article>
+      <Article>
+        <Header>
+          <Item>
+            <span className="title">font size</span>
+            <span className="token">lg4</span>
+          </Item>
+          <Item>
+            <span className="title">line height</span>
+            <span className="token">$lineHeight.lg4</span>
+          </Item>
+        </Header>
+        <div className="example lg4">
+          Morbi molestie, nisl eget sodales sollicitudin, purus dui auctor
+          magna, eget faucibus augue massa quis sapien.
+        </div>
+      </Article>
+      <Article>
+        <Header>
+          <Item>
+            <span className="title">font size</span>
+            <span className="token">lg5</span>
+          </Item>
+          <Item>
+            <span className="title">line height</span>
+            <span className="token">$lineHeight.lg5</span>
+          </Item>
+        </Header>
+        <div className="example lg5">
+          Morbi molestie, nisl eget sodales sollicitudin, purus dui auctor
+          magna, eget faucibus augue massa quis sapien.
+        </div>
+      </Article>
     </Wrapper>
   );
 };
@@ -176,6 +208,16 @@ const Article = styled.article`
   .lg3 {
     font-size: ${fontSize.lg3};
     line-height: ${lineHeight.lg3};
+  }
+
+  .lg4 {
+    font-size: ${fontSize.lg4};
+    line-height: ${lineHeight.lg4};
+  }
+
+  .lg5 {
+    font-size: ${fontSize.lg5};
+    line-height: ${lineHeight.lg5};
   }
 `;
 

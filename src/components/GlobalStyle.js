@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import { neutral, primaryFont, typeScale } from "./Token";
+import { fontSize, lineHeight, neutral, primaryFont, typeScale } from "./Token";
 import { normalize } from "polished";
 
 const GlobalStyle = createGlobalStyle`
@@ -10,18 +10,17 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
-    html {
-        font-size: 16px;
-    }
 
     body {
-        font-family: ${primaryFont}
-        /* line-height: 1.875rem;
-        font-weight: 400; */
+        font-family: ${primaryFont};
+        font-size: ${fontSize.sm1};
+        line-height: ${lineHeight.sm1};
     }
 
     ul {
         list-style-position: inside;
+        text-indent: -1.4rem;
+        padding-left: 1.4rem;
     }
 
     li {
@@ -77,12 +76,6 @@ const GlobalStyle = createGlobalStyle`
         /* margin-bottom: .25rem; */
     }
 
-    p {
-        font-size: 1rem;
-        color: ${neutral[700]};
-        line-height: 1.5rem;
-    }
-
     em {
         font-style: normal;
         font-weight: 700;
@@ -96,7 +89,7 @@ const GlobalStyle = createGlobalStyle`
 
     code {
         font-size: .9rem;
-        padding: .5em;   
+        padding: .25rem;   
         font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
     }

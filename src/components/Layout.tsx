@@ -107,6 +107,10 @@ const Content = styled.div`
     line-height: 2rem;
   }
 
+  .codeBg {
+    background-color: #f4f3ec;
+  }
+
   @media ${breakpoint.lg} {
     padding: 2rem 3rem;
   }

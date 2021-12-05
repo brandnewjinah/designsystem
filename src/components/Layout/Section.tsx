@@ -37,8 +37,7 @@ export const Section: FC<Props> = ({
           {subtitle && <h3>{subtitle}</h3>}
         </header>
       )}
-
-      {text && <p className="text">{text}</p>}
+      {text && <>{text}</>}
       {image && (
         <ImageContainer>
           <img src={image} />
@@ -76,10 +75,6 @@ const Wrapper = styled.section<Props>`
 
   h3 {
     color: ${neutral[600]};
-  }
-
-  .text {
-    margin: 1rem 0;
   }
 `;
 

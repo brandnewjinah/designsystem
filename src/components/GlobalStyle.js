@@ -23,6 +23,10 @@ const GlobalStyle = createGlobalStyle`
         padding-left: 1.4rem;
     }
 
+    ol {
+        list-style-type: none;
+    }
+
     li {
         line-height: 1.875rem;
     }
@@ -88,8 +92,10 @@ const GlobalStyle = createGlobalStyle`
     }
 
     code {
-        font-size: .9rem;
+        font-size: ${fontSize.sm2};
+        border-radius: 0.25rem;
         padding: .25rem;   
+        margin: 0 0.25rem;
         font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
     }

@@ -5,11 +5,11 @@ import styled from "styled-components";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { arduinoLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-//import layout components
+//import components
+import { Header } from "../../components/Layout/Header";
+import { Article } from "../../components/Layout/Article";
 import { Section } from "../../components/Layout/Section";
 import Flex from "../../components/Layout/Flex";
-
-//import components
 import Table from "../../components/Table";
 
 import { Button, IconButton } from "../../components/Buttons/Button";
@@ -29,12 +29,10 @@ import * as Code from "../../data/code/button";
 const ButtonPage = () => {
   return (
     <Wrapper>
-      <Header>
-        <h1>Button</h1>
-        <Article>
-          <p>Buttons allow user to press and take actions.</p>
-        </Article>
-      </Header>
+      <Header
+        title="Button"
+        subtitle="Buttons allow user to press and take actions."
+      />
       <Main>
         <Section title="Anatomy" image={Anatomy} />
         <Section title="States" image={States}>
@@ -288,38 +286,34 @@ const ButtonPage = () => {
           />
         </Section>
         <Section title="Accessibility">
-          <Section
-            subtitle="Label"
+          <Article
             text={
-              <p>
-                Label should be short and clearly explain what will happen when
-                button is pressed. Icon button should also have a label as it is
-                used for{" "}
-                <code style={{ backgroundColor: "#f4f3ec" }}>aria-label</code>.
-              </p>
+              <ul>
+                <li>
+                  {" "}
+                  Label should be short and clearly explain what will happen
+                  when button is pressed. Icon button should also have a label
+                  as it is used for{" "}
+                  <code style={{ backgroundColor: "#f4f3ec" }}>aria-label</code>
+                  .
+                </li>
+                <li>
+                  Background color and label color contrast needs to comply with
+                  the{" "}
+                  <a href="https://www.w3.org/TR/WCAG/" target="_blank">
+                    WCAG AA
+                  </a>{" "}
+                  standard. It can be tested on{" "}
+                  <a
+                    href="https://webaim.org/resources/contrastchecker"
+                    target="_blank"
+                  >
+                    WebAIM
+                  </a>
+                  .
+                </li>
+              </ul>
             }
-            divider={false}
-          />
-          <Section
-            subtitle="Color contrast"
-            text={
-              <>
-                Background color and label color contrast needs to comply with
-                the{" "}
-                <a href="https://www.w3.org/TR/WCAG/" target="_blank">
-                  WCAG AA
-                </a>{" "}
-                standard. It can be tested on{" "}
-                <a
-                  href="https://webaim.org/resources/contrastchecker"
-                  target="_blank"
-                >
-                  WebAIM
-                </a>
-                .
-              </>
-            }
-            divider={false}
           />
         </Section>
 
@@ -341,20 +335,7 @@ const ButtonPage = () => {
   );
 };
 
-const Wrapper = styled.div`
-  h1 {
-    font-family: "Lora", serif;
-  }
-`;
-
-const Header = styled.header`
-  margin-bottom: 4em;
-`;
-
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
+const Wrapper = styled.div``;
 
 const Main = styled.main``;
 

@@ -19,7 +19,7 @@ const ReduxPage = () => {
     <Wrapper>
       <Header
         title="Type Scale"
-        subtitle="Type scale tokens are set promote clarity, legibility and clear hierchy."
+        subtitle="Type scale tokens are set promote clarity, legibility and clear hierarchy."
       />
       <Main>
         <Section title="Font Size" divider={false}>

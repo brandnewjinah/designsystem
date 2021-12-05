@@ -29,6 +29,30 @@ export const avatarData = [
   },
 ];
 
+export const breadcrumbData = [
+  {
+    id: 1,
+    property: "label",
+    type: "string",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 2,
+    property: "path",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 3,
+    property: "current",
+    type: "boolean",
+    default: "-",
+    required: "no",
+  },
+];
+
 export const inputData = [
   {
     id: 1,

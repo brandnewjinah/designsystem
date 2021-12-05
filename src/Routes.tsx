@@ -24,6 +24,7 @@ import Semantic from "./pages/Foundation/Semantic";
 
 //import component pages
 import Avatar from "./pages/Components/Avatar";
+import Breadcrumb from "./pages/Components/Breadcrumb";
 import Button from "./pages/Components/Button";
 import Card from "./pages/Components/Card";
 import Selection from "./pages/Components/Selection";
@@ -73,6 +74,7 @@ const Routes = () => {
           <Route exact path="/foundation/iconography" component={Iconography} />
           <Route exact path="/foundation/navigation" component={Navigation} />
           <Route exact path="/components/avatar" component={Avatar} />
+          <Route exact path="/components/breadcrumb" component={Breadcrumb} />
           <Route exact path="/components/button" component={Button} />
           <Route exact path="/components/card" component={Card} />
           <Route exact path="/components/checkbox" component={Selection} />

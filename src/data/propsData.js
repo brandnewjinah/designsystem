@@ -53,6 +53,44 @@ export const breadcrumbData = [
   },
 ];
 
+export const cardData = [
+  {
+    id: 1,
+    property: "title",
+    type: "string",
+    default: "-",
+    required: "yes",
+  },
+  {
+    id: 2,
+    property: "imgsrc",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 3,
+    property: "subtitle",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 4,
+    property: "price",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 5,
+    property: "ratio",
+    type: "string",
+    default: "100%",
+    required: "no",
+  },
+];
+
 export const inputData = [
   {
     id: 1,

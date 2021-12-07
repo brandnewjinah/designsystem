@@ -1,59 +1,105 @@
 import React, { useState } from "react";
-
-//import libraries
 import styled from "styled-components";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-//import components
-import Table from "../../components/Table";
+//components
+import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
-
-//import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
-
-//import local data
-import { deviceData } from "../../data/deviceData";
+import { Article } from "../../components/Layout/Article";
 import { Cards } from "../../components/Cards/Cards";
+import Table from "../../components/Table";
+import { ratio } from "../../components/Token";
+import Grid from "../../components/Layout/Grid";
+
+//syntax
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import * as Code from "../../data/code/card";
+
+//data
+import { cardData } from "../../data/propsData";
 
 const CardPage = () => {
   return (
     <Wrapper>
-      <Header>
-        <h1>Card</h1>
-        <Article>
-          <p>
-            Card is a rectangular container that groups related contents and
-            actions about a single subject.
-          </p>
-        </Article>
-        <Main>
-          <Section title="Interactive Demo" maxWidth={true}>
-            <Cards title="Card Title" subtitle="March 16 2021">
-              <p>
-                Amet minim mollit non deserunt ullamco est sit aliqua dolor do
-                amet sint. Velit officia consequat duis enim velit mollit.
-                Exercitation veniam consequat sunt nostrud amet.
-              </p>
-            </Cards>
-          </Section>
-        </Main>
-      </Header>
+      <Header
+        title="Card"
+        subtitle="Card is a rectangular container that groups related contents and
+        actions about a single subject."
+      />
+      <Main>
+        <Section title="Example">
+          <Grid>
+            <Cards
+              imgsrc="http://res.cloudinary.com/fw7128/image/upload/v1637292169/c3vwqzpuvtdyigvk068z.jpg"
+              ratio={ratio.portrait_34}
+              title="title fjieowjf j fjieowjf jifo jifowjio jioejwofji jiojf jeiwo"
+              subtitle="subtitle"
+              price="$10.00"
+            />
+            <Cards
+              imgsrc="http://res.cloudinary.com/fw7128/image/upload/v1637292169/c3vwqzpuvtdyigvk068z.jpg"
+              ratio={ratio.portrait_34}
+              title="title"
+              subtitle="subtitle"
+              price="$10.00"
+            />
+            <Cards
+              imgsrc="http://res.cloudinary.com/fw7128/image/upload/v1637292169/c3vwqzpuvtdyigvk068z.jpg"
+              ratio={ratio.portrait_34}
+              title="title"
+              subtitle="subtitle"
+              price="$10.00"
+            />
+            <Cards
+              imgsrc="http://res.cloudinary.com/fw7128/image/upload/v1637292169/c3vwqzpuvtdyigvk068z.jpg"
+              ratio={ratio.portrait_34}
+              title="title"
+              subtitle="subtitle"
+              price="$10.00"
+            />
+          </Grid>
+        </Section>
+        <Section title="Guidelines">
+          <Article
+            title="Images"
+            text={
+              <ul>
+                <li>By default, an image is sized at 1:1 aspect ratio.</li>
+                <li>
+                  Give a proper aspect ratio depending on the card type. For
+                  example, a movie poster should have an aspect ratio of 2:3.
+                </li>
+                <li>
+                  Aspect ratio should be calculated in percentage. For a movie
+                  poster, it's (3 / 2) * 100 = 150%.
+                </li>
+                <li>
+                  Common aspect ratio percentage is calculated in the ratio
+                  token.
+                </li>
+              </ul>
+            }
+          />
+        </Section>
+        <Section title="Implementation for React">
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.card}
+          </SyntaxHighlighter>
+        </Section>
+        <Section title="Props" divider={false}>
+          <Table
+            data={cardData}
+            listSize={10}
+            keys={["property", "type", "default", "required"]}
+            showId={false}
+          />
+        </Section>
+      </Main>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div``;
-
-const Header = styled.header`
-  margin-bottom: 4em;
-`;
-
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
 
 const Main = styled.main``;
 

@@ -1,126 +1,95 @@
 import React, { FC } from "react";
 import styled from "styled-components";
-import { typeScale, neutral } from "../Token";
+import { typeScale, neutral, fontSize, breakpoint } from "../Token";
 import { More } from "../../assets/Icons";
 import { Button } from "../Buttons/Button";
 
 interface Props {
-  preview?: string;
+  imgsrc?: string;
   title?: string;
   subtitle?: string;
-  headerAction?: any;
-  footerTitle?: string;
-  footerSub?: string;
-  children?: any;
+  ratio?: string;
+  price?: string;
 }
 
-export const Cards: FC<Props> = ({
-  preview,
-  title,
-  subtitle,
-  headerAction,
-  footerTitle,
-  footerSub,
-  children,
-}) => {
+export const Cards: FC<Props> = ({ imgsrc, title, subtitle, ratio, price }) => {
   return (
     <Wrapper>
-      {preview && (
-        <Preview>
-          <img src={preview} />
+      {imgsrc && (
+        <Preview ratio={ratio}>
+          <img src={imgsrc} alt="" />
         </Preview>
       )}
-      <Content>
-        <Header>
-          <Title>
-            {title && <p className="title">{title}</p>}
-            {subtitle && <p className="helper">{subtitle}</p>}
-          </Title>
-          {headerAction && headerAction}
-        </Header>
-        <Body>{children}</Body>
-        <Footer>
-          <div className="left">
-            <div className="top">{footerTitle}</div>
-            <div className="bottom">{footerSub}</div>
-          </div>
-          <Button label="Button" variant="primary" shape="rounded" />
-        </Footer>
-      </Content>
+      <Details>
+        <p className="sub">{subtitle}</p>
+        <h3 className="main">
+          {(title || "").length > 26 ? `${title?.substring(0, 24)}...` : title}
+        </h3>
+        <p>{price}</p>
+      </Details>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  width: 100%;
-  border: 1px solid #ebebf9;
+  color: #1b1b1b;
+  background-color: #fff;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 0.25rem;
 `;
 
-const Preview = styled.figure`
-  width: 100%;
-  height: 225px;
-  background-color: #eee;
+const Preview = styled.div<Props>`
+  position: relative;
+  display: block;
+  max-width: 100%;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-bottom: ${(props) => (props.ratio ? props.ratio : "100%")};
+    width: 100%;
+  }
 
   img {
+    border: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
   }
 `;
 
-const Content = styled.div`
-  padding: 1rem 2rem;
-`;
+const Details = styled.div`
+  width: 100%;
+  font-size: ${fontSize.base};
+  font-weight: 500;
+  color: ${neutral[600]};
+  padding: 0.25rem 0;
 
-const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ebebf9;
-  padding: 1rem 0;
-
-  .left {
-    display: flex;
+  h3 {
+    font-size: ${fontSize.lg1};
+    /* padding: 0.125rem 0; */
   }
 
-  .title {
-    font-size: ${typeScale.body};
-    font-weight: 500;
-  }
-
-  .helper {
-    font-size: 0.75rem;
+  .sub {
+    font-size: ${fontSize.sm2};
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
     color: ${neutral[400]};
   }
-`;
 
-const Title = styled.div``;
+  @media ${breakpoint.m} {
+    h3 {
+    }
 
-const Body = styled.div`
-  padding: 1rem 0;
-  border-bottom: 1px solid #ebebf9;
-
-  p {
-    font-size: 0.875rem;
-    line-height: 1.5rem;
-  }
-`;
-
-const Footer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 0;
-
-  .top {
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.5rem;
-  }
-
-  .bottom {
-    font-size: 0.75rem;
-    color: ${neutral[400]};
-    line-height: 1rem;
+    .sub {
+      font-size: ${fontSize.sm3};
+    }
   }
 `;

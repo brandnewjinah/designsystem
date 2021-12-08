@@ -8,6 +8,7 @@ import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hl
 //import components
 import Table from "../../components/Table";
 import { Section } from "../../components/Layout/Section";
+import { Article } from "../../components/Layout/Article";
 import { Checkbox } from "../../components/Checkbox";
 
 //import assets
@@ -19,16 +20,36 @@ import { deviceData } from "../../data/deviceData";
 import * as Code from "../../data/code/select";
 
 const Selection = () => {
-  const [data, setData] = useState({
-    one: true,
-    two: false,
-    three: true,
-  });
+  const groupData = [
+    { id: 1, name: "one" },
+    { id: 2, name: "two" },
+    { id: 3, name: "three" },
+  ];
+  const [check, setCheck] = useState(false);
+  const [checkedItems, setCheckedItems] = useState([]);
+  const [indeterminate, setIndeterminate] = useState(false);
+  const [checkAll, setCheckAll] = useState(false);
 
-  const handleChange = (e) => {
-    const userInput = { ...data };
-    userInput[e.target.name] = e.target.checked;
-    setData(userInput);
+  const handleCheck = (e) => {
+    setCheck(!check);
+  };
+
+  const handleSelect = (e) => {
+    const { name, checked } = e.target;
+    setCheckedItems([...checkedItems, name]);
+    // if (checkedItems.length > 0 && checkedItems.length < groupData.length)
+    //   setIndeterminate(true);
+    if (!checked) {
+      setCheckedItems(checkedItems.filter((item) => item !== name));
+    }
+  };
+
+  const handleSelectAll = (e) => {
+    setCheckAll(!checkAll);
+    setCheckedItems(groupData.map((item) => item.name));
+    if (checkAll) {
+      setCheckedItems([]);
+    }
   };
 
   return (
@@ -43,31 +64,46 @@ const Selection = () => {
         </Article>
       </Header>
       <Main>
-        <Section title="Interactive Demo">
-          <div className="demo">
-            <Checkbox
-              label="label 1"
-              name="one"
-              value={data.one}
-              checked={data.one}
-              onChange={handleChange}
-            />
-            <Checkbox
-              label="label 2"
-              name="two"
-              value={data.two}
-              checked={data.two}
-              onChange={handleChange}
-            />
-            <Checkbox
-              label="label 3"
-              name="three"
-              value={data.three}
-              checked={data.three}
-              disabled={true}
-              onChange={handleChange}
-            />
-          </div>
+        <Section title="Example">
+          <Article title="Default">
+            <div className="demo">
+              <Checkbox
+                label="Checkbox"
+                name="default"
+                checked={check}
+                onChange={handleCheck}
+              />
+            </div>
+          </Article>
+          <Article title="Group">
+            <div className="demo">
+              <Checkbox
+                label="select all"
+                name="all"
+                indeterminate={indeterminate}
+                checked={checkAll}
+                onChange={handleSelectAll}
+              />
+              <hr />
+              {groupData.map((item) => (
+                <Checkbox
+                  key={item.id}
+                  label={item.name}
+                  name={item.name}
+                  checked={checkedItems.includes(item.name)}
+                  onChange={handleSelect}
+                />
+              ))}
+
+              <Checkbox
+                label="disabled"
+                name="disabled"
+                checked={checkedItems.includes("disabled")}
+                onChange={handleSelect}
+                disabled={true}
+              />
+            </div>
+          </Article>
         </Section>
         <Section title="States" image={States}></Section>
         <Section title="Accessibility">
@@ -98,17 +134,27 @@ const Header = styled.header`
   margin-bottom: 4em;
 `;
 
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
+// const Article = styled.article`
+//   font-size: 1rem;
+//   margin: 1em 0;
+// `;
 
 const Main = styled.main`
   .demo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    /* align-items: center; */
+  }
+
+  hr {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
+    margin: 0.5rem 0;
   }
 `;
 

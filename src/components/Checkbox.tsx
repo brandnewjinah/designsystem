@@ -3,7 +3,7 @@ import React, { FC, ChangeEvent } from "react";
 //import libraries
 import styled from "styled-components";
 
-import { neutral } from "./Token";
+import { fontSize, lineHeight, neutral } from "./Token";
 
 interface Props {
   label?: string;
@@ -11,6 +11,7 @@ interface Props {
   name?: string;
   checked?: boolean;
   disabled?: boolean;
+  indeterminate?: boolean;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -20,6 +21,7 @@ export const Checkbox: FC<Props> = ({
   checked,
   onChange,
   label,
+  indeterminate,
   disabled,
 }) => {
   return (
@@ -32,19 +34,21 @@ export const Checkbox: FC<Props> = ({
         name={name}
         disabled={disabled}
       />
-      <label htmlFor={label}>
+      <Label htmlFor={label} indeterminate={indeterminate}>
         {disabled ? (
           <span className="disabled">{label}</span>
         ) : (
           <span>{label}</span>
         )}
-      </label>
+      </Label>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   position: relative;
+  display: flex;
+  align-items: center;
   margin: 0.5rem 0;
 
   .disabled {
@@ -53,44 +57,9 @@ const Wrapper = styled.div`
 `;
 
 const Input = styled.input`
-  width: 1.2em;
-  height: 1.2em;
   position: absolute;
-  top: 0;
-  left: 0;
   opacity: 0;
-
-  + label {
-    padding: 0 0 0 2em;
-    cursor: pointer;
-  }
-
-  + label::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 1.2em;
-    height: 1.2em;
-    border: 2px solid #888;
-    border-radius: 0.25em;
-    content: "";
-    /* transition: all 0.1s ease-in-out; */
-  }
-
-  + label::after {
-    content: "";
-    border: 3px solid #fff;
-    border-left: 0;
-    border-top: 0;
-    width: 0.3em;
-    height: 0.7em;
-    position: absolute;
-    top: 0.2rem;
-    left: 0.5em;
-    opacity: 0;
-    transform: rotate(45deg);
-    transition: opacity 0.2s ease-in-out;
-  }
+  cursor: pointer;
 
   &:checked + label::before {
     background-color: #0a3ddb;
@@ -109,5 +78,39 @@ const Input = styled.input`
   &:disabled + label::before {
     background-color: #cdcdcd;
     border-color: #cdcdcd;
+  }
+`;
+
+const Label = styled.label<Props>`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: ${fontSize.sm1};
+
+  &:before {
+    content: "";
+    width: 1.15rem;
+    height: 1.15rem;
+    border: 0.05rem solid #888;
+    border-radius: 0.15rem;
+    margin-right: 0.5rem;
+    /* transition: all 0.1s ease-in-out; */
+  }
+
+  &:after {
+    content: "";
+    border: 0.175rem solid #fff;
+    border-left: 0;
+    border-top: 0;
+    border-right: ${(props) => props.indeterminate && 0};
+    width: ${(props) => (props.indeterminate ? `.5rem` : `0.15rem`)};
+    height: 0.45rem;
+    position: absolute;
+    top: ${(props) => (props.indeterminate ? `.25rem` : `0.45rem`)};
+    left: ${(props) => (props.indeterminate ? `.35rem` : `0.45rem`)};
+    opacity: 0;
+    transform: ${(props) =>
+      props.indeterminate ? `rotate(0)` : `rotate(45deg)`};
+    transition: opacity 0.2s ease-in-out;
   }
 `;

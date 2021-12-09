@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent } from "react";
+import React, { FC, ChangeEvent, useEffect, useRef } from "react";
 
 //import libraries
 import styled from "styled-components";
@@ -7,26 +7,41 @@ import { fontSize, lineHeight, neutral } from "./Token";
 
 interface Props {
   label?: string;
-  value?: boolean;
-  name?: string;
   checked?: boolean;
+  name?: string;
   disabled?: boolean;
-  indeterminate?: boolean;
+  indeterminate?: boolean | undefined;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 export const Checkbox: FC<Props> = ({
-  value,
-  name,
   checked,
+  name,
   onChange,
   label,
   indeterminate,
   disabled,
 }) => {
+  const checkRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (indeterminate && checkRef.current !== null && indeterminate === true) {
+      checkRef.current.indeterminate = true;
+      checkRef.current.checked = false;
+    } else if (
+      checkRef.current !== null &&
+      indeterminate === false &&
+      checked
+    ) {
+      checkRef.current.indeterminate = false;
+      checkRef.current.checked = true;
+    }
+  }, [indeterminate]);
+
   return (
     <Wrapper>
       <Input
+        ref={checkRef}
         id={label}
         type="checkbox"
         checked={checked}
@@ -66,6 +81,14 @@ const Input = styled.input`
     border-color: #0a3ddb;
   }
 
+  &:indeterminate + label::before {
+    border-color: #0a3ddb;
+  }
+
+  &:indeterminate + label::after {
+    opacity: 1;
+  }
+
   &:checked + label::after {
     opacity: 1;
   }
@@ -78,6 +101,11 @@ const Input = styled.input`
   &:disabled + label::before {
     background-color: #cdcdcd;
     border-color: #cdcdcd;
+  }
+
+  &:hover:disabled + label::before {
+    box-shadow: none;
+    outline: none;
   }
 `;
 
@@ -97,9 +125,15 @@ const Label = styled.label<Props>`
     /* transition: all 0.1s ease-in-out; */
   }
 
+  &:hover::before {
+    box-shadow: 0 0 0 3px #c6d0f7;
+    outline: 3px solid transparent;
+  }
+
   &:after {
     content: "";
-    border: 0.175rem solid #fff;
+    border: ${(props) =>
+      props.indeterminate ? `0.175rem solid #0a3ddb` : `0.175rem solid #fff`};
     border-left: 0;
     border-top: 0;
     border-right: ${(props) => props.indeterminate && 0};
@@ -113,4 +147,19 @@ const Label = styled.label<Props>`
       props.indeterminate ? `rotate(0)` : `rotate(45deg)`};
     transition: opacity 0.2s ease-in-out;
   }
+
+  /* &:after {
+    content: "";
+    border: 0.175rem solid #fff;
+    border-left: 0;
+    border-top: 0;
+    width: 0.15rem;
+    height: 0.45rem;
+    position: absolute;
+    top: 0.45rem;
+    left: 0.45rem;
+    opacity: 0;
+    transform: rotate(45deg);
+    transition: opacity 0.2s ease-in-out;
+  } */
 `;

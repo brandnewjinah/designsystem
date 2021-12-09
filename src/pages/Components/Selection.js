@@ -6,17 +6,14 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
-import Table from "../../components/Table";
+
 import { Section } from "../../components/Layout/Section";
 import { Article } from "../../components/Layout/Article";
 import { Checkbox } from "../../components/Checkbox";
 
 //import assets
 import States from "../../assets/components/Checkbox_States.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
 
-//import local data
-import { deviceData } from "../../data/deviceData";
 import * as Code from "../../data/code/select";
 
 const Selection = () => {
@@ -25,31 +22,33 @@ const Selection = () => {
     { id: 2, name: "two" },
     { id: 3, name: "three" },
   ];
-  const [check, setCheck] = useState(false);
+  const [checked, setChecked] = useState({ default: false, disabled: true });
   const [checkedItems, setCheckedItems] = useState([]);
   const [indeterminate, setIndeterminate] = useState(false);
-  const [checkAll, setCheckAll] = useState(false);
+  const [checkedAll, setCheckedAll] = useState(false);
 
   const handleCheck = (e) => {
-    setCheck(!check);
+    const userInput = { ...checked };
+    userInput[e.target.name] = e.target.checked;
+    setChecked(userInput);
   };
 
-  const handleSelect = (e) => {
+  const handleCheckOne = (e) => {
     const { name, checked } = e.target;
-    setCheckedItems([...checkedItems, name]);
-    // if (checkedItems.length > 0 && checkedItems.length < groupData.length)
-    //   setIndeterminate(true);
-    if (!checked) {
-      setCheckedItems(checkedItems.filter((item) => item !== name));
-    }
+    const newChecked = checked
+      ? [...checkedItems, name]
+      : checkedItems.filter((item) => item !== name);
+    setCheckedItems(newChecked);
+    setIndeterminate(
+      newChecked.length > 0 && newChecked.length < groupData.length
+    );
+    setCheckedAll(newChecked.length === groupData.length);
   };
 
-  const handleSelectAll = (e) => {
-    setCheckAll(!checkAll);
-    setCheckedItems(groupData.map((item) => item.name));
-    if (checkAll) {
-      setCheckedItems([]);
-    }
+  const handleCheckAll = (e) => {
+    setCheckedAll(!checkedAll);
+    setIndeterminate(checkedAll && false);
+    setCheckedItems(checkedAll ? [] : groupData.map((item) => item.name));
   };
 
   return (
@@ -64,25 +63,37 @@ const Selection = () => {
         </Article>
       </Header>
       <Main>
-        <Section title="Example">
-          <Article title="Default">
+        <Section title="Examples">
+          <Article title="Base">
             <div className="demo">
               <Checkbox
                 label="Checkbox"
                 name="default"
-                checked={check}
+                checked={checked.default}
+                onChange={handleCheck}
+              />
+            </div>
+          </Article>
+          <Article title="Disabled">
+            <div className="demo">
+              <Checkbox
+                label="Disabled"
+                name="disabled"
+                checked={checked.disabled}
+                disabled
                 onChange={handleCheck}
               />
             </div>
           </Article>
           <Article title="Group">
-            <div className="demo">
+            <fieldset className="demo">
+              <legend>Group</legend>
               <Checkbox
-                label="select all"
-                name="all"
+                label="Check All"
+                name="checkAll"
+                checked={checkedAll}
                 indeterminate={indeterminate}
-                checked={checkAll}
-                onChange={handleSelectAll}
+                onChange={handleCheckAll}
               />
               <hr />
               {groupData.map((item) => (
@@ -91,31 +102,29 @@ const Selection = () => {
                   label={item.name}
                   name={item.name}
                   checked={checkedItems.includes(item.name)}
-                  onChange={handleSelect}
+                  onChange={handleCheckOne}
                 />
               ))}
-
-              <Checkbox
-                label="disabled"
-                name="disabled"
-                checked={checkedItems.includes("disabled")}
-                onChange={handleSelect}
-                disabled={true}
-              />
-            </div>
+            </fieldset>
           </Article>
         </Section>
         <Section title="States" image={States}></Section>
-        <Section title="Accessibility">
-          <Section
-            subtitle="Customization"
+        <Section title="Guidelines">
+          <Article
+            title="Accessibility"
             text={
-              <p>
-                Checkboxes are customized on top of default <code>input</code>{" "}
-                with opacity set to 0, to make it accessible by AT users.
-              </p>
+              <ul>
+                <li>
+                  When building a checkbox group, use a
+                  <code className="codeBg">fieldset</code> to wrap the group.
+                  This tells screen reader users that the group of checkboxes
+                  relate to each other and. Add a
+                  <code className="codeBg">legend</code>element to title the
+                  group. This helps users understand what question they are
+                  answering.
+                </li>
+              </ul>
             }
-            divider={false}
           />
         </Section>
         <Section title="Implementation for React" divider={false}>
@@ -134,11 +143,6 @@ const Header = styled.header`
   margin-bottom: 4em;
 `;
 
-// const Article = styled.article`
-//   font-size: 1rem;
-//   margin: 1em 0;
-// `;
-
 const Main = styled.main`
   .demo {
     display: flex;
@@ -155,6 +159,10 @@ const Main = styled.main`
     background-color: #ccc;
     border: none;
     margin: 0.5rem 0;
+  }
+
+  fieldset {
+    border: none;
   }
 `;
 

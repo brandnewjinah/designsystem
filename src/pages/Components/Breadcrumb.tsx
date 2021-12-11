@@ -25,7 +25,7 @@ const BreadcrumbPage = () => {
       />
       <Main>
         <Section title="Example">
-          <Article backgroundColor center>
+          <Article center>
             <Breadcrumb>
               <BreadcrumbItem label="item1" path="/button" />
               <BreadcrumbItem label="item2" path="#" />

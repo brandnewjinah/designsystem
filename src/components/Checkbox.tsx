@@ -137,7 +137,7 @@ const Label = styled.label<Props>`
     border-left: 0;
     border-top: 0;
     border-right: ${(props) => props.indeterminate && 0};
-    width: ${(props) => (props.indeterminate ? `.5rem` : `0.15rem`)};
+    width: ${(props) => (props.indeterminate ? `.6rem` : `0.15rem`)};
     height: 0.45rem;
     position: absolute;
     top: ${(props) => (props.indeterminate ? `.25rem` : `0.45rem`)};

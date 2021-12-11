@@ -6,7 +6,7 @@ import { Eye, EyeOff } from "../assets/Icons";
 import { neutral } from "./Token";
 
 interface Props {
-  label: string;
+  label?: string;
   name: string;
   value?: string;
   required?: boolean;
@@ -40,15 +40,18 @@ export const Input: FC<Props> = ({
   margin,
   placeholder,
   handleChange,
+  ...rest
 }) => {
   const [isPassword, setIsPassword] = useState(true);
 
   return (
     <InputContainer margin={margin} shape={shape}>
-      <label htmlFor={name} aria-hidden="true">
-        {label}
-        {required && " *"}
-      </label>
+      {label && (
+        <label htmlFor={name}>
+          {label}
+          {required && " *"}
+        </label>
+      )}
       {type === "password" && (
         <div className="pw" onClick={() => setIsPassword(!isPassword)}>
           {isPassword ? (
@@ -58,6 +61,7 @@ export const Input: FC<Props> = ({
           )}
         </div>
       )}
+
       <InputTag
         placeholder={placeholder}
         shape={shape}
@@ -66,11 +70,12 @@ export const Input: FC<Props> = ({
         type={type === "password" && isPassword ? "password" : "text"}
         name={name}
         value={value}
-        aria-label={name}
         aria-required={required}
-        aria-invalid={error ? true : false}
+        aria-invalid={!!error}
         onChange={handleChange}
+        {...rest}
       />
+
       {error && <p className="helper">error message</p>}
     </InputContainer>
   );
@@ -148,8 +153,8 @@ const InputContainer = styled.div<StyleProps>`
 
   .pw {
     position: absolute;
-    top: 2.25em;
-    right: 0.75em;
+    top: 2.5rem;
+    right: 0.75rem;
     display: flex;
     cursor: pointer;
   }

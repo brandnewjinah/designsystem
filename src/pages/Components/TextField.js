@@ -1,13 +1,10 @@
 import React, { FC, useState, FormEvent, ChangeEvent } from "react";
-
-//import libraries
 import styled from "styled-components";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
 import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
+import { Article } from "../../components/Layout/Article";
 import Table from "../../components/Table";
 import { Input, FloatingInput } from "../../components/Input";
 
@@ -19,6 +16,11 @@ import { spacing, neutral } from "../../components/Token";
 
 //import local data
 import { inputData } from "../../data/propsData";
+
+//syntax
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import * as Code from "../../data/code/textfield";
 
 const TextField = () => {
   const [data, setData] = useState({
@@ -35,7 +37,6 @@ const TextField = () => {
 
   return (
     <Wrapper>
-      {/* <Header title="" subtitle=""/> */}
       <Header
         title="Text Field"
         subtitle="Text fields allow users to enter or edit text entries."
@@ -43,68 +44,118 @@ const TextField = () => {
       <Main>
         <Section title="Anatomy" image={Anatomy} />
         <Section title="Options">
-          <Flex>
-            <div className="example">
+          <Article
+            title="Basic"
+            text={<p>Label and name properties are required.</p>}
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
               <Input
                 label="Label"
                 name="label"
                 handleChange={handleChange}
                 margin={spacing.l}
               />
-            </div>
-            <div className="description">
-              <h5>Default</h5>
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.base}
+          </SyntaxHighlighter>
+          <Article
+            title="Label Hidden"
+            text={
               <p>
-                <code>Input</code> requires a <code>label</code> and{" "}
-                <code>name</code>. is required and is used as a Label that is
-                top aligned. is required and is used as{" "}
-                <code>e.target.name</code> and <code>aria-label</code>
+                Add <code className="codeBg">aria-label="label"</code> to the
+                input when Label is hidden visually.
               </p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
+            }
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
+              <Input
+                name="hidden"
+                handleChange={handleChange}
+                aria-label="label"
+                margin={spacing.l}
+              />
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.labelHidden}
+          </SyntaxHighlighter>
+          <Article
+            title="Required"
+            text={
+              <p>
+                <code className="codeBg">required=true</code> adds an asterisk
+                next to a label and a
+                <code className="codeBg">aria-required=true</code> as a cue to
+                let users know it's a required field.
+              </p>
+            }
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
               <Input
                 label="Label"
-                name="label"
+                name="required"
                 required={true}
                 handleChange={handleChange}
                 margin={spacing.l}
               />
-            </div>
-            <div className="description">
-              <h5>Required</h5>
-              <p>
-                <code>required=true</code> adds an asterisk next to a label and
-                a <code>aria-required=true</code> as a cue to let users know
-                it's a required field. It's always better to include a hint text
-                to explain what the asterisk means.
-              </p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
-              <Input
-                label="Label"
-                name="label"
-                required={true}
-                placeholder="e.g. Placeholder"
-                handleChange={handleChange}
-                margin={spacing.l}
-              />
-            </div>
-            <div className="description">
-              <h5>Placeholder</h5>
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.required}
+          </SyntaxHighlighter>
+          <Article
+            title="Placeholder"
+            text={
               <p>
                 The placeholder text is not a replacement for labels as some
                 screen readers don't support it. It should only be used to
                 instruct users how to complete an input. Once a value is
                 entered, placeholder text disappears.
               </p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
+            }
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
+              <Input
+                label="Label"
+                name="placeholder"
+                required={true}
+                placeholder="e.g. Placeholder"
+                handleChange={handleChange}
+                margin={spacing.l}
+              />
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.placeholder}
+          </SyntaxHighlighter>
+          <Article
+            title="Password"
+            text={
+              <p>
+                <code className="codeBg">type="password"</code> adds a show/hide
+                icon that enables or disables visibility of password value
+                entered.
+              </p>
+            }
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
               <Input
                 label="Password"
                 name="password"
@@ -112,17 +163,24 @@ const TextField = () => {
                 handleChange={handleChange}
                 margin={spacing.l}
               />
-            </div>
-            <div className="description">
-              <h5>Password</h5>
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.password}
+          </SyntaxHighlighter>
+          <Article
+            title="Error"
+            text={
               <p>
-                <code>type="password"</code> adds a show/hide icon that enables
-                or disables visibility of password value entered.
+                When an error message is passed as the prop, text field is
+                highlighted and an error message shows up below the field.
               </p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
+            }
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
               <Input
                 label="Error"
                 name="error"
@@ -130,17 +188,19 @@ const TextField = () => {
                 handleChange={handleChange}
                 margin={spacing.l}
               />
-            </div>
-            <div className="description">
-              <h5>Error</h5>
-              <p>
-                When an error message is passed as the prop, text field is
-                highlighted and an error message shows up below the field.
-              </p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.error}
+          </SyntaxHighlighter>
+          <Article
+            title="Underline"
+            text={<p>Underline text field can work for certain layouts.</p>}
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
               <Input
                 label="Underline"
                 name="underline"
@@ -149,93 +209,39 @@ const TextField = () => {
                 handleChange={handleChange}
                 margin={spacing.xl}
               />
-            </div>
-            <div className="description">
-              <h5>Underline</h5>
-              <p>Underline text field can work for certain layouts.</p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
-              <FloatingInput
-                label="Floating Label"
-                name="label"
-                required={true}
-                handleChange={handleChange}
-                margin={spacing.xxl}
-              />
-            </div>
-            <div className="description">
-              <h5>Floating Label</h5>
+            </InputContainer>
+          </Article>
+          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+            {Code.underline}
+          </SyntaxHighlighter>
+          <Article
+            title="Floating Label"
+            text={
               <p>
                 Floating label text field can work for some layouts with limited
                 vertical space. Be aware of accessibility issues for users with
                 motion sensitivity and low vision.
               </p>
-            </div>
-          </Flex>
-          <Flex>
-            <div className="example">
-              <div className="margin" />
+            }
+            divider={false}
+            childCenter={true}
+            childBg={true}
+          >
+            <InputContainer>
               <FloatingInput
                 label="Floating Label"
-                name="label"
+                name="floating"
                 required={true}
                 handleChange={handleChange}
+                margin={spacing.xxl}
               />
-              <div className="margin" />
-            </div>
-            <div className="description">
-              <h5>Margin</h5>
-              <p>
-                Margin adds top and bottom margin to the component for modular
-                spacing. Refer to the StyleVariables file for size variable set.
-              </p>
-            </div>
-          </Flex>
-        </Section>
-        <Section title="Implementation for React">
+            </InputContainer>
+          </Article>
           <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
-            {`
-  import { Input, FloatingInput } from "components/Input";
-  import { spacing } from "components/StyleVariables";
-
-  const [data, setData] = useState({
-    name: "",
-    password: "",
-  });
-
-  const handleChange = ({ currentTarget: input }) => {
-    const userInput = { ...data };
-    userInput[input.name] = input.value;
-    setData(userInput);
-  };
-
-  <Input
-    label="Name"
-    name="name"
-    placeholder="e.g. Enter name"
-    required={true}
-    value={data.name}
-    error={error}
-    shape="underline"
-    handleChange={handleChange}
-    margin={spacing.l}
-  />
-
-  <FloatingInput
-    label="Password"
-    name="password"
-    type="password""
-    required={true}
-    value={data.password}
-    error={error} 
-    handleChange={handleChange}
-    margin={spacing.l}
-/>
-  `}
+            {Code.floating}
           </SyntaxHighlighter>
         </Section>
+
         <Section title="Props" divider={false}>
           <Table
             data={inputData}
@@ -251,29 +257,24 @@ const TextField = () => {
 
 const Wrapper = styled.div``;
 
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
-
 const Main = styled.main``;
 
-const Flex = styled.div`
+const InputContainer = styled.div`
+  width: 100%;
+  max-width: 500px;
+  height: 100%;
+  padding: 1rem 2.5rem;
+`;
+
+const Flex = styled.article`
   display: flex;
   justify-content: space-between;
   margin: 2em 0;
 
-  .example {
-    width: 50%;
-    height: 100%;
-    background-color: #fcfcf9;
-    padding: 1em 2.5em;
-
-    .margin {
-      width: 100%;
-      height: 0.5em;
-      background-color: rgba(255, 0, 0, 0.125);
-    }
+  .margin {
+    width: 100%;
+    height: 0.5em;
+    background-color: rgba(255, 0, 0, 0.125);
   }
 
   .description {

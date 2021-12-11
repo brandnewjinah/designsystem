@@ -8,6 +8,9 @@ import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 //import components
 import Table from "../../components/Table";
 import { Section } from "../../components/Layout/Section";
+import { Header } from "../../components/Layout/Header";
+import { Article } from "../../components/Layout/Article";
+import Authentication from "../../patterns/Authentication";
 
 //import assets
 import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
@@ -19,27 +22,22 @@ import { deviceData } from "../../data/deviceData";
 const AuthenticationPage = () => {
   return (
     <Wrapper>
-      <Header>
-        <h1>Authentication</h1>
-        <Article>
-          <p>text</p>
-        </Article>
-        <Main></Main>
-      </Header>
+      <Header
+        title="Authentication"
+        subtitle="Allows users to create an acocunt or login to gain access to an app."
+      />
+      <Main>
+        <Section title="Example">
+          <Article backgroundColor="#f6f8fa" center>
+            <Authentication />
+          </Article>
+        </Section>
+      </Main>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div``;
-
-const Header = styled.header`
-  margin-bottom: 4em;
-`;
-
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
 
 const Main = styled.main``;
 

@@ -15,8 +15,10 @@ interface Props {
   divider?: boolean;
   text?: React.ReactNode;
   maxWidth?: boolean;
-  backgroundColor?: boolean;
+  backgroundColor?: string;
   center?: boolean;
+  childCenter?: boolean;
+  childBg?: boolean;
 }
 
 export const Article: FC<Props> = ({
@@ -31,6 +33,8 @@ export const Article: FC<Props> = ({
   maxWidth,
   backgroundColor,
   center,
+  childCenter,
+  childBg,
 }) => {
   return (
     <Wrapper backgroundColor={backgroundColor} center={center}>
@@ -49,7 +53,7 @@ export const Article: FC<Props> = ({
         </ImageContainer>
       )}
       {children && (
-        <Div center={center} maxWidth={maxWidth}>
+        <Div childCenter={childCenter} childBg={childBg} maxWidth={maxWidth}>
           {children}
         </Div>
       )}
@@ -61,7 +65,8 @@ const Wrapper = styled.article<Props>`
   display: ${(props) => props.center && "flex"};
   align-items: ${(props) => props.center && "center"};
   justify-content: ${(props) => props.center && "center"};
-  background-color: ${(props) => props.backgroundColor && "#fcfcf9"};
+  background-color: ${(props) =>
+    props.backgroundColor ? props.backgroundColor : "none"};
   padding: 0.5rem 0;
 
   h3 {
@@ -88,8 +93,9 @@ const ImageContainer = styled.div`
 const Div = styled.div<Props>`
   width: 100%;
   max-width: ${(props) => (props.maxWidth ? "400px" : null)};
-  display: ${(props) => props.center && "flex"};
-  align-items: ${(props) => props.center && "center"};
-  justify-content: ${(props) => props.center && "center"};
+  display: ${(props) => props.childCenter && "flex"};
+  align-items: ${(props) => props.childCenter && "center"};
+  justify-content: ${(props) => props.childCenter && "center"};
+  background-color: ${(props) => props.childBg && "#fcfcf9"};
   margin: 1rem auto;
 `;

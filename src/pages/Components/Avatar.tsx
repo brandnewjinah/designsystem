@@ -30,7 +30,7 @@ const AvatarPage = () => {
       />
       <Main>
         <Section title="Example">
-          <Article backgroundColor center>
+          <Article center>
             <Flex gap="1rem">
               <Avatar
                 user="Jinah"

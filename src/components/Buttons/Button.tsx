@@ -80,10 +80,10 @@ const Container = styled.button<Props>`
       : props.shape === "pill"
       ? "2rem"
       : props.shape === "rounded"
-      ? "0.5rem"
+      ? "0.35rem"
       : 0};
   width: ${(props) => (props.fullwidth ? "100%" : null)};
-  padding: ${(props) => (props.variant === "tertiary" ? 0 : "0.875em 1.5em")};
+  padding: ${(props) => (props.variant === "tertiary" ? 0 : "1rem 1.5rem")};
   background-color: ${(props) =>
     props.variant === "primary" ? props.color : "transparent"};
   border: ${(props) =>

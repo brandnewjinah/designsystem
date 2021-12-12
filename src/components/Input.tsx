@@ -3,7 +3,7 @@ import React, { ChangeEvent, FC, useState } from "react";
 //import styles and assets
 import styled from "styled-components";
 import { Eye, EyeOff } from "../assets/Icons";
-import { neutral } from "./Token";
+import { fontSize, neutral } from "./Token";
 
 interface Props {
   label?: string;
@@ -18,9 +18,7 @@ interface Props {
   small?: boolean;
   shape?: "underline" | "pill" | "rounded";
   margin?: string;
-  handleChange?: (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => void;
+  handleChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 
 type StyleProps = {
@@ -76,7 +74,7 @@ export const Input: FC<Props> = ({
         {...rest}
       />
 
-      {error && <p className="helper">error message</p>}
+      {error && <p className="helper">{error}</p>}
     </InputContainer>
   );
 };
@@ -168,8 +166,8 @@ const InputContainer = styled.div<StyleProps>`
 
 const InputTag = styled.input<StyleProps>`
   width: 100%;
-  font-size: 1.05rem;
-  height: 3.25rem;
+  font-size: ${fontSize.base};
+  height: 3rem;
   border-radius: ${(props) =>
     props.shape === "underline" ? "none" : "0.35rem"};
   border-top: ${(props) =>

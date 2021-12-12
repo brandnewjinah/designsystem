@@ -1,23 +1,16 @@
 import React, { useState } from "react";
-
-//import libraries
 import styled from "styled-components";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
-//import components
-import Table from "../../components/Table";
+//components
 import { Section } from "../../components/Layout/Section";
 import { Header } from "../../components/Layout/Header";
 import { Article } from "../../components/Layout/Article";
 import Authentication from "../../patterns/Authentication";
 
-//import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
-
-//import local data
-import { deviceData } from "../../data/deviceData";
+//syntax
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import * as Code from "../../data/code/auth";
 
 const AuthenticationPage = () => {
   return (
@@ -28,9 +21,37 @@ const AuthenticationPage = () => {
       />
       <Main>
         <Section title="Example">
-          <Article backgroundColor="#f6f8fa" center>
+          <Article backgroundColor="#f6f8fa" childCenter>
             <Authentication />
           </Article>
+        </Section>
+        <Section title="Validation">
+          <Article
+            title="Client Side"
+            text={
+              <ul>
+                <li>Empty fields</li>
+                <li>Invalid email format</li>
+                <li>Confirm password value that doens't match password</li>
+              </ul>
+            }
+            divider={false}
+          />
+          <Article
+            title="Server Side"
+            text={
+              <ul>
+                <li>Invalid email and password combination</li>
+                <li>Existing email for signup</li>
+              </ul>
+            }
+            divider={false}
+          />
+        </Section>
+        <Section title="Code for React" divider={false}>
+          <SyntaxHighlighter language="javascript" style={atomOneLight}>
+            {Code.auth}
+          </SyntaxHighlighter>
         </Section>
       </Main>
     </Wrapper>

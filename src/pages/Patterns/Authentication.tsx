@@ -41,7 +41,7 @@ const AuthenticationPage = () => {
             title="Server Side"
             text={
               <ul>
-                <li>Invalid email and password combination</li>
+                <li>Invalid email or password</li>
                 <li>Existing email for signup</li>
               </ul>
             }

@@ -208,3 +208,41 @@ export const buttonData = [
     required: "no",
   },
 ];
+
+export const linkData = [
+  {
+    id: 1,
+    property: "label",
+    type: "string",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 2,
+    property: "href",
+    type: "string",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 3,
+    property: "variant",
+    type: "primary / secondary / tertiary",
+    default: "primary",
+    required: "no",
+  },
+  {
+    id: 4,
+    property: "external",
+    type: "boolean",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 5,
+    property: "disabled",
+    type: "boolean",
+    default: "-",
+    required: "no",
+  },
+];

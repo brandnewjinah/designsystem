@@ -25,29 +25,29 @@ export const checkbox = `
       }
     };
 
-    return(
-    <Checkbox
-      label="Checkbox"
-      name="default"
-      checked={check}
-      onChange={handleCheck}
-    />
-    <Checkbox
-      label="select all"
-      name="all"
-      indeterminate={indeterminate}
-      checked={checkAll}
-      onChange={handleSelectAll}
-    />
-    {data.map((item) => (
+    return (
       <Checkbox
-        key={item.id}
-        label={item.name}
-        name={item.name}
-        checked={checkedItems.includes(item.name)}
-        onChange={handleSelect}
+        label="Checkbox"
+        name="default"
+        checked={check}
+        onChange={handleCheck}
       />
-    ))}
+      <Checkbox
+        label="select all"
+        name="all"
+        indeterminate={indeterminate}
+        checked={checkAll}
+        onChange={handleSelectAll}
+      />
+      {data.map((item) => (
+        <Checkbox
+          key={item.id}
+          label={item.name}
+          name={item.name}
+          checked={checkedItems.includes(item.name)}
+          onChange={handleSelect}
+        />
+      ))}
     )
 `;
 

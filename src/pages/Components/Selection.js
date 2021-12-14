@@ -3,7 +3,7 @@ import React, { ChangeEvent, useState } from "react";
 //import libraries
 import styled from "styled-components";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
 
@@ -128,7 +128,7 @@ const Selection = () => {
           />
         </Section>
         <Section title="Implementation for React" divider={false}>
-          <SyntaxHighlighter language="javascript" style={atelierEstuaryLight}>
+          <SyntaxHighlighter language="javascript" style={atomOneLight}>
             {Code.checkbox}
           </SyntaxHighlighter>
         </Section>

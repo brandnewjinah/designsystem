@@ -102,26 +102,31 @@ export const navData = [
       },
       {
         id: 308,
+        name: "Link",
+        link: "/components/link",
+      },
+      {
+        id: 309,
         name: "Radio Button",
         link: "/components/radio",
       },
       {
-        id: 309,
+        id: 310,
         name: "Slider",
         link: "/components/slider",
       },
       {
-        id: 310,
+        id: 311,
         name: "Table",
         link: "/components/table",
       },
       {
-        id: 311,
+        id: 312,
         name: "Tags",
         link: "/components/tags",
       },
       {
-        id: 312,
+        id: 313,
         name: "Text Fields",
         link: "/components/textfield",
       },

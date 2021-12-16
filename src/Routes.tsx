@@ -31,6 +31,7 @@ import Selection from "./pages/Components/Selection";
 import Radio from "./pages/Components/RadioButton";
 import Header from "./pages/Components/Header";
 import Link from "./pages/Components/Link";
+import Pagination from "./pages/Components/Pagination";
 import Select from "./pages/Components/Dropdown";
 import Slider from "./pages/Components/Slider";
 import Table from "./pages/Components/Table";
@@ -83,6 +84,7 @@ const Routes = () => {
           <Route exact path="/components/radio" component={Radio} />
           <Route exact path="/components/header" component={Header} />
           <Route exact path="/components/link" component={Link} />
+          <Route exact path="/components/pagination" component={Pagination} />
           <Route exact path="/components/dropdown" component={Select} />
           <Route exact path="/components/table" component={Table} />
           <Route exact path="/components/textfield" component={TextField} />

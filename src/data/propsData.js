@@ -246,3 +246,48 @@ export const linkData = [
     required: "no",
   },
 ];
+
+export const paginationData = [
+  {
+    id: 1,
+    property: "currentPage",
+    type: "number",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 2,
+    property: "pageSize",
+    type: "number",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 3,
+    property: "dataLength",
+    type: "number",
+    default: "primary",
+    required: "required for numbered pagination",
+  },
+  {
+    id: 4,
+    property: "onPageChange",
+    type: "function()",
+    default: "-",
+    required: "required for numbered pagination",
+  },
+  {
+    id: 5,
+    property: "handlePrev",
+    type: "function()",
+    default: "-",
+    required: "required",
+  },
+  {
+    id: 6,
+    property: "handleNext",
+    type: "function()",
+    default: "-",
+    required: "required",
+  },
+];

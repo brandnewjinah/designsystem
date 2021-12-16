@@ -5,15 +5,15 @@ import styled from "styled-components";
 import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
 import { Article } from "../../components/Layout/Article";
-
-//assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
+import Table from "../../components/Table";
 
 //syntax
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import * as Code from "../../data/code/select";
+import { atomOneLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import * as Code from "../../data/code/avatar";
+
+//import local data
+import { linkData } from "../../data/propsData";
 
 const HeaderPage = () => {
   return (
@@ -24,6 +24,9 @@ const HeaderPage = () => {
     navigate and interact with the web."
       />
       <Main>
+        <Section title="Example">
+          <Article center></Article>
+        </Section>
         <Section title="Who benefits from accessibility?">
           <Article
             title="People with disabilities"
@@ -53,6 +56,19 @@ const HeaderPage = () => {
               </ul>
             }
             divider={false}
+          />
+        </Section>
+        <Section title="Implementation for React" divider={false}>
+          <SyntaxHighlighter language="javascript" style={atomOneLight}>
+            {Code.avatar}
+          </SyntaxHighlighter>
+        </Section>
+        <Section title="Props" divider={false}>
+          <Table
+            data={linkData}
+            listSize={10}
+            keys={["property", "type", "default", "required"]}
+            showId={false}
           />
         </Section>
       </Main>

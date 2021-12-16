@@ -17,12 +17,6 @@ const GlobalStyle = createGlobalStyle`
         line-height: ${lineHeight.sm1};
     }
 
-    ul {
-        list-style-position: inside;
-        text-indent: -1.4rem;
-        padding-left: 1.4rem;
-    }
-
     ol {
         list-style-type: none;
     }

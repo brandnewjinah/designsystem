@@ -19,6 +19,8 @@ interface Props {
   center?: boolean;
   childCenter?: boolean;
   childBg?: boolean;
+  childColumn?: boolean;
+  padding?: string;
 }
 
 export const Article: FC<Props> = ({
@@ -35,6 +37,8 @@ export const Article: FC<Props> = ({
   center,
   childCenter,
   childBg,
+  childColumn,
+  padding,
 }) => {
   return (
     <Wrapper backgroundColor={backgroundColor} center={center}>
@@ -53,7 +57,13 @@ export const Article: FC<Props> = ({
         </ImageContainer>
       )}
       {children && (
-        <Div childCenter={childCenter} childBg={childBg} maxWidth={maxWidth}>
+        <Div
+          childCenter={childCenter}
+          childBg={childBg}
+          maxWidth={maxWidth}
+          childColumn={childColumn}
+          padding={padding}
+        >
           {children}
         </Div>
       )}
@@ -75,6 +85,12 @@ const Wrapper = styled.article<Props>`
     color: ${neutral[600]};
     padding-bottom: 0.5rem;
   }
+
+  ul {
+    list-style-position: inside;
+    text-indent: -1.4rem;
+    padding-left: 1.4rem;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -94,8 +110,10 @@ const Div = styled.div<Props>`
   width: 100%;
   max-width: ${(props) => (props.maxWidth ? "400px" : null)};
   display: ${(props) => props.childCenter && "flex"};
+  flex-direction: ${(props) => props.childColumn && "column"};
   align-items: ${(props) => props.childCenter && "center"};
   justify-content: ${(props) => props.childCenter && "center"};
   background-color: ${(props) => props.childBg && "#fcfcf9"};
+  padding: ${(props) => (props.padding ? props.padding : "0.5rem 0")};
   margin: 1rem auto;
 `;

@@ -107,26 +107,31 @@ export const navData = [
       },
       {
         id: 309,
+        name: "Pagination",
+        link: "/components/pagination",
+      },
+      {
+        id: 310,
         name: "Radio Button",
         link: "/components/radio",
       },
       {
-        id: 310,
+        id: 311,
         name: "Slider",
         link: "/components/slider",
       },
       {
-        id: 311,
+        id: 312,
         name: "Table",
         link: "/components/table",
       },
       {
-        id: 312,
+        id: 313,
         name: "Tags",
         link: "/components/tags",
       },
       {
-        id: 313,
+        id: 314,
         name: "Text Fields",
         link: "/components/textfield",
       },

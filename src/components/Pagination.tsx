@@ -30,70 +30,87 @@ const Pagination: FC<Props> = ({
   const pages = _.range(1, numberOfPages + 1); //creates an array with numbers [1, 2, 3... number of pages]
 
   return (
-    <Wrapper>
-      <nav>
-        <ul className="pagination">
-          <li>
-            <a className="arrow" onClick={() => handlePrev()}>
-              <ChevronLeft width={20} height={20} color="#000" stroke={2} />
-            </a>
-          </li>
-          {pages.map((page) => (
-            <li key={page}>
+    <Nav aria-label="pagination">
+      <ul>
+        <Arrow>
+          <a aria-label="Go to previous page" onClick={() => handlePrev()}>
+            <ChevronLeft width={20} height={20} color="#000" stroke={2} />
+          </a>
+        </Arrow>
+        {pages.map((page) => (
+          <li key={page}>
+            {page === currentPage ? (
               <a
-                className={
-                  page === currentPage ? "pageLink active" : "pageLink"
-                }
+                className="pageLink active"
+                aria-label={`page ${page}`}
+                aria-current={true}
                 onClick={() => onPageChange(page)}
               >
                 {page}
               </a>
-            </li>
-          ))}
-          <li>
-            <a className="arrow" onClick={() => handleNext()}>
-              <ChevronRight width={20} height={20} color="#000" stroke={2} />
-            </a>
+            ) : (
+              <a
+                className="pageLink"
+                aria-label={`page ${page}`}
+                onClick={() => onPageChange(page)}
+              >
+                {page}
+              </a>
+            )}
           </li>
-        </ul>
-      </nav>
-    </Wrapper>
+        ))}
+        <Arrow>
+          <a aria-label="Go to next page" onClick={() => handleNext()}>
+            <ChevronRight width={20} height={20} color="#000" stroke={2} />
+          </a>
+        </Arrow>
+      </ul>
+    </Nav>
   );
 };
 
-const Wrapper = styled.div`
-  .pagination {
+const Nav = styled.nav`
+  font-weight: 600;
+
+  ul {
+    list-style-type: none;
+    text-indent: 0;
+    padding-left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 1em 0;
   }
 
-  .arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 0.5em;
-  }
-
   .pageLink {
+    width: 2rem;
+    height: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 2em;
-    height: 2em;
-    border-radius: 50%;
-    margin: 0 0.5em;
+    padding: 0.25rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
 
     &:hover {
-      background-color: ${defaultTheme.neutralHover};
+      background-color: ${neutral[100]};
+      border-radius: 50%;
     }
   }
 
   .active {
-    background-color: ${defaultTheme.secondaryColor};
-    border-radius: 100%;
-    color: #fff;
+    background-color: ${neutral[100]};
+    border-radius: 50%;
+  }
+`;
+
+const Arrow = styled.li`
+  margin: 0 0.5rem;
+
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

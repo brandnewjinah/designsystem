@@ -1,15 +1,13 @@
 import React, { useState } from "react";
-
-//import libraries
 import styled from "styled-components";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 //import components
+import { Header } from "../../components/Layout/Header";
 import Table from "../../components/Table";
 import { Section } from "../../components/Layout/Section";
-import Flex from "../../components/Layout/Flex";
+import { Article } from "../../components/Layout/Article";
 import { Dropdown } from "../../components/Dropdown";
+import Select from "../../components/Select";
 
 //import assets
 import Anatomy from "../../assets/components/Dropdown_Anatomy.jpg";
@@ -18,6 +16,10 @@ import Anatomy2 from "../../assets/components/Dropdown_Anatomy2.jpg";
 //import styles
 import { neutral, spacing } from "../../components/Token";
 
+//syntax
+import SyntaxHighlighter from "react-syntax-highlighter";
+import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 //import local data
 import { profileOptions } from "../../data/profileOptions";
 import * as Code from "../../data/code/dropdown";
@@ -25,17 +27,18 @@ import * as Code from "../../data/code/dropdown";
 const DropdownPage = () => {
   return (
     <Wrapper>
-      <Header>
-        <h1>Dropdown</h1>
-        <Article>
-          <p>
-            A dropdown displays a list of options from which a user can select
-            one or more option(s). A selected option can represent a value in a
-            form or can be used to filter content.
-          </p>
-        </Article>
-      </Header>
+      <Header
+        title="Dropdown"
+        subtitle="A dropdown displays a list of options from which a user can select
+        one or more option(s). A selected option can represent a value in a
+        form or can be used to filter content."
+      />
       <Main>
+        <Section title="Example">
+          <Article center>
+            <Select />
+          </Article>
+        </Section>
         <Section title="Interactive Demo" maxWidth={true}>
           <Dropdown
             label="Select one"
@@ -100,15 +103,6 @@ const DropdownPage = () => {
 };
 
 const Wrapper = styled.div``;
-
-const Header = styled.header`
-  margin-bottom: 4em;
-`;
-
-const Article = styled.article`
-  font-size: 1rem;
-  margin: 1em 0;
-`;
 
 const Main = styled.main``;
 

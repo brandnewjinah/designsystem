@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ScrollToTop } from "./utils/ScrollToTop";
 
 //import layout
-import Layout from "./components/Layout";
+import Layout from "./components/Structure/Layout";
 
 //import pages
 import Home from "./pages/Home/Home";

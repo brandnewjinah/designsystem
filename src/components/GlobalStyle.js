@@ -28,6 +28,10 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none; 
         cursor: pointer;
+
+        &:visited {
+            color: ${neutral[700]}
+        }
     }
 
     button {

@@ -4,71 +4,87 @@ import React from "react";
 
 //import styles and assets
 import styled from "styled-components";
+import { Main, Wrapper } from "../../../components/Layout/Containers";
+import { Header } from "../../../components/Layout/Header";
+import { Section } from "../../../components/Layout/Section";
+import Table from "../../../components/Table";
+import Text from "../../../components/Text";
+
+//data
+import { gridData } from "../../../data/tableData";
 
 const Grid = () => {
   return (
     <Wrapper>
-      <Section>
-        <h4>Grid columns</h4>
-        <Container>
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
-          <div>10</div>
-          <div>11</div>
-          <div>12</div>
-        </Container>
-      </Section>
-      <Section>
-        <h4>Layout examples</h4>
-        <Container>
-          <div className="span span6 mobile">1</div>
-          <div className="span span8 tablet">1</div>
-          <div className="span span12 desktop">1</div>
-        </Container>
-        <Container>
-          <div className="span span2 mobile">1</div>
-          <div className="span span2 mobile">2</div>
-          <div className="span span4 tablet">1</div>
-          <div className="span span4 tablet">2</div>
-          <div className="span span6 desktop">1</div>
-          <div className="span span6 desktop">2</div>
-        </Container>
-        <Container>
-          <div className="span span4 desktop">1</div>
-          <div className="span span4 desktop">2</div>
-          <div className="span span4 desktop">3</div>
-        </Container>
-        <Container>
-          <div className="span span2 tablet">1</div>
-          <div className="span span2 tablet">2</div>
-          <div className="span span2 tablet">3</div>
-          <div className="span span2 tablet">4</div>
-          <div className="span span3 desktop">1</div>
-          <div className="span span3 desktop">2</div>
-          <div className="span span3 desktop">3</div>
-          <div className="span span3 desktop">4</div>
-        </Container>
-      </Section>
+      <Header
+        title="Grid"
+        subtitle="Grid system helps you align information and maintain consistent user experience. It is based on 12 grid system."
+      />
+      <Main>
+        <Section title="Breakpoints">
+          <Text>
+            The grid system is responsive based on 4-column, 8-column, and
+            12-column grids, suit different screen sizes.
+          </Text>
+          <Section divider={false}>
+            <Table
+              data={gridData}
+              listSize={10}
+              keys={["screen size", "margin", "columns"]}
+              showId={false}
+            />
+          </Section>
+          <h4>Grid columns</h4>
+          <Container>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+            <div>11</div>
+            <div>12</div>
+          </Container>
+        </Section>
+        <Section>
+          <h4>Layout examples</h4>
+          <Container>
+            <div className="span span6 mobile">1</div>
+            <div className="span span8 tablet">1</div>
+            <div className="span span12 desktop">1</div>
+          </Container>
+          <Container>
+            <div className="span span2 mobile">1</div>
+            <div className="span span2 mobile">2</div>
+            <div className="span span4 tablet">1</div>
+            <div className="span span4 tablet">2</div>
+            <div className="span span6 desktop">1</div>
+            <div className="span span6 desktop">2</div>
+          </Container>
+          <Container>
+            <div className="span span4 desktop">1</div>
+            <div className="span span4 desktop">2</div>
+            <div className="span span4 desktop">3</div>
+          </Container>
+          <Container>
+            <div className="span span2 tablet">1</div>
+            <div className="span span2 tablet">2</div>
+            <div className="span span2 tablet">3</div>
+            <div className="span span2 tablet">4</div>
+            <div className="span span3 desktop">1</div>
+            <div className="span span3 desktop">2</div>
+            <div className="span span3 desktop">3</div>
+            <div className="span span3 desktop">4</div>
+          </Container>
+        </Section>
+      </Main>
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  h4 {
-    margin-top: 1em;
-  }
-`;
-
-const Section = styled.div`
-  margin: 1em 0;
-`;
 
 const Container = styled.div`
   display: grid;

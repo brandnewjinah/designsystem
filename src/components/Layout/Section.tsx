@@ -67,11 +67,11 @@ const Wrapper = styled.section<Props>`
     padding: 0.75rem 0;
   }
 
-  h2 {
+  /* h2 {
     font-size: ${fontSize.lg2};
     font-weight: 500;
     color: ${neutral[600]};
-  }
+  } */
 
   h3 {
     color: ${neutral[600]};

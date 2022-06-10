@@ -12,6 +12,7 @@ import { Article } from "../../components/Layout/Article";
 
 //data
 import { deviceData } from "../../data/deviceData";
+import { Main } from "../../components/Layout/Containers";
 
 const NavigationPage = () => {
   return (
@@ -100,7 +101,5 @@ const NavigationPage = () => {
 };
 
 const Wrapper = styled.div``;
-
-const Main = styled.main``;
 
 export default NavigationPage;

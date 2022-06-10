@@ -40,44 +40,6 @@ const GlobalStyle = createGlobalStyle`
       
     }
 
-    h1 {
-        color: ${neutral[700]};
-        font-size: ${typeScale.header1};
-        letter-spacing: 0.015rem;
-    }
-
-    h2 {
-        color: ${neutral[700]};
-        font-size: ${typeScale.header2};
-        letter-spacing: 0.015rem;
-    }
-
-    h3 {
-        color: ${neutral[700]};
-        font-size: ${typeScale.header3};
-
-    }
-
-    h4 {
-        color: ${neutral[700]};
-        font-size: ${typeScale.header4};
-        /* margin-bottom: .625rem; */
-    }
-
-    h5 {
-        color: ${neutral[700]};
-        font-size: ${typeScale.header5};
-        font-weight: 500;
-        /* margin-bottom: .25rem; */
-    }
-
-    h6 {
-        color: ${neutral[700]};
-        font-size: ${typeScale.header6};
-        font-weight: 500;
-        /* margin-bottom: .25rem; */
-    }
-
     em {
         font-style: normal;
         font-weight: 700;

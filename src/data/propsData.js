@@ -291,3 +291,34 @@ export const paginationData = [
     required: "required",
   },
 ];
+
+export const typographyData = [
+  {
+    id: 1,
+    property: "variant",
+    type: "h1-h6, body_big, body_small, caption ",
+    default: "body",
+    required: "no",
+  },
+  {
+    id: 2,
+    property: "bold",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 3,
+    property: "color",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+  {
+    id: 4,
+    property: "uppercase",
+    type: "string",
+    default: "-",
+    required: "no",
+  },
+];

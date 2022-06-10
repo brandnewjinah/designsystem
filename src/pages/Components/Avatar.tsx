@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
 import { Article } from "../../components/Layout/Article";
-import { Flex } from "../../components/Layout/Containers";
+import { Flex, Main, Wrapper } from "../../components/Layout/Containers";
 import Avatar from "../../components/Avatar";
 import Table from "../../components/Table";
 
@@ -95,9 +95,5 @@ const AvatarPage = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div``;
-
-const Main = styled.main``;
 
 export default AvatarPage;

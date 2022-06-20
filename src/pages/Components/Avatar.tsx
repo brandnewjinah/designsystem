@@ -9,10 +9,6 @@ import { Flex, Main, Wrapper } from "../../components/Layout/Containers";
 import Avatar from "../../components/Avatar";
 import Table from "../../components/Table";
 
-//import assets
-import Anatomy from "../../assets/components/Table_DT_Anatomy.jpg";
-import AnatomyMobile from "../../assets/components/Table_Mobile_Anatomy.jpg";
-
 //syntax
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atelierEstuaryLight } from "react-syntax-highlighter/dist/esm/styles/hljs";

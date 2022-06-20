@@ -14,19 +14,18 @@ import { neutral } from "../../../components/Token";
 //import local data
 import { neutrals, blue, peach } from "../../../data/colorData";
 import * as Code from "../../../data/code/color";
+import { Header } from "../../../components/Layout/Header";
+import { Main, Wrapper } from "../../../components/Layout/Containers";
+import { Article } from "../../../components/Layout/Article";
 
 const Colors = () => {
   return (
     <Wrapper>
-      <Header>
-        <h1>Color</h1>
-        <Article>
-          <p>
-            Color is used to draw attention, group elements, convey meaning,
-            generate mood and enhance aesthetics.
-          </p>
-        </Article>
-      </Header>
+      <Header
+        title="Color"
+        subtitle="Color is used to draw attention, group elements, convey meaning,
+            generate mood and enhance aesthetics."
+      />
       <Main>
         <Section title="Color Palettes">
           <Subsection>
@@ -73,26 +72,32 @@ const Colors = () => {
             </Grid>
           </Subsection>
         </Section>
-
-        <Section
-          title="Accessibility"
-          text={
-            <>
-              It needs to comply with the{" "}
-              <a href="https://www.w3.org/TR/WCAG/" target="_blank">
-                WCAG AA
-              </a>{" "}
-              standard contrast ratios. It can be tested on{" "}
-              <a
-                href="https://webaim.org/resources/contrastchecker"
-                target="_blank"
-              >
-                WebAIM
-              </a>
-              .
-            </>
-          }
-        >
+        <Section title="Accessibility">
+          <Article
+            title="WCAG 2 Contrast Ratio"
+            text={
+              <ul>
+                <li>
+                  It needs to comply with the{" "}
+                  <a href="https://www.w3.org/TR/WCAG/" target="_blank">
+                    WCAG AA
+                  </a>{" "}
+                  standard contrast ratios.
+                </li>
+                <li>
+                  It can be tested on{" "}
+                  <a
+                    href="https://webaim.org/resources/contrastchecker"
+                    target="_blank"
+                  >
+                    WebAIM.
+                  </a>
+                </li>
+              </ul>
+            }
+          />
+        </Section>
+        <Section>
           <Grid>
             {peach.map((color, idx) => (
               <div key={idx} className="span2">
@@ -133,20 +138,6 @@ const Colors = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div``;
-
-const Header = styled.header`
-  margin-bottom: 4em;
-`;
-
-const Article = styled.article`
-  font-size: 1rem;
-  color: ${neutral[600]};
-  margin: 1em 0;
-`;
-
-const Main = styled.main``;
 
 const Subsection = styled.section`
   h5 {

@@ -1,10 +1,3 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-
-//syntax
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
 //comps
 import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
@@ -12,7 +5,7 @@ import { Article } from "../../components/Layout/Article";
 
 //data
 import { deviceData } from "../../data/deviceData";
-import { Main } from "../../components/Layout/Containers";
+import { Main, Wrapper } from "../../components/Layout/Containers";
 
 const NavigationPage = () => {
   return (
@@ -99,7 +92,5 @@ const NavigationPage = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div``;
 
 export default NavigationPage;

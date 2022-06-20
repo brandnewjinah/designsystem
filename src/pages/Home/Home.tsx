@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 //import components
+import { Main, Wrapper } from "../../components/Layout/Containers";
 import Table from "../../components/Table";
 
 //import assets
@@ -12,25 +13,21 @@ import Cover from "../../assets/Cover.jpg";
 
 //import local data
 import { deviceData } from "../../data/deviceData";
+import { Header } from "../../components/Layout/Header";
 
 const Home = () => {
   return (
     <Wrapper>
-      <Header>
-        <h1>Design System</h1>
-
-        <Article>
-          <p>
-            This design system includes guidelines I researched and created to
-            design and develop more efficiently. Focused around user experience,
-            accessibility and clean code. It's following WCAG accessibility
-            guidelines.
-          </p>
-        </Article>
-        <ImageContainer>
-          <img src={Cover} />
-        </ImageContainer>
-      </Header>
+      <Header
+        title="Design System"
+        subtitle="This design system includes guidelines I researched and created to
+        design and develop more efficiently. Focused around user experience,
+        accessibility and clean code. It's following WCAG accessibility
+        guidelines."
+      />
+      <ImageContainer>
+        <img src={Cover} />
+      </ImageContainer>
 
       <Main>
         <Divider />
@@ -56,22 +53,6 @@ const Home = () => {
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  h1 {
-    font-family: "Lora", serif;
-  }
-`;
-
-const Header = styled.header`
-  margin-bottom: 2em;
-`;
-
-const Article = styled.article`
-  margin: 1em 0;
-`;
-
-const Main = styled.main``;
 
 const Section = styled.section`
   margin: 2em 0 3em;

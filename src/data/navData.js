@@ -1,24 +1,24 @@
 export const navData = [
-  {
-    id: 100,
-    name: "Overview",
-    subcategory: [
-      {
-        id: 101,
-        name: "Principles",
-        link: "/overview/principles",
-      },
-    ],
-  },
+  // {
+  //   id: 100,
+  //   name: "Overview",
+  //   subcategory: [
+  //     {
+  //       id: 101,
+  //       name: "Principles",
+  //       link: "/overview/principles",
+  //     },
+  //   ],
+  // },
   {
     id: 200,
     name: "Foundation",
     subcategory: [
-      {
-        id: 201,
-        name: "Initial Setup",
-        link: "/foundation/setup",
-      },
+      // {
+      //   id: 201,
+      //   name: "Initial Setup",
+      //   link: "/foundation/setup",
+      // },
       {
         id: 202,
         name: "Layout",
@@ -44,14 +44,14 @@ export const navData = [
         name: "Typography",
         link: "/foundation/typography",
       },
-      {
-        id: 207,
-        name: "Iconography",
-        link: "/foundation/iconography",
-      },
+      // {
+      //   id: 207,
+      //   name: "Iconography",
+      //   link: "/foundation/iconography",
+      // },
       {
         id: 208,
-        name: "Navigation",
+        name: "Global Navigation",
         link: "/foundation/navigation",
       },
       {

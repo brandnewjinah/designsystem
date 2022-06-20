@@ -1,14 +1,8 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-
-//syntax
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
 //comps
 import { Section } from "../../components/Layout/Section";
 import { Article } from "../../components/Layout/Article";
 import { Header } from "../../components/Layout/Header";
+import { Main, Wrapper } from "../../components/Layout/Containers";
 
 const NavigationPage = () => {
   return (
@@ -85,25 +79,9 @@ const NavigationPage = () => {
             }
           />
         </Section>
-        <Section title="Heading" divider={false}>
-          <Article
-            text={
-              <ul>
-                <li>
-                  Use one<code style={{ backgroundColor: "#f4f3ec" }}>h1</code>
-                  per page.
-                </li>
-              </ul>
-            }
-          />
-        </Section>
       </Main>
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div``;
-
-const Main = styled.main``;
 
 export default NavigationPage;

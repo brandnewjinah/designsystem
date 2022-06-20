@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 //import components
-import { Article, Main, Wrapper } from "../../components/Layout/Containers";
+import { Main, Wrapper } from "../../components/Layout/Containers";
 import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
 import Text from "../../components/Text";
@@ -15,6 +15,7 @@ import * as Code from "../../data/code/typography";
 
 //data
 import { typographyData } from "../../data/propsData";
+import { Article } from "../../components/Layout/Article";
 
 const TypographyPage = () => {
   return (
@@ -25,6 +26,10 @@ const TypographyPage = () => {
         present content clearly and efficiently."
       />
       <Main>
+        <Section
+          title="When to use"
+          subtitle="When you need to display text contents on a page and keep them clear and consistent."
+        />
         <Section title="Type Styles">
           <TypeScale>
             <Article>

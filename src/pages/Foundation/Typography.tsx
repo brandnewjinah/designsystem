@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 //import components
-import { Main, Wrapper } from "../../components/Layout/Containers";
+import { Main, Wrapper, Article } from "../../components/Layout/Containers";
 import { Header } from "../../components/Layout/Header";
 import { Section } from "../../components/Layout/Section";
 import Text from "../../components/Text";
@@ -15,7 +15,6 @@ import * as Code from "../../data/code/typography";
 
 //data
 import { typographyData } from "../../data/propsData";
-import { Article } from "../../components/Layout/Article";
 
 const TypographyPage = () => {
   return (
@@ -28,15 +27,15 @@ const TypographyPage = () => {
       <Main>
         <Section
           title="When to use"
-          subtitle="When you need to display text contents on a page and keep them clear and consistent."
+          text="When you need to display text contents on a page and keep them clear and consistent."
         />
         <Section title="Type Styles">
           <TypeScale>
             <Article>
               <Text variant="h1">Header 1</Text>
               <Text variant="caption">
-                <span className="sub">VARIANT:</span> h2{" "}
-                <span className="sub">SIZE:</span> fontSize.lg3{" "}
+                <span className="sub">VARIANT:</span> h1{" "}
+                <span className="sub">SIZE:</span> fontSize.lg5{" "}
                 <span className="sub">WEIGHT:</span> 700
               </Text>
             </Article>
@@ -45,7 +44,7 @@ const TypographyPage = () => {
               <Text variant="caption">
                 <span className="sub">VARIANT:</span> h2{" "}
                 <span className="sub">SIZE:</span> fontSize.lg3{" "}
-                <span className="sub">WEIGHT:</span> 700
+                <span className="sub">WEIGHT:</span> 600
               </Text>
             </Article>
             <Article>
@@ -53,7 +52,7 @@ const TypographyPage = () => {
               <Text variant="caption">
                 <span className="sub">VARIANT:</span> h3{" "}
                 <span className="sub">SIZE:</span> fontSize.lg2{" "}
-                <span className="sub">WEIGHT:</span> 700
+                <span className="sub">WEIGHT:</span> 600
               </Text>
             </Article>
             <Article>
@@ -61,7 +60,7 @@ const TypographyPage = () => {
               <Text variant="caption">
                 <span className="sub">VARIANT:</span> h4{" "}
                 <span className="sub">SIZE:</span> fontSize.lg1{" "}
-                <span className="sub">WEIGHT:</span> 700
+                <span className="sub">WEIGHT:</span> 600
               </Text>
             </Article>
             <Article>
@@ -69,7 +68,7 @@ const TypographyPage = () => {
               <Text variant="caption">
                 <span className="sub">VARIANT:</span> h5{" "}
                 <span className="sub">SIZE:</span> fontSize.base{" "}
-                <span className="sub">WEIGHT:</span> 700
+                <span className="sub">WEIGHT:</span> 600
               </Text>
             </Article>
             <Article>
@@ -77,7 +76,7 @@ const TypographyPage = () => {
               <Text variant="caption">
                 <span className="sub">VARIANT:</span> h6{" "}
                 <span className="sub">SIZE:</span> fontSize.sm2{" "}
-                <span className="sub">WEIGHT:</span> 700
+                <span className="sub">WEIGHT:</span> 600
               </Text>
             </Article>
             <Article>
@@ -137,6 +136,7 @@ const TypographyPage = () => {
 const TypeScale = styled.div`
   background-color: #fcfcf9;
   padding: 1rem 3rem;
+  margin: 1rem 0;
 
   .sub {
     display: inline-block;

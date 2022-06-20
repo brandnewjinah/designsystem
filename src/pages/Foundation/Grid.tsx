@@ -4,27 +4,27 @@ import React from "react";
 
 //import styles and assets
 import styled from "styled-components";
-import { Main, Wrapper } from "../../../components/Layout/Containers";
-import { Header } from "../../../components/Layout/Header";
-import { Section } from "../../../components/Layout/Section";
-import Table from "../../../components/Table";
-import Text from "../../../components/Text";
+import { Main, Wrapper } from "../../components/Layout/Containers";
+import { Header } from "../../components/Layout/Header";
+import { Section } from "../../components/Layout/Section";
+import Table from "../../components/Table";
+import Text from "../../components/Text";
 
 //data
-import { gridData } from "../../../data/tableData";
+import { gridData } from "../../data/tableData";
 
 const Grid = () => {
   return (
     <Wrapper>
       <Header
         title="Grid"
-        subtitle="Grid system helps you align information and maintain consistent user experience. It is based on 12 grid system."
+        subtitle="Grid system helps you align information and maintain consistent user experience."
       />
       <Main>
         <Section title="Breakpoints">
-          <Text>
-            The grid system is responsive based on 4-column, 8-column, and
-            12-column grids, suit different screen sizes.
+          <Text variant="body_small">
+            The grid system is responsive and uses 4-column, 8-column or
+            12-column depending on screen sizes and orientation.
           </Text>
           <Section divider={false}>
             <Table
@@ -81,6 +81,7 @@ const Grid = () => {
             <div className="span span3 desktop">4</div>
           </Container>
         </Section>
+        <Section title="How to use"></Section>
       </Main>
     </Wrapper>
   );

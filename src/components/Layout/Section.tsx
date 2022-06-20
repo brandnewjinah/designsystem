@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import styled from "styled-components";
+import Text from "../Text";
 
 //import styles and assets
 import { typeScale, neutral, spacing, fontSize } from "../Token";
@@ -32,12 +33,12 @@ export const Section: FC<Props> = ({
   return (
     <Wrapper divider={divider}>
       {title && (
-        <header>
-          <h2>{title}</h2>
-          {subtitle && <h3>{subtitle}</h3>}
-        </header>
+        <>
+          <Text variant="h2">{title}</Text>
+          {subtitle && <Text variant="h3">{subtitle}</Text>}
+        </>
       )}
-      {text && <>{text}</>}
+      {text && <Text variant="body_small">{text}</Text>}
       {image && (
         <ImageContainer>
           <img src={image} />
@@ -61,7 +62,7 @@ const Wrapper = styled.section<Props>`
   gap: 1rem;
   border-bottom: ${(props) =>
     props.divider === false ? null : `1px solid ${neutral[100]}`};
-  padding: 1.5rem 0;
+  padding: 2.5rem 0;
 
   header {
     padding: 0.75rem 0;
@@ -79,8 +80,6 @@ const Wrapper = styled.section<Props>`
 `;
 
 const ImageContainer = styled.div`
-  margin: 2rem 0 2.5rem;
-
   img {
     width: 100%;
     object-fit: cover;

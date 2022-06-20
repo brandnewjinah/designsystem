@@ -95,7 +95,7 @@ const Text: FC<Props> = ({
 
 const Heading1 = styled.h1<Props>`
   font-family: ${primaryFont};
-  font-size: ${fontSize.lg4};
+  font-size: ${fontSize.lg5};
   font-weight: 700;
   padding: ${(props) => props.padding};
 `;
@@ -103,35 +103,35 @@ const Heading1 = styled.h1<Props>`
 const Heading2 = styled.h2<Props>`
   font-family: ${primaryFont};
   font-size: ${fontSize.lg3};
-  font-weight: 700;
+  font-weight: 600;
   padding: ${(props) => props.padding};
 `;
 
 const Heading3 = styled.h3<Props>`
   font-family: ${primaryFont};
   font-size: ${fontSize.lg2};
-  font-weight: 700;
+  font-weight: 600;
   padding: ${(props) => props.padding};
 `;
 
 const Heading4 = styled.h4<Props>`
   font-family: ${primaryFont};
   font-size: ${fontSize.lg1};
-  font-weight: 700;
+  font-weight: 600;
   padding: ${(props) => props.padding};
 `;
 
 const Heading5 = styled.h5<Props>`
   font-family: ${primaryFont};
   font-size: ${fontSize.base};
-  font-weight: 700;
+  font-weight: 600;
   padding: ${(props) => props.padding};
 `;
 
 const Heading6 = styled.h6<Props>`
   font-family: ${primaryFont};
   font-size: ${fontSize.sm2};
-  font-weight: 700;
+  font-weight: 600;
   padding: ${(props) => props.padding};
 `;
 
